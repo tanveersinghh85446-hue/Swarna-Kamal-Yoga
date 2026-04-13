@@ -117,14 +117,14 @@ function Home({ splashDone }) {
 
       {/* ABOUT STRIP */}
       <section className="py-14 sm:py-20 px-4 sm:px-6 max-w-5xl mx-auto text-center">
-        <p className="uppercase tracking-widest text-xs text-gray-400 mb-3">Who We Are</p>
+        <p className="uppercase tracking-widest text-xs text-black mb-3">Who We Are</p>
         <h2 className="text-3xl sm:text-4xl font-extrabold mb-4 sm:mb-6">Ancient Wisdom. Modern Teaching.</h2>
         <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
           Swarna Kamal Yoga offers certified online yoga teacher training courses accredited by Yoga Alliance.
           Our expert trainers guide you through live Zoom sessions with recorded access, PDF materials, and personal support.
         </p>
         <Link to="/about"
-          className="inline-block mt-6 sm:mt-8 border-2 border-black text-black px-6 sm:px-8 py-3 font-bold rounded-full hover:bg-black hover:text-white transition-all text-sm sm:text-base">
+          className="inline-block mt-6 sm:mt-8 border-2 border-black text-black px-6 sm:px-8 py-3 font-bold rounded-full hover:bg-purple-600 hover:text-black transition-all text-sm sm:text-base">
           Meet Our Trainers
         </Link>
       </section>
@@ -132,7 +132,7 @@ function Home({ splashDone }) {
       {/* COURSES PREVIEW */}
       <section className="bg-black text-white py-14 sm:py-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <p className="uppercase tracking-widest text-xs text-gray-400 mb-3 text-center">What We Offer</p>
+          <p className="uppercase tracking-widest text-xs text-white mb-3 text-center">What We Offer</p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-8 sm:mb-12">Online Yoga Courses</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {courses.map((c, i) => (
@@ -146,7 +146,7 @@ function Home({ splashDone }) {
           <div className="text-center mt-8 sm:mt-10">
             <Link to="/courses"
               className="bg-white text-black px-6 sm:px-8 py-3 font-bold rounded-full hover:bg-gray-200 transition-all text-sm sm:text-base">
-              View All 14 Courses →
+              View All  Courses →
             </Link>
           </div>
         </div>

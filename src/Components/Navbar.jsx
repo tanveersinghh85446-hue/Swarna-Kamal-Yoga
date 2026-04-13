@@ -53,9 +53,9 @@ function Navbar() {
             {aboutOpen && (
               <ul className="absolute top-10 left-0 bg-white text-black rounded-xl shadow-2xl py-2 w-48 list-none z-50 border border-gray-200">
                 {[
-                  { to: "/testimonials", label: "🌟 Testimonials" },
-                  { to: "/blog",         label: "📝 Blog" },
-                  { to: "/gallery",      label: "🖼️ Gallery" },
+                  { to: "/testimonials", label: " Testimonials" },
+                  { to: "/blog",         label: " Blog" },
+                  { to: "/gallery",      label: " Gallery" },
                 ].map((item) => (
                   <li key={item.to}>
                     <Link to={item.to} onClick={() => setAboutOpen(false)}
