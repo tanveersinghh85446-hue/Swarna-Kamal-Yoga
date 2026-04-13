@@ -8,9 +8,7 @@ function useCountUp(target, duration = 2000, splashDone = false) {
   const started = useRef(false);
 
   useEffect(() => {
-    // Splash khatam nahi hua toh wait karo
     if (!splashDone) return;
-    // Ek baar se zyada mat chalao
     if (started.current) return;
     started.current = true;
 
