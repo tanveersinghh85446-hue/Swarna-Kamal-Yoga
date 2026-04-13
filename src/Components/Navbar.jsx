@@ -99,9 +99,9 @@ function Navbar() {
             <p className="text-white font-semibold mb-2 text-sm uppercase tracking-wider">About Us</p>
             <div className="pl-4 flex flex-col gap-3 border-l border-gray-700">
               {[
-                { to: "/testimonials", label: "🌟 Testimonials" },
-                { to: "/blog",         label: "📝 Blog" },
-                { to: "/gallery",      label: "🖼️ Gallery" },
+                { to: "/testimonials", label: " Testimonials" },
+                { to: "/blog",         label: " Blog" },
+                { to: "/gallery",      label: " Gallery" },
               ].map((item) => (
                 <Link key={item.to} to={item.to}
                   className="text-gray-300 text-sm hover:text-white transition-colors"
