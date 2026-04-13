@@ -1,4 +1,57 @@
 import { Link } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+
+// ── Count-up Hook ──────────────────────────────────────────
+// splashDone true hone ke baad hi count shuru hoga
+function useCountUp(target, duration = 2000, splashDone = false) {
+  const [count, setCount] = useState(0);
+  const started = useRef(false);
+
+  useEffect(() => {
+    // Splash khatam nahi hua toh wait karo
+    if (!splashDone) return;
+    // Ek baar se zyada mat chalao
+    if (started.current) return;
+    started.current = true;
+
+    let start = 0;
+    const step = Math.ceil(target / (duration / 16));
+    const timer = setInterval(() => {
+      start += step;
+      if (start >= target) {
+        setCount(target);
+        clearInterval(timer);
+      } else {
+        setCount(start);
+      }
+    }, 16);
+
+    return () => clearInterval(timer);
+  }, [splashDone, target, duration]);
+
+  return count;
+}
+
+// ── Stat Item ──────────────────────────────────────────────
+function StatItem({ target, suffix, label, splashDone }) {
+  const count = useCountUp(target, 2000, splashDone);
+  return (
+    <div className="text-center">
+      <p className="text-3xl sm:text-4xl font-extrabold">
+        {count}{suffix}
+      </p>
+      <p className="text-gray-400 text-xs sm:text-sm mt-1 uppercase tracking-widest">{label}</p>
+    </div>
+  );
+}
+
+// ── Data ───────────────────────────────────────────────────
+const stats = [
+  { target: 500, suffix: "+", label: "Students" },
+  { target: 14,  suffix: "+", label: "Courses" },
+  { target: 10,  suffix: "+", label: "Expert Trainers" },
+  { target: 5,   suffix: "★", label: "Rating" },
+];
 
 const courses = [
   "Pranayama Mudra Meditations",
@@ -9,13 +62,6 @@ const courses = [
   "Ashtanga Vinyasa Teacher Training",
 ];
 
-const stats = [
-  { num: "500+", label: "Students" },
-  { num: "14+",  label: "Courses" },
-  { num: "10+",  label: "Expert Trainers" },
-  { num: "5★",   label: "Rating" },
-];
-
 const features = [
   { icon: "🎓", title: "Yoga Alliance Certified", desc: "YACEP certified courses recognized globally." },
   { icon: "📹", title: "Live + Recorded",         desc: "Attend live on Zoom & rewatch recordings anytime." },
@@ -23,11 +69,12 @@ const features = [
   { icon: "🏅", title: "Soft Copy Certificate",   desc: "Receive your certificate digitally after completion." },
 ];
 
-function Home() {
+// ── Home Page ──────────────────────────────────────────────
+function Home({ splashDone }) {
   return (
     <div className="bg-white text-black font-sans">
 
-      {/* ── HERO ── */}
+      {/* HERO */}
       <section className="min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 bg-black text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-5"
           style={{ backgroundImage: "repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 40px),repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 40px)" }} />
@@ -53,19 +100,22 @@ function Home() {
         </div>
       </section>
 
-      {/* ── STATS ── */}
-      <section className="bg-black text-white border-t border-gray-800 py-10 sm:py-12">
-        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center px-4 sm:px-6">
+      {/* STATS — Count Up after Splash */}
+      <section className="bg-black text-white border-t border-gray-800 py-10 sm:py-14">
+        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 px-4 sm:px-6">
           {stats.map((s, i) => (
-            <div key={i}>
-              <p className="text-3xl sm:text-4xl font-extrabold">{s.num}</p>
-              <p className="text-gray-400 text-xs sm:text-sm mt-1 uppercase tracking-widest">{s.label}</p>
-            </div>
+            <StatItem
+              key={i}
+              target={s.target}
+              suffix={s.suffix}
+              label={s.label}
+              splashDone={splashDone}   // ← yahan se control hota hai
+            />
           ))}
         </div>
       </section>
 
-      {/* ── ABOUT STRIP ── */}
+      {/* ABOUT STRIP */}
       <section className="py-14 sm:py-20 px-4 sm:px-6 max-w-5xl mx-auto text-center">
         <p className="uppercase tracking-widest text-xs text-gray-400 mb-3">Who We Are</p>
         <h2 className="text-3xl sm:text-4xl font-extrabold mb-4 sm:mb-6">Ancient Wisdom. Modern Teaching.</h2>
@@ -79,7 +129,7 @@ function Home() {
         </Link>
       </section>
 
-      {/* ── COURSES PREVIEW ── */}
+      {/* COURSES PREVIEW */}
       <section className="bg-black text-white py-14 sm:py-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <p className="uppercase tracking-widest text-xs text-gray-400 mb-3 text-center">What We Offer</p>
@@ -102,7 +152,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ── WHY US ── */}
+      {/* WHY US */}
       <section className="py-14 sm:py-20 px-4 sm:px-6 max-w-6xl mx-auto">
         <p className="uppercase tracking-widest text-xs text-gray-400 mb-3 text-center">Why Choose Us</p>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-8 sm:mb-12">The Swarna Kamal Difference</h2>
@@ -118,7 +168,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ── TESTIMONIAL STRIP ── */}
+      {/* TESTIMONIAL STRIP */}
       <section className="bg-black text-white py-14 sm:py-16 px-4 sm:px-6 text-center">
         <p className="uppercase tracking-widest text-xs text-gray-400 mb-3">Student Love</p>
         <h2 className="text-2xl sm:text-3xl font-extrabold mb-4 sm:mb-6">What Our Students Say</h2>
@@ -131,7 +181,7 @@ function Home() {
         </Link>
       </section>
 
-      {/* ── CTA ── */}
+      {/* CTA */}
       <section className="py-14 sm:py-20 px-4 sm:px-6 text-center max-w-3xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-extrabold mb-3 sm:mb-4">Ready to Begin Your Journey?</h2>
         <p className="text-gray-500 text-base sm:text-lg mb-6 sm:mb-8">Join Swarna Kamal Yoga today and start your transformation.</p>

@@ -33,7 +33,7 @@ function Navbar() {
 
         {/* Logo */}
         <Link to="/" className="text-base sm:text-xl font-extrabold text-white tracking-widest uppercase flex items-center gap-2">
-          🪷 <span className="hidden xs:inline">Swarna Kamal Yoga</span>
+           <span className="hidden xs:inline">Swarna Kamal Yoga</span>
           <span className="xs:hidden">SKY</span>
         </Link>
 
