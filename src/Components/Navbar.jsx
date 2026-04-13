@@ -28,7 +28,7 @@ function Navbar() {
       : "text-gray-300 hover:text-white transition-colors duration-200 font-medium";
 
   return (
-    <nav className="bg-black sticky top-0 z-50 border-b border-gray-800">
+    <nav className="bg-purple-600 sticky top-0 z-50 border-b border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
 
         {/* Logo */}

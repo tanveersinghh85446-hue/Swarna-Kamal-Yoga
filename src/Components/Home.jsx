@@ -85,7 +85,7 @@ function Home({ splashDone }) {
             <span className="border-b-4 border-white pb-1">Yoga</span>
           </h1>
           <p className="text-gray-300 text-base sm:text-lg md:text-xl mt-4 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed px-2">
-            Transform your mind, body & soul through certified online yoga courses — Live on Zoom.
+            Transform your mind, body & soul through certified online yoga courses  Live on Zoom.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
             <Link to="/courses"

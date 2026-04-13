@@ -53,29 +53,22 @@ function SplashScreen({ onFinish }) {
           </span>
         ))}
 
-        {/* Blinking cursor — only while typing */}
-        {step >= 1 && step <= 3 && (
-          <span className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-white animate-pulse ml-1">
-            |
-          </span>
-        )}
+        
       </div>
 
       {/* Meaning — Swarna Kamal Yoga */}
       <div
         className={`text-center transition-all duration-700 ${
-          step >= 4 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          step >= 4 ? "opacity-10 translate-y-0" : "opacity-0 translate-y-4"
         }`}
       >
-        {/* Divider line */}
-        <div className="w-12 h-0.5 bg-white mx-auto mb-4 opacity-40" />
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-3 text-white">
           <span className="text-base sm:text-lg md:text-xl font-semibold tracking-widest">
-            <span className="text-white font-extrabold">S</span>warna
+            Swarna
           </span>
           <span className="text-base sm:text-lg md:text-xl font-semibold tracking-widest">
-            <span className="text-white font-extrabold">K</span>amal
+            Kamal
           </span>
           <span className="text-base sm:text-lg md:text-xl font-semibold tracking-widest">
             <span className="text-white font-extrabold">Y</span>oga
