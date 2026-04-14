@@ -6,36 +6,16 @@ const blogs = [
     category: "Pranayama",
     date: "June 1, 2025",
     readTime: "5 min read",
+    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&grayscale",
     intro: "Discover how simple breathing techniques can reduce stress, improve focus, and boost your energy levels every morning.",
     content: [
-      {
-        heading: "What is Pranayama?",
-        text: "Pranayama is the ancient yogic practice of controlling the breath. The word comes from Sanskrit — 'Prana' means life force and 'Ayama' means to extend or expand. By controlling our breath, we can directly influence our mind, body, and nervous system.",
-      },
-      {
-        heading: "1. Nadi Shodhana (Alternate Nostril Breathing)",
-        text: "This is one of the most powerful pranayama techniques for balancing the left and right hemispheres of the brain. Sit comfortably, close your right nostril with your thumb, inhale through the left, then close the left and exhale through the right. Repeat for 5–10 minutes daily. Benefits: reduces anxiety, improves focus, balances energy.",
-      },
-      {
-        heading: "2. Kapalabhati (Skull Shining Breath)",
-        text: "Kapalabhati involves short, sharp exhalations through the nose with passive inhalations. Start with 30 pumps per minute. This technique detoxifies the lungs, energizes the body, and improves digestion. Best practiced in the morning on an empty stomach.",
-      },
-      {
-        heading: "3. Bhramari (Humming Bee Breath)",
-        text: "Close your eyes, plug your ears with your thumbs, and make a humming sound as you exhale. The vibration calms the nervous system instantly. Excellent for insomnia, anxiety, and high blood pressure. Practice 5–7 rounds daily.",
-      },
-      {
-        heading: "4. Ujjayi (Ocean Breath)",
-        text: "Constrict the back of your throat slightly as you breathe through the nose, creating a soft ocean-like sound. This breath is commonly used in yoga asana practice to maintain focus and regulate body heat. It also activates the parasympathetic nervous system.",
-      },
-      {
-        heading: "5. Bhastrika (Bellows Breath)",
-        text: "Bhastrika involves rapid, forceful inhalations and exhalations. It is excellent for boosting energy, clearing the respiratory system, and warming the body. Practice in sets of 20 breaths with rest in between. Avoid if you have high blood pressure.",
-      },
-      {
-        heading: "How to Get Started",
-        text: "Begin with just 5 minutes each morning. Choose one technique and practice it consistently for a week before adding another. Always practice on an empty stomach, in a quiet comfortable space. Over time, you will notice significant improvements in your energy, clarity, and emotional balance.",
-      },
+      { heading: "What is Pranayama?", text: "Pranayama is the ancient yogic practice of controlling the breath. The word comes from Sanskrit — 'Prana' means life force and 'Ayama' means to extend or expand. By controlling our breath, we can directly influence our mind, body, and nervous system." },
+      { heading: "1. Nadi Shodhana (Alternate Nostril Breathing)", text: "This is one of the most powerful pranayama techniques for balancing the left and right hemispheres of the brain. Sit comfortably, close your right nostril with your thumb, inhale through the left, then close the left and exhale through the right. Repeat for 5–10 minutes daily. Benefits: reduces anxiety, improves focus, balances energy." },
+      { heading: "2. Kapalabhati (Skull Shining Breath)", text: "Kapalabhati involves short, sharp exhalations through the nose with passive inhalations. Start with 30 pumps per minute. This technique detoxifies the lungs, energizes the body, and improves digestion. Best practiced in the morning on an empty stomach." },
+      { heading: "3. Bhramari (Humming Bee Breath)", text: "Close your eyes, plug your ears with your thumbs, and make a humming sound as you exhale. The vibration calms the nervous system instantly. Excellent for insomnia, anxiety, and high blood pressure. Practice 5–7 rounds daily." },
+      { heading: "4. Ujjayi (Ocean Breath)", text: "Constrict the back of your throat slightly as you breathe through the nose, creating a soft ocean-like sound. This breath is commonly used in yoga asana practice to maintain focus and regulate body heat. It also activates the parasympathetic nervous system." },
+      { heading: "5. Bhastrika (Bellows Breath)", text: "Bhastrika involves rapid, forceful inhalations and exhalations. It is excellent for boosting energy, clearing the respiratory system, and warming the body. Practice in sets of 20 breaths with rest in between. Avoid if you have high blood pressure." },
+      { heading: "How to Get Started", text: "Begin with just 5 minutes each morning. Choose one technique and practice it consistently for a week before adding another. Always practice on an empty stomach, in a quiet comfortable space. Over time, you will notice significant improvements in your energy, clarity, and emotional balance." },
     ],
   },
   {
@@ -45,32 +25,15 @@ const blogs = [
     category: "Women's Health",
     date: "May 25, 2025",
     readTime: "7 min read",
+    image: "https://images.unsplash.com/photo-1588286840104-8957b019727f?w=800&q=80&grayscale",
     intro: "Learn how specific yoga asanas and mudras can help regulate hormones and manage PCOS symptoms naturally.",
     content: [
-      {
-        heading: "Understanding PCOS",
-        text: "Polycystic Ovary Syndrome (PCOS) is a hormonal disorder affecting millions of women worldwide. It is characterized by irregular periods, excess androgen levels, and polycystic ovaries. Symptoms include weight gain, acne, hair loss, and fertility challenges. Yoga offers a natural, holistic approach to managing these symptoms.",
-      },
-      {
-        heading: "How Yoga Helps PCOS",
-        text: "Yoga reduces cortisol (stress hormone) levels, which directly impacts hormonal balance. It improves insulin sensitivity, supports healthy weight management, and stimulates the endocrine system. Regular practice can lead to more regular menstrual cycles and reduced symptoms over time.",
-      },
-      {
-        heading: "Best Asanas for PCOS",
-        text: "Butterfly Pose (Baddha Konasana) — opens the hips and stimulates ovaries. Cobra Pose (Bhujangasana) — stimulates the reproductive organs. Child's Pose (Balasana) — reduces stress and calms the nervous system. Seated Forward Bend (Paschimottanasana) — massages abdominal organs. Supine Twist — detoxifies and stimulates digestion.",
-      },
-      {
-        heading: "Pranayama for Hormonal Balance",
-        text: "Nadi Shodhana (Alternate Nostril Breathing) is especially effective for balancing the hormonal system. Practice 10 minutes daily. Bhramari (Humming Bee Breath) calms the hypothalamus and pituitary gland, which are key regulators of hormones.",
-      },
-      {
-        heading: "Mudras for PCOS",
-        text: "Yoni Mudra — place both hands on the lower abdomen in a diamond shape. Hold for 10–15 minutes daily while breathing deeply. This mudra is believed to balance the reproductive system and regulate menstrual flow. Apana Mudra also supports the downward flow of energy and aids reproductive health.",
-      },
-      {
-        heading: "Diet and Lifestyle Tips",
-        text: "Combine your yoga practice with a low-glycemic diet, reducing refined sugars and processed foods. Include anti-inflammatory foods like turmeric, ginger, and leafy greens. Maintain a consistent sleep schedule and manage stress through meditation. These lifestyle changes, combined with yoga, can significantly improve PCOS symptoms.",
-      },
+      { heading: "Understanding PCOS", text: "Polycystic Ovary Syndrome (PCOS) is a hormonal disorder affecting millions of women worldwide. It is characterized by irregular periods, excess androgen levels, and polycystic ovaries. Symptoms include weight gain, acne, hair loss, and fertility challenges. Yoga offers a natural, holistic approach to managing these symptoms." },
+      { heading: "How Yoga Helps PCOS", text: "Yoga reduces cortisol (stress hormone) levels, which directly impacts hormonal balance. It improves insulin sensitivity, supports healthy weight management, and stimulates the endocrine system. Regular practice can lead to more regular menstrual cycles and reduced symptoms over time." },
+      { heading: "Best Asanas for PCOS", text: "Butterfly Pose (Baddha Konasana) — opens the hips and stimulates ovaries. Cobra Pose (Bhujangasana) — stimulates the reproductive organs. Child's Pose (Balasana) — reduces stress and calms the nervous system. Seated Forward Bend (Paschimottanasana) — massages abdominal organs. Supine Twist — detoxifies and stimulates digestion." },
+      { heading: "Pranayama for Hormonal Balance", text: "Nadi Shodhana (Alternate Nostril Breathing) is especially effective for balancing the hormonal system. Practice 10 minutes daily. Bhramari (Humming Bee Breath) calms the hypothalamus and pituitary gland, which are key regulators of hormones." },
+      { heading: "Mudras for PCOS", text: "Yoni Mudra — place both hands on the lower abdomen in a diamond shape. Hold for 10–15 minutes daily while breathing deeply. This mudra is believed to balance the reproductive system and regulate menstrual flow. Apana Mudra also supports the downward flow of energy and aids reproductive health." },
+      { heading: "Diet and Lifestyle Tips", text: "Combine your yoga practice with a low-glycemic diet, reducing refined sugars and processed foods. Include anti-inflammatory foods like turmeric, ginger, and leafy greens. Maintain a consistent sleep schedule and manage stress through meditation." },
     ],
   },
   {
@@ -80,32 +43,15 @@ const blogs = [
     category: "Nutrition",
     date: "May 18, 2025",
     readTime: "6 min read",
+    image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80&grayscale",
     intro: "A practical guide to building a sattvic diet that supports your yoga practice, weight goals, and overall wellbeing.",
     content: [
-      {
-        heading: "What is a Yogic Diet?",
-        text: "A yogic diet is based on the Ayurvedic concept of Sattva — foods that are pure, light, and nourishing. These foods calm the mind, energize the body, and support spiritual growth. A sattvic diet primarily includes fresh fruits, vegetables, whole grains, legumes, nuts, seeds, and dairy.",
-      },
-      {
-        heading: "The 3 Gunas of Food",
-        text: "Sattvic foods — fresh, natural, lightly cooked — promote clarity and peace. Rajasic foods — spicy, stimulating, heavily seasoned — increase restlessness and agitation. Tamasic foods — stale, processed, heavy — promote lethargy and dullness. A yogi aims to maximize sattvic foods in their diet.",
-      },
-      {
-        heading: "Building Your Meal Plan",
-        text: "Morning: Start with warm lemon water. Breakfast: Fresh fruit, soaked nuts, or oatmeal with honey. Lunch (main meal): Dal, brown rice, sabzi with ghee, and fresh salad. Evening snack: Herbal tea with dates or a small handful of almonds. Dinner (light): Khichdi, vegetable soup, or steamed vegetables with roti.",
-      },
-      {
-        heading: "Importance of Water",
-        text: "Drink 8–10 glasses of water daily. Avoid drinking water immediately before or after meals as it dilutes digestive enzymes. Sip warm water throughout the day to support digestion and detoxification. Herbal teas like ginger, tulsi, and cumin water are excellent additions.",
-      },
-      {
-        heading: "Foods to Avoid",
-        text: "Minimize or avoid: meat, fish, eggs (especially for sadhana periods), alcohol, caffeine, processed foods, refined sugar, artificial additives, garlic and onion in large quantities (considered rajasic). These foods disturb the mind and create imbalance in the body.",
-      },
-      {
-        heading: "Eating Mindfully",
-        text: "Eat in a calm environment without distractions. Chew each bite slowly and thoroughly. Express gratitude before meals. Eat only when genuinely hungry and stop before feeling completely full. This practice of mindful eating, combined with a sattvic diet, transforms not just the body but the entire quality of life.",
-      },
+      { heading: "What is a Yogic Diet?", text: "A yogic diet is based on the Ayurvedic concept of Sattva — foods that are pure, light, and nourishing. These foods calm the mind, energize the body, and support spiritual growth. A sattvic diet primarily includes fresh fruits, vegetables, whole grains, legumes, nuts, seeds, and dairy." },
+      { heading: "The 3 Gunas of Food", text: "Sattvic foods — fresh, natural, lightly cooked — promote clarity and peace. Rajasic foods — spicy, stimulating, heavily seasoned — increase restlessness and agitation. Tamasic foods — stale, processed, heavy — promote lethargy and dullness. A yogi aims to maximize sattvic foods in their diet." },
+      { heading: "Building Your Meal Plan", text: "Morning: Start with warm lemon water. Breakfast: Fresh fruit, soaked nuts, or oatmeal with honey. Lunch (main meal): Dal, brown rice, sabzi with ghee, and fresh salad. Evening snack: Herbal tea with dates or a small handful of almonds. Dinner (light): Khichdi, vegetable soup, or steamed vegetables with roti." },
+      { heading: "Importance of Water", text: "Drink 8–10 glasses of water daily. Avoid drinking water immediately before or after meals as it dilutes digestive enzymes. Sip warm water throughout the day to support digestion and detoxification. Herbal teas like ginger, tulsi, and cumin water are excellent additions." },
+      { heading: "Foods to Avoid", text: "Minimize or avoid: meat, fish, eggs, alcohol, caffeine, processed foods, refined sugar, artificial additives, garlic and onion in large quantities. These foods disturb the mind and create imbalance in the body." },
+      { heading: "Eating Mindfully", text: "Eat in a calm environment without distractions. Chew each bite slowly and thoroughly. Express gratitude before meals. Eat only when genuinely hungry and stop before feeling completely full." },
     ],
   },
   {
@@ -115,32 +61,15 @@ const blogs = [
     category: "Yoga Tips",
     date: "May 10, 2025",
     readTime: "5 min read",
+    image: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=800&q=80&grayscale",
     intro: "Break down the differences between these two powerful traditions and find the perfect style for your body and goals.",
     content: [
-      {
-        heading: "Overview of Hatha Yoga",
-        text: "Hatha Yoga is the foundation of all physical yoga styles. The word 'Hatha' means 'force' in Sanskrit, referring to the physical practice of yoga postures. Hatha classes are typically slow-paced, holding each pose for several breaths, making them ideal for beginners and those seeking a meditative practice.",
-      },
-      {
-        heading: "Overview of Ashtanga Yoga",
-        text: "Ashtanga Yoga is a dynamic, athletic style developed by Sri K. Pattabhi Jois. It follows a set sequence of poses linked by breath and movement (vinyasa). The primary series consists of around 75 poses and takes 60–90 minutes to complete. It requires strength, flexibility, and endurance.",
-      },
-      {
-        heading: "Key Differences",
-        text: "Pace: Hatha is slow and meditative; Ashtanga is fast and dynamic. Structure: Hatha varies by teacher; Ashtanga follows a fixed sequence. Intensity: Hatha is gentle; Ashtanga is physically demanding. Breathwork: Both emphasize breath, but Ashtanga uses Ujjayi breath throughout. Best for: Hatha suits beginners; Ashtanga suits intermediate to advanced practitioners.",
-      },
-      {
-        heading: "Benefits of Hatha Yoga",
-        text: "Improves flexibility and posture. Reduces stress and anxiety. Builds body awareness. Suitable for all ages and fitness levels. Excellent foundation for other yoga styles. Promotes relaxation and mindfulness.",
-      },
-      {
-        heading: "Benefits of Ashtanga Yoga",
-        text: "Builds significant strength and stamina. Improves cardiovascular fitness. Creates a moving meditation experience. Develops discipline and consistency. Detoxifies the body through heat generated by the practice. Excellent for weight management.",
-      },
-      {
-        heading: "Which Should You Choose?",
-        text: "Choose Hatha if you are new to yoga, recovering from injury, or seeking a gentle, stress-relieving practice. Choose Ashtanga if you are physically fit, enjoy athletic challenges, and want a structured, intense practice. Many practitioners start with Hatha and transition to Ashtanga as they build strength and experience.",
-      },
+      { heading: "Overview of Hatha Yoga", text: "Hatha Yoga is the foundation of all physical yoga styles. The word 'Hatha' means 'force' in Sanskrit, referring to the physical practice of yoga postures. Hatha classes are typically slow-paced, holding each pose for several breaths, making them ideal for beginners and those seeking a meditative practice." },
+      { heading: "Overview of Ashtanga Yoga", text: "Ashtanga Yoga is a dynamic, athletic style developed by Sri K. Pattabhi Jois. It follows a set sequence of poses linked by breath and movement (vinyasa). The primary series consists of around 75 poses and takes 60–90 minutes to complete. It requires strength, flexibility, and endurance." },
+      { heading: "Key Differences", text: "Pace: Hatha is slow and meditative; Ashtanga is fast and dynamic. Structure: Hatha varies by teacher; Ashtanga follows a fixed sequence. Intensity: Hatha is gentle; Ashtanga is physically demanding. Breathwork: Both emphasize breath, but Ashtanga uses Ujjayi breath throughout." },
+      { heading: "Benefits of Hatha Yoga", text: "Improves flexibility and posture. Reduces stress and anxiety. Builds body awareness. Suitable for all ages and fitness levels. Excellent foundation for other yoga styles. Promotes relaxation and mindfulness." },
+      { heading: "Benefits of Ashtanga Yoga", text: "Builds significant strength and stamina. Improves cardiovascular fitness. Creates a moving meditation experience. Develops discipline and consistency. Detoxifies the body through heat generated by the practice. Excellent for weight management." },
+      { heading: "Which Should You Choose?", text: "Choose Hatha if you are new to yoga, recovering from injury, or seeking a gentle, stress-relieving practice. Choose Ashtanga if you are physically fit, enjoy athletic challenges, and want a structured, intense practice." },
     ],
   },
   {
@@ -150,32 +79,15 @@ const blogs = [
     category: "Yin Yoga",
     date: "May 3, 2025",
     readTime: "5 min read",
+    image: "https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&q=80&grayscale",
     intro: "Explore how long-held passive poses can release deep tension in the body and bring profound relaxation to the mind.",
     content: [
-      {
-        heading: "What is Yin Yoga?",
-        text: "Yin Yoga is a slow, meditative style where poses are held for 3–5 minutes or longer. Unlike other styles that target muscles, Yin Yoga targets the deeper connective tissues — fascia, ligaments, joints, and bones. It is based on Taoist principles and incorporates concepts from Traditional Chinese Medicine.",
-      },
-      {
-        heading: "How Yin Yoga Relieves Stress",
-        text: "Long-held poses activate the parasympathetic nervous system — the 'rest and digest' response. This counteracts chronic stress and anxiety. During Yin practice, the body releases physical tension stored in connective tissues, and the mind learns to remain still and present, developing emotional resilience.",
-      },
-      {
-        heading: "Key Yin Yoga Poses",
-        text: "Butterfly Pose — opens inner groin and lower back. Dragon Pose — deep hip flexor stretch. Sleeping Swan — intense hip opener. Caterpillar — forward fold that releases spine. Sphinx — gentle backbend that stimulates the sacral lumbar arch. Savasana — final integration and deep rest.",
-      },
-      {
-        heading: "Meridian Theory in Yin Yoga",
-        text: "Yin Yoga targets specific meridian lines that correspond to organs in Chinese Medicine. Hip-opening poses stimulate the Liver and Kidney meridians, supporting emotional balance and vitality. Spinal poses target the Bladder meridian. By working these lines, Yin Yoga promotes holistic health beyond just physical flexibility.",
-      },
-      {
-        heading: "Benefits Beyond Stress Relief",
-        text: "Increases flexibility in joints and connective tissue. Improves circulation to deep tissues. Balances the energy body. Develops mindfulness and meditation skills. Complements active yang practices like Vinyasa. Supports joint health and prevents injury. Excellent for athletes and desk workers.",
-      },
-      {
-        heading: "Getting Started with Yin Yoga",
-        text: "Begin with a 30-minute practice, 2–3 times per week. Use props like blocks, bolsters, and blankets for support. Set a timer for each pose so you can fully surrender without watching the clock. Focus on the breath throughout. Do not force any stretch — find your edge and stay there with ease.",
-      },
+      { heading: "What is Yin Yoga?", text: "Yin Yoga is a slow, meditative style where poses are held for 3–5 minutes or longer. Unlike other styles that target muscles, Yin Yoga targets the deeper connective tissues — fascia, ligaments, joints, and bones. It is based on Taoist principles and incorporates concepts from Traditional Chinese Medicine." },
+      { heading: "How Yin Yoga Relieves Stress", text: "Long-held poses activate the parasympathetic nervous system — the 'rest and digest' response. This counteracts chronic stress and anxiety. During Yin practice, the body releases physical tension stored in connective tissues, and the mind learns to remain still and present, developing emotional resilience." },
+      { heading: "Key Yin Yoga Poses", text: "Butterfly Pose — opens inner groin and lower back. Dragon Pose — deep hip flexor stretch. Sleeping Swan — intense hip opener. Caterpillar — forward fold that releases spine. Sphinx — gentle backbend that stimulates the sacral lumbar arch. Savasana — final integration and deep rest." },
+      { heading: "Meridian Theory in Yin Yoga", text: "Yin Yoga targets specific meridian lines that correspond to organs in Chinese Medicine. Hip-opening poses stimulate the Liver and Kidney meridians, supporting emotional balance and vitality. Spinal poses target the Bladder meridian." },
+      { heading: "Benefits Beyond Stress Relief", text: "Increases flexibility in joints and connective tissue. Improves circulation to deep tissues. Balances the energy body. Develops mindfulness and meditation skills. Complements active yang practices like Vinyasa. Supports joint health and prevents injury." },
+      { heading: "Getting Started with Yin Yoga", text: "Begin with a 30-minute practice, 2–3 times per week. Use props like blocks, bolsters, and blankets for support. Set a timer for each pose so you can fully surrender without watching the clock. Focus on the breath throughout." },
     ],
   },
   {
@@ -185,32 +97,15 @@ const blogs = [
     category: "Face Yoga",
     date: "April 28, 2025",
     readTime: "4 min read",
+    image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80&grayscale",
     intro: "Simple face yoga exercises you can do in 10 minutes daily to tone facial muscles and achieve a natural glow.",
     content: [
-      {
-        heading: "What is Face Yoga?",
-        text: "Face Yoga is a natural, non-invasive technique that uses specific exercises to tone and strengthen the 57 muscles in the face and neck. Just like body yoga builds physical strength and flexibility, Face Yoga sculpts and lifts the facial muscles, reducing signs of aging naturally.",
-      },
-      {
-        heading: "How Face Yoga Works",
-        text: "As we age, facial muscles lose tone and skin loses elasticity. Face Yoga exercises stimulate blood circulation, increase collagen production, and tone the underlying muscles. Regular practice can lift sagging areas, reduce wrinkles, and give the face a more youthful, radiant appearance.",
-      },
-      {
-        heading: "5 Essential Face Yoga Exercises",
-        text: "The V — press fingertips to brow and cheekbones, look up and squint. Smooth the Brow — place fingers horizontally on forehead, pull down while raising eyebrows. The Giraffe — look up, tilt head back, press fingertips to collarbone. Cheek Sculptor — smile wide, place fingertips on cheeks, push down while resisting with muscles. Lion Face — inhale deeply, exhale forcefully with tongue out and eyes wide.",
-      },
-      {
-        heading: "Acupressure Points",
-        text: "Combine face yoga with gentle acupressure for enhanced results. Press the point between the brows to relieve eye strain. Press the point at the temples to reduce headaches. Massage the jawline to release tension. These pressure points stimulate energy flow and improve skin health.",
-      },
-      {
-        heading: "When and How Often",
-        text: "Practice Face Yoga for 10–20 minutes daily, ideally in the morning. Wash your face and apply a few drops of facial oil before starting to reduce friction. Be consistent — results typically become visible after 4–6 weeks of daily practice. Take weekly photos to track your progress.",
-      },
-      {
-        heading: "Additional Tips for Glowing Skin",
-        text: "Stay hydrated — drink 8 glasses of water daily. Eat antioxidant-rich foods like berries, leafy greens, and nuts. Get 7–8 hours of sleep. Reduce stress through meditation and pranayama. Protect skin from sun damage. Avoid smoking and excessive alcohol. These habits combined with Face Yoga will give you transformative results.",
-      },
+      { heading: "What is Face Yoga?", text: "Face Yoga is a natural, non-invasive technique that uses specific exercises to tone and strengthen the 57 muscles in the face and neck. Just like body yoga builds physical strength and flexibility, Face Yoga sculpts and lifts the facial muscles, reducing signs of aging naturally." },
+      { heading: "How Face Yoga Works", text: "As we age, facial muscles lose tone and skin loses elasticity. Face Yoga exercises stimulate blood circulation, increase collagen production, and tone the underlying muscles. Regular practice can lift sagging areas, reduce wrinkles, and give the face a more youthful, radiant appearance." },
+      { heading: "5 Essential Face Yoga Exercises", text: "The V — press fingertips to brow and cheekbones, look up and squint. Smooth the Brow — place fingers horizontally on forehead, pull down while raising eyebrows. The Giraffe — look up, tilt head back, press fingertips to collarbone. Cheek Sculptor — smile wide, place fingertips on cheeks, push down while resisting with muscles." },
+      { heading: "Acupressure Points", text: "Combine face yoga with gentle acupressure for enhanced results. Press the point between the brows to relieve eye strain. Press the point at the temples to reduce headaches. Massage the jawline to release tension." },
+      { heading: "When and How Often", text: "Practice Face Yoga for 10–20 minutes daily, ideally in the morning. Wash your face and apply a few drops of facial oil before starting to reduce friction. Be consistent — results typically become visible after 4–6 weeks of daily practice." },
+      { heading: "Additional Tips for Glowing Skin", text: "Stay hydrated — drink 8 glasses of water daily. Eat antioxidant-rich foods like berries, leafy greens, and nuts. Get 7–8 hours of sleep. Reduce stress through meditation and pranayama. Protect skin from sun damage." },
     ],
   },
 ];
