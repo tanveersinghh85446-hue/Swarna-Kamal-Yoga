@@ -7,7 +7,7 @@ import Home          from "./Components/Home";
 import About         from "./Pages/About";
 import Apply         from "./Pages/Apply";
 import Blog          from "./Pages/Blog";
-import BlogDetail    from "./Pages/BlogDetail";
+import Blogdetail    from "./Pages/Blogdetail";
 import Contact       from "./Pages/Contact";
 import Courses       from "./Pages/Courses";
 import Gallery       from "./Pages/Gallery";
@@ -47,7 +47,7 @@ function App() {
             <Route path="/about"        element={<About />}        />
             <Route path="/apply"        element={<Apply />}        />
             <Route path="/blog"         element={<Blog />}         />
-            <Route path="/blog/:slug"   element={<BlogDetail />}   />
+            <Route path="/blog/:slug"   element={<Blogdetail />}   />
             <Route path="/contact"      element={<Contact />}      />
             <Route path="/courses"      element={<Courses />}      />
             <Route path="/gallery"      element={<Gallery />}      />
