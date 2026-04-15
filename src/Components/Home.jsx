@@ -525,6 +525,8 @@ const Home = () => {
         </div>
       </div>
 
+     
+
       {/* ══════════════════ 6. FLEXIBLE LEARNING ══════════════════ */}
       <FadeIn>
         <div className="py-16 px-6 bg-amber-600 text-white text-center">
@@ -567,8 +569,6 @@ const Home = () => {
           </div>
         </div>
       </FadeIn>
-
-    
 
       <div
         className="py-16 sm:py-20 px-6 bg-stone-50 bg-cover bg-center bg-no-repeat"
