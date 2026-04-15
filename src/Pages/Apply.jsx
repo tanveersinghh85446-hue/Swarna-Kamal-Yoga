@@ -137,8 +137,8 @@ function Apply() {
       </div>
 
       {/* ── Text ── */}
-      <p className="text-xs uppercase tracking-[0.4em] text-gray-400 mb-3">Page Under Construction</p>
-      <h1 className="text-4xl sm:text-5xl font-extrabold text-black mb-4">Coming Soon</h1>
+      <p className="text-xs uppercase tracking-[0.4em] text-gray-400 mb-3"> Apply Page Under Construction</p>
+      <h1 className="text-4xl sm:text-5xl font-extrabold text-black mb-4"> Apply Page Coming Soon</h1>
 
       {/* Polite message */}
       <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-md mx-auto mb-3">

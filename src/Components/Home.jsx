@@ -1,357 +1,748 @@
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-const messages = [
-  "Writing clean code... ✨",
-  "Designing beautiful layouts... 🎨",
-  "Testing on all devices... 📱",
-  "Almost there... 🚀",
-  "Adding final touches... 🛠️",
+// ── Unsplash yoga images for slider ───────────────────────
+const slides = [
+  {
+    img: "Home4.jpg",
+    title: "SWARNA KAMAL YOGA",
+    sub: "Transform your mind, body & soul since 2012",
+    btn: "Book a Free Trial",
+    to: "/apply",
+  },
+  {
+    img: "Home2.jpg",
+    title: "YOGA ALLIANCE CERTIFIED",
+    sub: "Internationally recognized Teacher Training Courses",
+    btn: "View Courses",
+    to: "/courses",
+  },
+  {
+    img: "Home1.jpg",
+    title: "ONLINE & OFFLINE CLASSES",
+    sub: "Learn from anywhere — flexible batches available",
+    btn: "Apply Now",
+    to: "/apply",
+  },
+  {
+    img: "Home5.jpg",
+    title: "WOMEN'S WELLNESS YOGA",
+    sub: "Specialized courses for hormonal health & complete wellbeing",
+    btn: "Explore More",
+    to: "/courses/womens-wellness",
+  },
 ];
 
-function Home() {
-  const [msgIndex, setMsgIndex] = useState(0);
-  const [dots, setDots] = useState("");
+// ── Teacher Training Courses with real images ─────────────
+const courses = [
+  {
+    title: "100 Hour TTC",
+    desc: "Foundation level. Perfect for beginners stepping into yoga teaching.",
+    img: "100 Hour TTC.jpg",
+    to: "/courses/hatha-yoga",
+    badge: "Beginner",
+  },
+  {
+    title: "200 Hour TTC",
+    desc: "The globally recognized standard for certified yoga instructors.",
+    img: "200 Hour TTC.jpg",
+    to: "/courses/pranayama",
+    badge: "Most Popular",
+  },
+  {
+    title: "300 Hour TTC",
+    desc: "Advanced training for deepening practice and teaching skills.",
+    img: "Samita.png",
+    to: "/courses/ashtanga",
+    badge: "Advanced",
+  },
+  {
+    title: "500 Hour TTC",
+    desc: "Master-level program combining 200Hr + 300Hr for complete mastery.",
+    img: "500 Hour TTC.jpg",
+    to: "/courses",
+    badge: "Master Level",
+  },
+];
 
-  // Cycle through messages
+// ── Why Us with real images ───────────────────────────────
+const whyUs = [
+  {
+    title: "16+ Years of Excellence",
+    desc: "Established in 2012, we are one of Bengaluru's most trusted yoga institutions with a proven track record.",
+    img: "16+ Years of Excellence.jpg",
+    to: "/about",
+  },
+  {
+    title: "Globally Recognized Certification",
+    desc: "Our TTC programs follow Yoga Alliance standards, giving you a certificate accepted worldwide.",
+    img: "Globally Recognized Certification.jpg",
+    to: "/courses",
+  },
+  {
+    title: "All Ages Welcome",
+    desc: "From toddlers to seniors — we design classes for every age group and fitness level.",
+    img: "OldAge.jpg",
+    to: "/about",
+  },
+  {
+    title: "Online & Offline Modes",
+    desc: "Can't visit in person? Our hybrid learning model lets you practice from home.",
+    img: "Online & Offline Modes.jpg",
+    to: "/courses",
+  },
+  {
+    title: "Holistic Approach",
+    desc: "We blend asanas, pranayama, meditation, and yogic philosophy for complete transformation.",
+    img: "Holistic Approach.jpg",
+    to: "/courses/pranayama",
+  },
+  {
+    title: "Personalized Guidance",
+    desc: "Small batch sizes ensure every student receives individual attention and customized feedback.",
+    img: "Personalized Guidance.jpg",
+    to: "/contact",
+  },
+];
+
+// ── FAQ Data ──────────────────────────────────────────────
+const faqs = [
+  {
+    question: "Who can join Swarna Kamal Yoga Center?",
+    answer:
+      "Anyone can join — beginners, intermediate, and advanced practitioners. We welcome adults, kids, seniors, and people with health conditions. Our trainers customize sessions to individual needs.",
+    to: "/about",
+  },
+  {
+    question: "What are the available batch timings?",
+    answer:
+      "We offer flexible morning and evening batches on weekdays and weekends. Please contact us on WhatsApp or visit the center to check the latest available slots.",
+    to: "/contact",
+  },
+  {
+    question: "Is the Teacher Training Course (TTC) recognized?",
+    answer:
+      "Yes! All our TTC programs (100Hr, 200Hr, 300Hr, 500Hr) are internationally recognized and follow Yoga Alliance standards, making our certification globally accepted.",
+    to: "/courses",
+  },
+  {
+    question: "Do you offer online classes?",
+    answer:
+      "Yes, we offer both offline and online yoga sessions. Our flexible learning model allows students from any part of the world to learn from Smita Karakavalasa directly.",
+    to: "/courses",
+  },
+  {
+    question: "What is the fee structure for courses?",
+    answer:
+      "Fee structure varies based on the course type and duration. Please reach out to us via WhatsApp or fill the enquiry form for a detailed fee breakdown and available discounts.",
+    to: "/contact",
+  },
+  {
+    question: "How experienced is the faculty?",
+    answer:
+      "Our founder, Smita Karakavalasa, has over 12 years of dedicated yoga teaching experience and has trained hundreds of students. She brings warmth, expertise, and a heart-centered approach to every session.",
+    to: "/about",
+  },
+];
+
+const faqColors = [
+  { bg: "#FEF9EE", border: "#D97706", text: "#92400E" },
+  { bg: "#F0FDF4", border: "#16A34A", text: "#14532D" },
+  { bg: "#FFF7ED", border: "#EA580C", text: "#7C2D12" },
+  { bg: "#EFF6FF", border: "#2563EB", text: "#1E3A8A" },
+  { bg: "#FDF4FF", border: "#9333EA", text: "#581C87" },
+  { bg: "#F0FDFA", border: "#0D9488", text: "#134E4A" },
+];
+
+// ── Animate on scroll hook ────────────────────────────────
+function useVisible() {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
   useEffect(() => {
-    const t = setInterval(() => {
-      setMsgIndex((prev) => (prev + 1) % messages.length);
-    }, 2000);
-    return () => clearInterval(t);
+    const obs = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setVisible(true);
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.15 },
+    );
+    if (ref.current) obs.observe(ref.current);
+    return () => obs.disconnect();
   }, []);
+  return { ref, visible };
+}
 
-  // Animated dots
-  useEffect(() => {
-    const t = setInterval(() => {
-      setDots((prev) => (prev.length >= 3 ? "" : prev + "."));
-    }, 400);
-    return () => clearInterval(t);
-  }, []);
-
+// ── Animated Section wrapper ──────────────────────────────
+function FadeIn({ children, delay = 0, className = "" }) {
+  const { ref, visible } = useVisible();
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4 text-center">
-      {/* ── Developer SVG Illustration ── */}
-      <div className="mb-8 sm:mb-10">
-        <svg
-          width="260"
-          height="260"
-          viewBox="0 0 260 260"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="mx-auto"
-        >
-          {/* Desk */}
-          <rect x="30" y="190" width="200" height="12" rx="6" fill="#111" />
-          <rect x="55" y="202" width="12" height="40" rx="4" fill="#333" />
-          <rect x="193" y="202" width="12" height="40" rx="4" fill="#333" />
-
-          {/* Monitor */}
-          <rect x="70" y="120" width="120" height="75" rx="8" fill="#111" />
-          <rect x="78" y="128" width="104" height="58" rx="4" fill="#1a1a2e" />
-          {/* Screen glow */}
-          <rect x="82" y="132" width="96" height="50" rx="3" fill="#0f0f23" />
-
-          {/* Code lines on screen */}
-          <rect x="88" y="140" width="55" height="3" rx="1.5" fill="#4ade80" />
-          <rect x="88" y="148" width="40" height="3" rx="1.5" fill="#60a5fa" />
-          <rect x="95" y="156" width="65" height="3" rx="1.5" fill="#f9a8d4" />
-          <rect x="95" y="164" width="45" height="3" rx="1.5" fill="#fbbf24" />
-          <rect x="88" y="172" width="30" height="3" rx="1.5" fill="#4ade80" />
-
-          {/* Blinking cursor */}
-          <rect x="120" y="172" width="2" height="10" rx="1" fill="white">
-            <animate
-              attributeName="opacity"
-              values="1;0;1"
-              dur="1s"
-              repeatCount="indefinite"
-            />
-          </rect>
-
-          {/* Monitor stand */}
-          <rect x="122" y="195" width="16" height="10" rx="2" fill="#333" />
-          <rect x="110" y="203" width="40" height="6" rx="3" fill="#222" />
-
-          {/* Keyboard */}
-          <rect x="80" y="210" width="100" height="18" rx="5" fill="#222" />
-          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
-            <rect
-              key={i}
-              x={86 + i * 9}
-              y="214"
-              width="6"
-              height="5"
-              rx="1.5"
-              fill="#444"
-            />
-          ))}
-          {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-            <rect
-              key={i}
-              x={90 + i * 9}
-              y="221"
-              width="6"
-              height="4"
-              rx="1.5"
-              fill="#444"
-            />
-          ))}
-
-          {/* Person body */}
-          <rect
-            x="108"
-            y="82"
-            width="44"
-            height="42"
-            rx="14"
-            fill="white"
-            stroke="#111"
-            strokeWidth="2"
-          />
-
-          {/* Person neck */}
-          <rect
-            x="125"
-            y="76"
-            width="10"
-            height="10"
-            rx="5"
-            fill="white"
-            stroke="#111"
-            strokeWidth="2"
-          />
-
-          {/* Person head */}
-          <circle
-            cx="130"
-            cy="58"
-            r="22"
-            fill="white"
-            stroke="#111"
-            strokeWidth="2"
-          />
-
-          {/* Hair */}
-          <path d="M108 52 Q110 32 130 30 Q150 32 152 52" fill="#111" />
-
-          {/* Eyes */}
-          <ellipse cx="122" cy="56" rx="4" ry="4.5" fill="#111" />
-          <ellipse cx="138" cy="56" rx="4" ry="4.5" fill="#111" />
-          <circle cx="123" cy="54" r="1.5" fill="white" />
-          <circle cx="139" cy="54" r="1.5" fill="white" />
-
-          {/* Glasses */}
-          <rect
-            x="116"
-            y="51"
-            width="12"
-            height="10"
-            rx="4"
-            fill="none"
-            stroke="#111"
-            strokeWidth="1.5"
-          />
-          <rect
-            x="132"
-            y="51"
-            width="12"
-            height="10"
-            rx="4"
-            fill="none"
-            stroke="#111"
-            strokeWidth="1.5"
-          />
-          <line
-            x1="128"
-            y1="56"
-            x2="132"
-            y2="56"
-            stroke="#111"
-            strokeWidth="1.5"
-          />
-          <line
-            x1="108"
-            y1="56"
-            x2="116"
-            y2="56"
-            stroke="#111"
-            strokeWidth="1.5"
-          />
-          <line
-            x1="144"
-            y1="56"
-            x2="152"
-            y2="56"
-            stroke="#111"
-            strokeWidth="1.5"
-          />
-
-          {/* Smile */}
-          <path
-            d="M122 67 Q130 74 138 67"
-            stroke="#111"
-            strokeWidth="2"
-            strokeLinecap="round"
-            fill="none"
-          />
-
-          {/* Left arm — typing */}
-          <line
-            x1="108"
-            y1="96"
-            x2="88"
-            y2="118"
-            stroke="#111"
-            strokeWidth="4"
-            strokeLinecap="round"
-          >
-            <animateTransform
-              attributeName="transform"
-              type="rotate"
-              values="0 108 96;-5 108 96;0 108 96"
-              dur="0.5s"
-              repeatCount="indefinite"
-            />
-          </line>
-          <ellipse
-            cx="85"
-            cy="121"
-            rx="7"
-            ry="5"
-            fill="white"
-            stroke="#111"
-            strokeWidth="2"
-          />
-
-          {/* Right arm — typing */}
-          <line
-            x1="152"
-            y1="96"
-            x2="172"
-            y2="118"
-            stroke="#111"
-            strokeWidth="4"
-            strokeLinecap="round"
-          >
-            <animateTransform
-              attributeName="transform"
-              type="rotate"
-              values="0 152 96;5 152 96;0 152 96"
-              dur="0.5s"
-              repeatCount="indefinite"
-              begin="0.25s"
-            />
-          </line>
-          <ellipse
-            cx="175"
-            cy="121"
-            rx="7"
-            ry="5"
-            fill="white"
-            stroke="#111"
-            strokeWidth="2"
-          />
-
-          {/* Coffee mug */}
-          <rect
-            x="32"
-            y="178"
-            width="24"
-            height="18"
-            rx="4"
-            fill="white"
-            stroke="#111"
-            strokeWidth="2"
-          />
-          <path
-            d="M56 183 Q64 183 64 189 Q64 195 56 195"
-            stroke="#111"
-            strokeWidth="2"
-            fill="none"
-          />
-          {/* Steam */}
-          <path
-            d="M38 175 Q40 170 38 165"
-            stroke="#aaa"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            fill="none"
-          >
-            <animate
-              attributeName="opacity"
-              values="0;1;0"
-              dur="1.5s"
-              repeatCount="indefinite"
-            />
-          </path>
-          <path
-            d="M46 174 Q48 168 46 162"
-            stroke="#aaa"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            fill="none"
-          >
-            <animate
-              attributeName="opacity"
-              values="0;1;0"
-              dur="1.5s"
-              repeatCount="indefinite"
-              begin="0.5s"
-            />
-          </path>
-
-          {/* Stars / sparkles around head */}
-          <text x="158" y="46" fontSize="14" fill="#111">
-            ✦
-          </text>
-          <text x="96" y="42" fontSize="12" fill="#111">
-            ✦
-          </text>
-          <text x="170" y="72" fontSize="10" fill="#111">
-            ✦
-          </text>
-        </svg>
-      </div>
-
-      {/* ── Text ── */}
-      <p className="text-xs uppercase tracking-[0.4em] text-gray-400 mb-3">
-        Page Under Construction
-      </p>
-      <h1 className="text-4xl sm:text-5xl font-extrabold text-black mb-4">
-        Coming Soon
-      </h1>
-
-      {/* Polite message */}
-      <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-md mx-auto mb-3">
-        We are working hard to bring you something wonderful. This page is
-        currently under development and will be ready very soon.
-      </p>
-      <p className="text-gray-400 text-sm max-w-sm mx-auto mb-8">
-        Thank you for your patience and support. We appreciate you visiting
-        Swarna Kamal Yoga! 🙏
-      </p>
-
-      {/* Animated status */}
-      <div className="flex items-center gap-3 mb-8 bg-gray-50 border border-gray-200 rounded-full px-5 py-2.5">
-        <span className="w-2 h-2 bg-black rounded-full animate-pulse shrink-0" />
-        <p className="text-sm font-medium text-gray-700 min-w-55 text-left">
-          {messages[msgIndex]}
-        </p>
-      </div>
-
-      {/* Bouncing dots */}
-      <div className="flex gap-2 mb-10">
-        {[0, 1, 2].map((i) => (
-          <div
-            key={i}
-            className="w-2.5 h-2.5 bg-black rounded-full animate-bounce"
-            style={{ animationDelay: `${i * 0.15}s` }}
-          />
-        ))}
-      </div>
+    <div
+      ref={ref}
+      className={className}
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(40px)",
+        transition: `opacity 0.7s ease ${delay}s, transform 0.7s ease ${delay}s`,
+      }}
+    >
+      {children}
     </div>
   );
 }
+
+// ── Main Home ─────────────────────────────────────────────
+const Home = () => {
+  const [current, setCurrent] = useState(0);
+  const [openFaq, setOpenFaq] = useState(null);
+  const [hoveredFaq, setHoveredFaq] = useState(null);
+  const [showTop, setShowTop] = useState(false);
+  const navigate = useNavigate();
+  const timerRef = useRef(null);
+
+  // Auto slide
+  useEffect(() => {
+    timerRef.current = setInterval(
+      () => setCurrent((p) => (p + 1) % slides.length),
+      3500,
+    );
+    return () => clearInterval(timerRef.current);
+  }, []);
+
+  // Show scroll-to-top
+  useEffect(() => {
+    const fn = () => setShowTop(window.scrollY > 300);
+    window.addEventListener("scroll", fn);
+    return () => window.removeEventListener("scroll", fn);
+  }, []);
+
+  const resetTimer = () => {
+    clearInterval(timerRef.current);
+    timerRef.current = setInterval(
+      () => setCurrent((p) => (p + 1) % slides.length),
+      3500,
+    );
+  };
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+  return (
+    <div className="w-full font-sans overflow-x-hidden">
+      {/* ── CSS Animations ── */}
+      <style>{`
+        @keyframes pingWA { 0%,100%{transform:scale(1);opacity:.75} 50%{transform:scale(1.4);opacity:0} }
+        @keyframes bounceUp { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+        @keyframes shimmer { 0%{background-position:-200%} 100%{background-position:200%} }
+        .wa-ping { animation: pingWA 1.5s ease-in-out infinite; }
+        .bounce-up { animation: bounceUp 2s ease-in-out infinite; }
+        .card-hover { transition: transform 0.35s ease, box-shadow 0.35s ease; }
+        .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+        .img-zoom img { transition: transform 0.5s ease; }
+        .img-zoom:hover img { transform: scale(1.07); }
+      `}</style>
+
+      {/* ══════════════════ 1. SLIDER ══════════════════ */}
+      <div className="w-full h-[70vh] sm:h-[80vh] overflow-hidden relative">
+        {slides.map((s, i) => (
+          <div
+            key={i}
+            className="absolute inset-0 transition-all duration-700 ease-in-out"
+            style={{
+              opacity: i === current ? 1 : 0,
+              transform:
+                i === current
+                  ? "translateX(0%)"
+                  : i < current
+                    ? "translateX(-6%)"
+                    : "translateX(6%)",
+              zIndex: i === current ? 10 : 0,
+            }}
+          >
+            <img
+              src={s.img}
+              alt={s.title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/40 to-black/70" />
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
+              <p
+                className="uppercase tracking-[0.4em] text-xs sm:text-sm text-amber-400 mb-3 font-semibold"
+                style={{
+                  opacity: i === current ? 1 : 0,
+                  transform:
+                    i === current ? "translateY(0)" : "translateY(20px)",
+                  transition: "all 0.8s ease 0.2s",
+                }}
+              >
+                Swarna Kamal Yoga Center
+              </p>
+              <h1
+                className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-wide drop-shadow-lg mb-4 max-w-3xl leading-tight"
+                style={{
+                  opacity: i === current ? 1 : 0,
+                  transform:
+                    i === current ? "translateY(0)" : "translateY(20px)",
+                  transition: "all 0.8s ease 0.35s",
+                }}
+              >
+                {s.title}
+              </h1>
+              <p
+                className="text-base sm:text-xl max-w-xl drop-shadow opacity-90 mb-8"
+                style={{
+                  opacity: i === current ? 1 : 0,
+                  transform:
+                    i === current ? "translateY(0)" : "translateY(20px)",
+                  transition: "all 0.8s ease 0.5s",
+                }}
+              >
+                {s.sub}
+              </p>
+              <div
+                className="flex flex-col sm:flex-row gap-3"
+                style={{
+                  opacity: i === current ? 1 : 0,
+                  transition: "all 0.8s ease 0.65s",
+                }}
+              >
+                <Link
+                  to={s.to}
+                  className="bg-amber-500 hover:bg-amber-600 text-white font-bold px-8 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform"
+                >
+                  {s.btn}
+                </Link>
+                <Link
+                  to="/contact"
+                  className="border-2 border-white text-white hover:bg-white hover:text-black font-bold px-8 py-3 rounded-full transition-all duration-300"
+                >
+                  Contact Us
+                </Link>
+              </div>
+            </div>
+          </div>
+        ))}
+
+        {/* Arrows */}
+        <button
+          onClick={() => {
+            setCurrent((p) => (p - 1 + slides.length) % slides.length);
+            resetTimer();
+          }}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 bg-white/20 hover:bg-white/50 backdrop-blur rounded-full text-white text-2xl flex items-center justify-center transition-all"
+        >
+          ‹
+        </button>
+        <button
+          onClick={() => {
+            setCurrent((p) => (p + 1) % slides.length);
+            resetTimer();
+          }}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 bg-white/20 hover:bg-white/50 backdrop-blur rounded-full text-white text-2xl flex items-center justify-center transition-all"
+        >
+          ›
+        </button>
+
+        {/* Dots */}
+        <div className="absolute bottom-5 left-0 right-0 flex justify-center gap-2 z-20">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => {
+                setCurrent(i);
+                resetTimer();
+              }}
+              className={`rounded-full transition-all duration-300 ${i === current ? "w-7 h-2.5 bg-amber-400" : "w-2.5 h-2.5 bg-white/50 hover:bg-white"}`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* ══════════════════ 2. STATS BAR ══════════════════ */}
+      <FadeIn>
+        <div className="bg-amber-500 py-6 sm:py-8">
+          <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 px-6 text-center text-white">
+            {[
+              { num: "500+", label: "Students Trained" },
+              { num: "12+", label: "Years Experience" },
+              { num: "14+", label: "Certified Courses" },
+              { num: "5★", label: "Student Rating" },
+            ].map((s, i) => (
+              <div key={i}>
+                <p className="text-3xl sm:text-4xl font-extrabold">{s.num}</p>
+                <p className="text-xs sm:text-sm uppercase tracking-widest opacity-80 mt-1">
+                  {s.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </FadeIn>
+
+      {/* ══════════════════ 3. ABOUT ══════════════════ */}
+      <div className="py-16 sm:py-20 px-6 bg-white">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 sm:gap-14">
+          <FadeIn delay={0} className="flex-1">
+            <p className="text-amber-600 font-semibold uppercase tracking-widest text-sm mb-2">
+              About
+            </p>
+            <h2 className="text-4xl font-bold text-gray-800 mb-5 leading-snug">
+              Swarna Kamal <br /> Yoga Center
+            </h2>
+            <p className="text-gray-600 leading-relaxed mb-6">
+              Swarna Kamal Yoga Center was established in December 2012 in
+              Bengaluru, India, and is always focused on the well-being of
+              individuals through the practice of Yoga. SKYC has trained more
+              than hundreds of students till date from adults to kids. It is the
+              first registered yoga center in the Celebrity Classic Layout of
+              Electronic City in Bengaluru.
+              <br />
+              <br />
+              This was only possible with the vision, hard work and dedication
+              of the soft-hearted Founder <strong>Smita Karakavalasa</strong>.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                to="/about"
+                className="bg-amber-500 hover:bg-amber-600 text-white font-bold px-6 py-2.5 rounded-full transition-all hover:-translate-y-0.5 transform shadow"
+              >
+                Meet Our Team
+              </Link>
+              <Link
+                to="/courses"
+                className="border-2 border-amber-500 text-amber-600 hover:bg-amber-50 font-bold px-6 py-2.5 rounded-full transition-all"
+              >
+                View Courses
+              </Link>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.2} className="flex-1 flex justify-center">
+            <div className="img-zoom w-72 h-96 sm:w-80 sm:h-105 rounded-2xl overflow-hidden shadow-2xl border-4 border-amber-100">
+              <img
+                src="Samita4.jpeg"
+                alt="Yoga"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </FadeIn>
+        </div>
+      </div>
+
+      {/* ══════════════════ 4. TEACHER TRAINING ══════════════════ */}
+      <div className="py-16 sm:py-20 px-6 bg-stone-50">
+        <div className="max-w-6xl mx-auto">
+          <FadeIn>
+            <p className="text-center text-amber-600 font-semibold uppercase tracking-widest text-sm mb-2">
+              Certifications
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-12">
+              Our Teacher Training Courses
+            </h2>
+          </FadeIn>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {courses.map((c, i) => (
+              <FadeIn key={i} delay={i * 0.1}>
+                <Link
+                  to={c.to}
+                  className="block card-hover rounded-2xl overflow-hidden shadow-md border border-stone-100 bg-white group"
+                >
+                  {/* Image */}
+                  <div className="img-zoom h-44 overflow-hidden relative">
+                    <img
+                      src={c.img}
+                      alt={c.title}
+                      className="w-full h-full object-cover transition-all duration-500"
+                    />
+                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all duration-300" />
+                    <span className="absolute top-3 right-3 bg-amber-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">
+                      {c.badge}
+                    </span>
+                    <span className="absolute bottom-3 left-3 text-3xl">
+                      {c.icon}
+                    </span>
+                  </div>
+                  {/* Text */}
+                  <div className="p-5">
+                    <h3 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-amber-600 transition-colors">
+                      {c.title}
+                    </h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">
+                      {c.desc}
+                    </p>
+                    <span className="inline-block mt-4 text-amber-600 text-xs font-bold uppercase tracking-wider border-b-2 border-amber-400">
+                      Learn More →
+                    </span>
+                  </div>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ══════════════════ 5. WHY US ══════════════════ */}
+      <div className="py-16 sm:py-20 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <FadeIn>
+            <p className="text-center text-amber-600 font-semibold uppercase tracking-widest text-sm mb-2">
+              Why Us
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-12">
+              Why Choose Swarna Kamal Yoga?
+            </h2>
+          </FadeIn>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {whyUs.map((item, i) => (
+              <FadeIn key={i} delay={i * 0.1}>
+                <Link
+                  to={item.to}
+                  className="block card-hover rounded-2xl overflow-hidden shadow-sm border border-stone-100 group bg-white"
+                >
+                  {/* Real image */}
+                  <div className="img-zoom h-40 overflow-hidden">
+                    <img
+                      src={item.img}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-all duration-500"
+                    />
+                  </div>
+                  <div className="p-5 hover:bg-amber-50 transition-colors">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-2xl">{item.icon}</span>
+                      <h3 className="text-base font-bold text-gray-800 group-hover:text-amber-700 transition-colors">
+                        {item.title}
+                      </h3>
+                    </div>
+                    <p className="text-gray-500 text-sm leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ══════════════════ 6. FLEXIBLE LEARNING ══════════════════ */}
+      <FadeIn>
+        <div className="py-16 px-6 bg-amber-600 text-white text-center">
+          <div className="max-w-3xl mx-auto">
+            <p className="uppercase tracking-widest text-sm font-semibold opacity-80 mb-2">
+              Learning Mode
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-5">
+              Flexible Learning & Real Returns
+            </h2>
+            <p className="opacity-90 leading-relaxed text-base sm:text-lg">
+              Learn at your own pace with our flexible online and offline
+              programs. We ensure value-driven learning experiences with
+              practical knowledge, expert guidance, and long-term personal
+              growth benefits.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              {[
+                "🎯 Expert-Led Sessions",
+                "📱 Online & Offline",
+                "🕐 Flexible Timings",
+                "📜 Certified Courses",
+              ].map((tag, i) => (
+                <div
+                  key={i}
+                  className="bg-white/20 border border-white/30 rounded-xl px-5 py-2.5 font-medium text-sm hover:bg-white/30 transition-all cursor-default"
+                >
+                  {tag}
+                </div>
+              ))}
+            </div>
+            <div className="mt-8">
+              <Link
+                to="/apply"
+                className="bg-white text-amber-600 font-extrabold px-8 py-3 rounded-full hover:bg-amber-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform inline-block"
+              >
+                Start Your Journey →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </FadeIn>
+
+    
+
+      <div
+        className="py-16 sm:py-20 px-6 bg-stone-50 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('God.jpg')", // yaha apni image ka path daal
+        }}
+      >
+        <div className="max-w-3xl mx-auto  p-6 rounded-xl">
+          <FadeIn>
+            <p className="text-center text-amber-600 font-semibold uppercase tracking-widest text-sm mb-2">
+              Got Questions?
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-10">
+              Frequently Asked Questions
+            </h2>
+          </FadeIn>
+
+          <div className="flex flex-col gap-4">
+            {faqs.map((faq, i) => {
+              const color = faqColors[i % faqColors.length];
+              const isOpen = openFaq === i;
+              const isHov = hoveredFaq === i;
+              return (
+                <FadeIn key={i} delay={i * 0.05}>
+                  <div
+                    onClick={() => setOpenFaq(isOpen ? null : i)}
+                    onMouseEnter={() => setHoveredFaq(i)}
+                    onMouseLeave={() => setHoveredFaq(null)}
+                    style={{
+                      backgroundColor: isOpen || isHov ? color.bg : "#ffffff",
+                      borderLeft: `4px solid ${isOpen || isHov ? color.border : "#e5e7eb"}`,
+                      transition: "all 0.3s ease",
+                    }}
+                    className="rounded-xl shadow-sm cursor-pointer px-6 py-5 select-none"
+                  >
+                    <div className="flex justify-between items-center gap-4">
+                      <h3
+                        className="font-semibold text-base"
+                        style={{
+                          color: isOpen || isHov ? color.text : "#1f2937",
+                          transition: "color 0.3s",
+                        }}
+                      >
+                        {faq.question}
+                      </h3>
+                      <span
+                        className="text-2xl font-light shrink-0"
+                        style={{
+                          color: color.border,
+                          transform: isOpen ? "rotate(45deg)" : "rotate(0)",
+                          transition: "transform 0.3s",
+                        }}
+                      >
+                        +
+                      </span>
+                    </div>
+                    <div
+                      style={{
+                        maxHeight: isOpen ? "200px" : "0px",
+                        overflow: "hidden",
+                        transition: "max-height 0.4s ease",
+                      }}
+                    >
+                      <p className="text-gray-600 text-sm leading-relaxed mt-3">
+                        {faq.answer}
+                      </p>
+                      {isOpen && (
+                        <Link
+                          to={faq.to}
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-block mt-3 text-xs font-bold uppercase tracking-wider border-b-2 pb-0.5"
+                          style={{
+                            color: color.border,
+                            borderColor: color.border,
+                          }}
+                        >
+                          Know More →
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                </FadeIn>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* ══════════════════ 8. CTA BANNER ══════════════════ */}
+      <FadeIn>
+        <div className="py-16 px-6 bg-white text-center">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
+              Ready to Begin Your Yoga Journey?
+            </h2>
+            <p className="text-gray-500 mb-8 text-base sm:text-lg">
+              Join hundreds of students who have transformed their lives through
+              the power of yoga at Swarna Kamal Yoga Center.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://wa.me/9663894499"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform text-base"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="white"
+                >
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                Chat on WhatsApp
+              </a>
+              <Link
+                to="/apply"
+                className="inline-flex items-center justify-center bg-amber-500 hover:bg-amber-600 text-white font-bold px-8 py-4 rounded-full transition-all shadow-lg hover:-translate-y-0.5 transform text-base"
+              >
+                Apply Now →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </FadeIn>
+
+      {/* ══════════════════ 9. FOOTER ══════════════════ */}
+
+      {/* ══════════════════ FLOATING WhatsApp ══════════════════ */}
+      <a
+        href="https://wa.me/9663894499"
+        target="_blank"
+        rel="noreferrer"
+        className="fixed bottom-6 left-6 z-50 group"
+      >
+        <div className="relative flex items-center justify-center">
+          {/* Ping rings */}
+          <span className="wa-ping absolute inline-flex w-14 h-14 rounded-full bg-green-400 opacity-50" />
+          <span
+            className="wa-ping absolute inline-flex w-14 h-14 rounded-full bg-green-400 opacity-30"
+            style={{ animationDelay: "0.5s" }}
+          />
+          {/* Button */}
+          <div className="relative bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 transform">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="26"
+              height="26"
+              fill="white"
+              viewBox="0 0 24 24"
+            >
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+          </div>
+          {/* Tooltip */}
+          <span className="absolute left-16 bg-black text-white text-xs font-semibold px-3 py-1.5 rounded-full whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg pointer-events-none">
+            Chat on WhatsApp
+          </span>
+        </div>
+      </a>
+
+      {/* ══════════════════ SCROLL TO TOP ══════════════════ */}
+      {showTop && (
+        <button
+          onClick={scrollToTop}
+          className="bounce-up fixed bottom-6 right-6 z-50 w-12 h-12 bg-amber-500 hover:bg-amber-600 text-white rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 transform text-xl font-bold"
+        >
+          ↑
+        </button>
+      )}
+    </div>
+  );
+};
 
 export default Home;
