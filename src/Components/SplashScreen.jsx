@@ -20,39 +20,38 @@ function SplashScreen({ onFinish }) {
       }`}
     >
       {/* 🔥 Background Glow */}
-      <div className="absolute w-125 h-125 bg-purple-400/30 blur-[120px] rounded-full"></div>
+      <div className="absolute w-125 h-125 bg-white blur-[120px] rounded-full"></div>
+
+      {/* Title */}
+      <svg viewBox="0 0 800 200" className="w-full max-w-5xl mx-auto">
+        <path id="curve" d="M 100 150 Q 400 20 700 150" fill="transparent" />
+
+        <text
+          className={`fill-white font-extrabold transition-all duration-700 ${
+            step >= 2 ? "opacity-100" : "opacity-0"
+          }`}
+          fontSize="60"
+          letterSpacing="8"
+        >
+          <textPath href="#curve" startOffset="70%" textAnchor="middle">
+            SWARNA KAMAL YOGA
+          </textPath>
+        </text>
+      </svg>
 
       {/* Logo */}
       <img
         src="/Start.png"
         alt="Logo"
-        className={`w-40 sm:w-52 md:w-64 mb-8 transition-all duration-700 ${
+        className={`w-60 sm:w-52 md:w-64 mb-8 transition-all duration-700 ${
           step >= 1 ? "scale-100 opacity-100" : "scale-50 opacity-0"
         }`}
         style={{ filter: "drop-shadow(0 0 30px rgba(255,255,255,0.5))" }}
       />
 
-      {/* Title */}
-      <h1
-        className={`text-5xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-widest transition-all duration-700 ${
-          step >= 2 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        }`}
-      >
-        SKY
-      </h1>
-
-      {/* Subtitle */}
-      <p
-        className={`text-white/80 mt-4 text-lg md:text-xl tracking-widest transition-all duration-700 ${
-          step >= 2 ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        Swarna Kamal Yoga
-      </p>
-
       {/* 🔥 Animated Loader */}
       <div className="mt-10 w-48 md:w-64 h-1.5 bg-white/30 rounded-full overflow-hidden">
-        <div className="h-full bg-white animate-loader" />
+        <div className="h-full animate-loader" />
       </div>
 
       {/* Optional tagline */}
