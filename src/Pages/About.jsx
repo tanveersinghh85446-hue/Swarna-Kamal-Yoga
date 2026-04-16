@@ -14,7 +14,7 @@ export default function About() {
         <img
           src="Samita5.jpeg"
           alt="background"
-          className="w-full h-87.5 md:h-112.5 object-cover rounded-3xl shadow-xl"
+          className="w-full h-full md:h-112.5  rounded-3xl shadow-xl"
         />
 
         <div className="absolute inset-0 bg-black/20 rounded-3xl"></div>
@@ -24,7 +24,7 @@ export default function About() {
           <img
             src="Samita1.png"
             alt="profile"
-            className="w-44 h-44 md:w-52 md:h-52 rounded-full border-[6px] border-white object-cover shadow-2xl"
+            className="w-44 h-44 md:w-52  md:h-52 rounded-full border-[6px] border-white object-cover shadow-2xl"
           />
         </div>
       </div>

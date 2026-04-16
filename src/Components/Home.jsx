@@ -363,8 +363,8 @@ const Home = () => {
         <div className="bg-amber-500 py-6 sm:py-8">
           <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 px-6 text-center text-white">
             {[
-              { num: "500+", label: "Students Trained" },
-              { num: "12+", label: "Years Experience" },
+              { num: "8000+", label: "Students Trained" },
+              { num: "16+", label: "Years Experience" },
               { num: "14+", label: "Certified Courses" },
               { num: "5★", label: "Student Rating" },
             ].map((s, i) => (
