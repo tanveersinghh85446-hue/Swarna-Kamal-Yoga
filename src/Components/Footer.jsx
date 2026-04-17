@@ -29,7 +29,7 @@ export default function Footer() {
             </div>
 
             <p className="text-stone-400 text-sm leading-relaxed mb-5 max-w-sm">
-              Yoga Alliance certified yoga courses. Transform your mind, body &
+              Yoga Alliance certified yoga courses. Transform your mind body &
               soul since 2012.
             </p>
           </div>
@@ -102,15 +102,15 @@ export default function Footer() {
             </ul>
 
             {/* 🔥 Connect With Us */}
-            <h4 className="font-semibold uppercase text-xs mb-3 text-stone-300 tracking-wider">
+            <h4 className="font-semibold uppercase text-xs mb-3 text-stone-300 tracking-wider ">
               Connect With Us
             </h4>
 
             <div className="flex gap-4">
-              <a href="#"className="p-2 bg-stone-800 rounded-full hover:bg-blue-600 transition"><FaFacebookF /></a>
-              <a href="#"className="p-2 bg-stone-800 rounded-full hover:bg-linear-to-tr hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#8134af] transition"><FaInstagram /></a>
-              <a href="#"className="p-2 bg-stone-800 rounded-full hover:bg-red-600 transition"><FaYoutube /></a>
-              <a href="#"className="p-2 bg-stone-800 rounded-full hover:bg-blue-500 transition"><FaLinkedinIn /></a>
+              <a href="#"className="p-2 rounded-full bg-blue-600 transition"><FaFacebookF /></a>
+              <a href="#" className="p-2 rounded-full bg-linear-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af]"><FaInstagram className="text-white text-lg" /></a>
+              <a href="#"className="p-2  rounded-full bg-red-600 transition"><FaYoutube /></a>
+              <a href="#"className="p-2  rounded-full bg-blue-500 transition"><FaLinkedinIn /></a>
             </div>
           </div>
         </div>
