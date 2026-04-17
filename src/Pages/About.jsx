@@ -7,7 +7,7 @@ const accomplishments = [
   "Certified Yoga Instructor (RYT 200)",
   "Certified Meditation and Pranayama Trainer",
   "Certified Yoga Therapist and Nutritionist",
-  "Pre & Post Natal Yoga Instructor",
+  "Added Yoga Alliance Certified Pre & Post Natal Yoga Instructor",
   "Certified Pilates Trainer",
   "Simplified Kundalini Yoga Assistant Professor",
   "Certified Spiritual Healer & Counselor",
@@ -46,7 +46,7 @@ function useFadeUp() {
           observer.disconnect();
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.15 },
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -77,7 +77,6 @@ export default function About() {
 
   return (
     <div className="bg-linear-to-b from-white to-gray-100 text-center pt-15 border-t border-white/2">
-
       {/* ── Hero Banner ── */}
       <div className="w-full bg-linear-to-br from-amber-400 via-yellow-400 to-amber-500 py-20 px-4">
         <div ref={heroRef}>
@@ -90,12 +89,13 @@ export default function About() {
           <p className="mt-4 text-amber-900 text-lg md:text-xl font-medium max-w-xl mx-auto leading-relaxed">
             Yoga Trainer · Therapist · Spiritual Healer
           </p>
-          <div className="mt-6 w-16 h-1 bg-white/60 mx-auto rounded-full" />
         </div>
       </div>
 
-      <div className="py-20 px-4">
-
+      <div
+        className="py-20 px-4 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url(BG.png)" }}
+      >
         {/* ── Image Section ── */}
         <div ref={imageRef} className="relative w-full max-w-4xl mx-auto group">
           <img
@@ -118,8 +118,8 @@ export default function About() {
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed italic">
             "Dr. Smita K is a Certified Yoga Instructor equipped with the
             knowledge and experience to train and motivate people through Yoga.
-            She holds 16 years of teaching experience and specializes in holistic
-            transformation through yoga."
+            She holds 16 years of teaching experience and specializes in
+            holistic transformation through yoga."
           </p>
           <p className="mt-6 font-bold text-lg">— Dr. Smita K</p>
         </div>
@@ -135,12 +135,12 @@ export default function About() {
             Soon, yoga became her way of life.
           </p>
           <p className="mt-4 text-gray-700 leading-relaxed">
-            Today, she is a passionate yoga trainer with degrees in Master of Arts
-            in Yoga for Human Excellence and Masters in Yoga Therapy. She is also
-            a certified Varmam professional and a trained Simplified Kundalini Yoga
-            (SKY) Assistant Professor. She has over 16 years of experience and has
-            trained more than 100 students, many of whom have won medals in yoga
-            championships.
+            Today, she is a passionate yoga trainer with degrees in Master of
+            Arts in Yoga for Human Excellence and Masters in Yoga Therapy. She
+            is also a certified Varmam professional and a trained Simplified
+            Kundalini Yoga (SKY) Assistant Professor. She has over 16 years of
+            experience and has trained more than 8000 students, many of whom
+            have won medals in yoga championships.
           </p>
         </div>
 
@@ -186,7 +186,6 @@ export default function About() {
             Start Your Yoga Journey →
           </Link>
         </div>
-
       </div>
 
       {/* Marquee keyframes */}

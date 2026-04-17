@@ -177,14 +177,24 @@ function Courses() {
   return (
     <div className="bg-linear-to-b from-white to-gray-100 min-h-screen pt-15 border-t border-white/2">
       {/* Header */}
-      <section className="bg-linear-to-r from-purple-600 to-indigo-600 text-white py-16 text-center">
-        <p className="uppercase tracking-[0.4em] text-xs mb-3 opacity-80">
-          Live on Zoom
-        </p>
-        <h1 className="text-5xl font-extrabold mb-4">Online Yoga Courses</h1>
-        <p className="max-w-xl mx-auto text-lg opacity-90">
-          Certified courses with expert trainers — learn, grow & transform.
-        </p>
+      <section
+        className="relative text-white py-16 text-center bg-cover bg-center"
+        style={{ backgroundImage: "url('/God.png')" }}
+      >
+        {/* dark overlay for readability */}
+        <div className="absolute inset-0 bg-black/50"></div>
+
+        <div className="relative">
+          <p className="uppercase tracking-[0.4em] text-xs mb-3 opacity-80">
+            Live on Zoom
+          </p>
+
+          <h1 className="text-5xl font-extrabold mb-4">Online Yoga Courses</h1>
+
+          <p className="max-w-xl mx-auto text-lg opacity-90">
+            Certified courses with expert trainers — learn, grow & transform.
+          </p>
+        </div>
       </section>
 
       {/* Cards */}

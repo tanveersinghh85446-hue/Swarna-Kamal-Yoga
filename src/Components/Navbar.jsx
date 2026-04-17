@@ -43,6 +43,12 @@ function Navbar() {
           <NavLink to="/contact" className={navLink}>
             Contact
           </NavLink>
+          <NavLink to="/Team" className={navLink}>
+            Team
+          </NavLink>
+          <NavLink to="/Gallery" className={navLink}>
+            Gallery
+          </NavLink>
 
           {/* CTA */}
           <NavLink
@@ -121,6 +127,20 @@ function Navbar() {
             onClick={() => setMenuOpen(false)}
           >
             Contact
+          </NavLink>
+          <NavLink
+            to="/Team"
+            className={navLink}
+            onClick={() => setMenuOpen(false)}
+          >
+            Team
+          </NavLink>
+          <NavLink
+            to="/Gallery"
+            className={navLink}
+            onClick={() => setMenuOpen(false)}
+          >
+            Gallery
           </NavLink>
 
           <NavLink

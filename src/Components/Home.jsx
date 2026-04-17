@@ -1,5 +1,15 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
+import { MdLiveTv } from "react-icons/md";
+import { CiMobile3 } from "react-icons/ci";
+import { IoMdMailUnread } from "react-icons/io";
+import { TiStopwatch } from "react-icons/ti";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaYoutube,
+  FaLinkedinIn,
+} from "react-icons/fa";
 
 const slides = [
   {
@@ -301,34 +311,36 @@ const Home = () => {
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black/70" />
-            
+
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4 sm:px-6">
               <p
                 className="uppercase tracking-[0.25em] text-[10px] sm:text-xs md:text-sm text-amber-400 mb-2 sm:mb-3 font-semibold"
                 style={{
                   opacity: i === current ? 1 : 0,
-                  transform: i === current ? "translateY(0)" : "translateY(20px)",
+                  transform:
+                    i === current ? "translateY(0)" : "translateY(20px)",
                   transition: "all 0.8s ease 0.2s",
                 }}
               >
                 Swarna Kamal Yoga Center
               </p>
-              
+
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight drop-shadow-lg mb-3 sm:mb-4 leading-[1.1] max-w-3xl">
                 {s.title}
               </h1>
-              
+
               <p
                 className="text-sm sm:text-base md:text-lg max-w-xl drop-shadow-md opacity-90 mb-6 sm:mb-8 px-2"
                 style={{
                   opacity: i === current ? 1 : 0,
-                  transform: i === current ? "translateY(0)" : "translateY(20px)",
+                  transform:
+                    i === current ? "translateY(0)" : "translateY(20px)",
                   transition: "all 0.8s ease 0.5s",
                 }}
               >
                 {s.sub}
               </p>
-              
+
               <div
                 className="flex flex-col sm:flex-row gap-3 w-full max-w-xs sm:max-w-none justify-center"
                 style={{
@@ -352,20 +364,6 @@ const Home = () => {
             </div>
           </div>
         ))}
-
-        {/* Dots */}
-        <div className="absolute bottom-6 sm:bottom-8 left-0 right-0 flex justify-center gap-2 z-20">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => {
-                setCurrent(i);
-                resetTimer();
-              }}
-              className={`rounded-full transition-all duration-300 ${i === current ? "w-8 h-2.5 bg-amber-400" : "w-2.5 h-2.5 bg-white/60 hover:bg-white"}`}
-            />
-          ))}
-        </div>
       </div>
 
       {/* ── 2. STATS BAR ── */}
@@ -536,10 +534,10 @@ const Home = () => {
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               {[
-                "🎯 Expert-Led Sessions",
-                "📱 Online & Offline",
-                "🕐 Flexible Timings",
-                "📜 Certified Courses",
+                " Expert-Led Sessions",
+                " Online & Offline",
+                " Flexible Timings",
+                " Certified Courses",
               ].map((tag, i) => (
                 <div
                   key={i}
@@ -679,8 +677,108 @@ const Home = () => {
         </div>
       </FadeIn>
 
-      {/* Floating WhatsApp & Scroll To Top - unchanged */}
-      {/* ... */}
+      <footer className="bg-stone-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 py-14">
+          {/* GRID */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+            {/* LOGO + ABOUT */}
+            <div className="lg:col-span-2">
+              <div className="flex flex-col items-start">
+                <img
+                  src="/Start.png"
+                  alt="logo"
+                  className="w-36 sm:w-52 object-contain mb-2"
+                />
+                <h3 className="text-xl sm:text-2xl font-bold">
+                  Swarna Kamal Yoga
+                </h3>
+              </div>
+
+              <p className="text-stone-400 text-sm leading-relaxed mt-3 max-w-sm">
+                Yoga Alliance certified yoga courses. Transform your mind body &
+                soul since 2012.
+              </p>
+            </div>
+
+            {/* QUICK LINKS */}
+            <div className="mt-6 sm:mt-0">
+              <h4 className="font-semibold uppercase text-xs mb-5 text-stone-300 tracking-wider">
+                Quick Links
+              </h4>
+              <ul className="space-y-3 text-sm text-stone-400">
+                {[
+                  ["About", "/about"],
+                  ["Contact", "/contact"],
+                  ["Apply", "/apply"],
+                  ["Gallery", "/gallery"],
+                  ["Testimonials", "/testimonials"],
+                ].map(([l, t], i) => (
+                  <li key={i}>
+                    <Link to={t} className="hover:text-white transition">
+                      {l}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* COURSES */}
+            <div className="mt-6 sm:mt-0">
+              <h4 className="font-semibold uppercase text-xs mb-5 text-stone-300 tracking-wider">
+                Top Courses
+              </h4>
+              <ul className="space-y-3 text-sm text-stone-400">
+                {[
+                  ["Pranayama & Meditation", "/courses/pranayama"],
+                  ["Weight Loss Coach", "/courses/weight-loss"],
+                  ["Women's Wellness", "/courses/womens-wellness"],
+                  ["Hatha Yoga TTC", "/courses/hatha-yoga"],
+                  ["Yin Yoga TTC", "/courses/yin-yoga"],
+                  ["MAT Pilates", "/courses/mat-pilates"],
+                ].map(([l, t], i) => (
+                  <li key={i}>
+                    <Link to={t} className="hover:text-white transition">
+                      {l}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* CONTACT + SOCIAL */}
+            <div className="mt-6 sm:mt-0">
+              {/* SOCIAL */}
+              <h4 className="font-semibold uppercase text-xs mb-3 text-stone-300 tracking-wider">
+                Connect With Us
+              </h4>
+
+              <div className="flex gap-3">
+                <a className="p-2 rounded-full bg-blue-600">
+                  <FaFacebookF />
+                </a>
+
+                <a className="p-2 rounded-full bg-linear-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af]">
+                  <FaInstagram className="text-white" />
+                </a>
+
+                <a className="p-2 rounded-full bg-red-600">
+                  <FaYoutube />
+                </a>
+
+                <a className="p-2 rounded-full bg-blue-500 transition-all">
+                  <FaLinkedinIn />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* BOTTOM */}
+          <div className="border-t border-stone-800 mt-10 pt-4 text-center text-xs text-stone-500">
+            © {new Date().getFullYear()} Swarna Kamal Yoga Center, Bengaluru.
+            All rights reserved.
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

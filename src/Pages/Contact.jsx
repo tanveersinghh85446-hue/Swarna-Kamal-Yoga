@@ -1,367 +1,341 @@
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
 
-const messages = [
-  "Writing clean code... ✨",
-  "Designing beautiful layouts... 🎨",
-  "Testing on all devices... 📱",
-  "Almost there... 🚀",
-  "Adding final touches... 🛠️",
+ const images = [
+  "/P1.png",
+  "/P2.png",
+  "/P3.png",
+  "/P4.png",
+  "/P5.png",
+  "/P6.png",
+  "/P7.png",
+  "/P8.png",
+  "/P9.png",
+  "/P10.png",
+  "/P11.png",
+  "/P12.png",
 ];
 
-function Contact() {
-  const [msgIndex, setMsgIndex] = useState(0);
-  const [dots, setDots] = useState("");
-
-  // Cycle through messages
+// ── FadeIn (same as Home.jsx) ─────────────────────────────────────────────────
+function useVisible(threshold = 0.15) {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
   useEffect(() => {
-    const t = setInterval(() => {
-      setMsgIndex((prev) => (prev + 1) % messages.length);
-    }, 2000);
-    return () => clearInterval(t);
+    const obs = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) { setVisible(true); obs.disconnect(); }
+      },
+      { threshold }
+    );
+    if (ref.current) obs.observe(ref.current);
+    return () => obs.disconnect();
   }, []);
+  return { ref, visible };
 
-  // Animated dots
-  useEffect(() => {
-    const t = setInterval(() => {
-      setDots((prev) => (prev.length >= 3 ? "" : prev + "."));
-    }, 400);
-    return () => clearInterval(t);
-  }, []);
 
+}
+
+function FadeIn({ children, delay = 0, className = "" }) {
+  const { ref, visible } = useVisible();
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4 text-center pt-15 border-t border-white/2">
-      {/* ── Developer SVG Illustration ── */}
-      <div className="mb-8 sm:mb-10">
-        <svg
-          width="260"
-          height="260"
-          viewBox="0 0 260 260"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="mx-auto"
-        >
-          {/* Desk */}
-          <rect x="30" y="190" width="200" height="12" rx="6" fill="#111" />
-          <rect x="55" y="202" width="12" height="40" rx="4" fill="#333" />
-          <rect x="193" y="202" width="12" height="40" rx="4" fill="#333" />
-
-          {/* Monitor */}
-          <rect x="70" y="120" width="120" height="75" rx="8" fill="#111" />
-          <rect x="78" y="128" width="104" height="58" rx="4" fill="#1a1a2e" />
-          {/* Screen glow */}
-          <rect x="82" y="132" width="96" height="50" rx="3" fill="#0f0f23" />
-
-          {/* Code lines on screen */}
-          <rect x="88" y="140" width="55" height="3" rx="1.5" fill="#4ade80" />
-          <rect x="88" y="148" width="40" height="3" rx="1.5" fill="#60a5fa" />
-          <rect x="95" y="156" width="65" height="3" rx="1.5" fill="#f9a8d4" />
-          <rect x="95" y="164" width="45" height="3" rx="1.5" fill="#fbbf24" />
-          <rect x="88" y="172" width="30" height="3" rx="1.5" fill="#4ade80" />
-
-          {/* Blinking cursor */}
-          <rect x="120" y="172" width="2" height="10" rx="1" fill="white">
-            <animate
-              attributeName="opacity"
-              values="1;0;1"
-              dur="1s"
-              repeatCount="indefinite"
-            />
-          </rect>
-
-          {/* Monitor stand */}
-          <rect x="122" y="195" width="16" height="10" rx="2" fill="#333" />
-          <rect x="110" y="203" width="40" height="6" rx="3" fill="#222" />
-
-          {/* Keyboard */}
-          <rect x="80" y="210" width="100" height="18" rx="5" fill="#222" />
-          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
-            <rect
-              key={i}
-              x={86 + i * 9}
-              y="214"
-              width="6"
-              height="5"
-              rx="1.5"
-              fill="#444"
-            />
-          ))}
-          {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-            <rect
-              key={i}
-              x={90 + i * 9}
-              y="221"
-              width="6"
-              height="4"
-              rx="1.5"
-              fill="#444"
-            />
-          ))}
-
-          {/* Person body */}
-          <rect
-            x="108"
-            y="82"
-            width="44"
-            height="42"
-            rx="14"
-            fill="white"
-            stroke="#111"
-            strokeWidth="2"
-          />
-
-          {/* Person neck */}
-          <rect
-            x="125"
-            y="76"
-            width="10"
-            height="10"
-            rx="5"
-            fill="white"
-            stroke="#111"
-            strokeWidth="2"
-          />
-
-          {/* Person head */}
-          <circle
-            cx="130"
-            cy="58"
-            r="22"
-            fill="white"
-            stroke="#111"
-            strokeWidth="2"
-          />
-
-          {/* Hair */}
-          <path d="M108 52 Q110 32 130 30 Q150 32 152 52" fill="#111" />
-
-          {/* Eyes */}
-          <ellipse cx="122" cy="56" rx="4" ry="4.5" fill="#111" />
-          <ellipse cx="138" cy="56" rx="4" ry="4.5" fill="#111" />
-          <circle cx="123" cy="54" r="1.5" fill="white" />
-          <circle cx="139" cy="54" r="1.5" fill="white" />
-
-          {/* Glasses */}
-          <rect
-            x="116"
-            y="51"
-            width="12"
-            height="10"
-            rx="4"
-            fill="none"
-            stroke="#111"
-            strokeWidth="1.5"
-          />
-          <rect
-            x="132"
-            y="51"
-            width="12"
-            height="10"
-            rx="4"
-            fill="none"
-            stroke="#111"
-            strokeWidth="1.5"
-          />
-          <line
-            x1="128"
-            y1="56"
-            x2="132"
-            y2="56"
-            stroke="#111"
-            strokeWidth="1.5"
-          />
-          <line
-            x1="108"
-            y1="56"
-            x2="116"
-            y2="56"
-            stroke="#111"
-            strokeWidth="1.5"
-          />
-          <line
-            x1="144"
-            y1="56"
-            x2="152"
-            y2="56"
-            stroke="#111"
-            strokeWidth="1.5"
-          />
-
-          {/* Smile */}
-          <path
-            d="M122 67 Q130 74 138 67"
-            stroke="#111"
-            strokeWidth="2"
-            strokeLinecap="round"
-            fill="none"
-          />
-
-          {/* Left arm — typing */}
-          <line
-            x1="108"
-            y1="96"
-            x2="88"
-            y2="118"
-            stroke="#111"
-            strokeWidth="4"
-            strokeLinecap="round"
-          >
-            <animateTransform
-              attributeName="transform"
-              type="rotate"
-              values="0 108 96;-5 108 96;0 108 96"
-              dur="0.5s"
-              repeatCount="indefinite"
-            />
-          </line>
-          <ellipse
-            cx="85"
-            cy="121"
-            rx="7"
-            ry="5"
-            fill="white"
-            stroke="#111"
-            strokeWidth="2"
-          />
-
-          {/* Right arm — typing */}
-          <line
-            x1="152"
-            y1="96"
-            x2="172"
-            y2="118"
-            stroke="#111"
-            strokeWidth="4"
-            strokeLinecap="round"
-          >
-            <animateTransform
-              attributeName="transform"
-              type="rotate"
-              values="0 152 96;5 152 96;0 152 96"
-              dur="0.5s"
-              repeatCount="indefinite"
-              begin="0.25s"
-            />
-          </line>
-          <ellipse
-            cx="175"
-            cy="121"
-            rx="7"
-            ry="5"
-            fill="white"
-            stroke="#111"
-            strokeWidth="2"
-          />
-
-          {/* Coffee mug */}
-          <rect
-            x="32"
-            y="178"
-            width="24"
-            height="18"
-            rx="4"
-            fill="white"
-            stroke="#111"
-            strokeWidth="2"
-          />
-          <path
-            d="M56 183 Q64 183 64 189 Q64 195 56 195"
-            stroke="#111"
-            strokeWidth="2"
-            fill="none"
-          />
-          {/* Steam */}
-          <path
-            d="M38 175 Q40 170 38 165"
-            stroke="#aaa"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            fill="none"
-          >
-            <animate
-              attributeName="opacity"
-              values="0;1;0"
-              dur="1.5s"
-              repeatCount="indefinite"
-            />
-          </path>
-          <path
-            d="M46 174 Q48 168 46 162"
-            stroke="#aaa"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            fill="none"
-          >
-            <animate
-              attributeName="opacity"
-              values="0;1;0"
-              dur="1.5s"
-              repeatCount="indefinite"
-              begin="0.5s"
-            />
-          </path>
-
-          {/* Stars / sparkles around head */}
-          <text x="158" y="46" fontSize="14" fill="#111">
-            ✦
-          </text>
-          <text x="96" y="42" fontSize="12" fill="#111">
-            ✦
-          </text>
-          <text x="170" y="72" fontSize="10" fill="#111">
-            ✦
-          </text>
-        </svg>
-      </div>
-
-      {/* ── Text ── */}
-      <p className="text-xs uppercase tracking-[0.4em] text-gray-400 mb-3">
-        {" "}
-        Contact Page Under Construction
-      </p>
-      <h1 className="text-4xl sm:text-5xl font-extrabold text-black mb-4">
-        {" "}
-        Contact Page Coming Soon
-      </h1>
-
-      {/* Polite message */}
-      <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-md mx-auto mb-3">
-        We are working hard to bring you something wonderful. This page is
-        currently under development and will be ready very soon.
-      </p>
-      <p className="text-gray-400 text-sm max-w-sm mx-auto mb-8">
-        Thank you for your patience and support. We appreciate you visiting
-        Swarna Kamal Yoga! 🙏
-      </p>
-
-      {/* Animated status */}
-      <div className="flex items-center gap-3 mb-8 bg-gray-50 border border-gray-200 rounded-full px-5 py-2.5">
-        <span className="w-2 h-2 bg-black rounded-full animate-pulse shrink-0" />
-        <p className="text-sm font-medium text-gray-700 min-w-55 text-left">
-          {messages[msgIndex]}
-        </p>
-      </div>
-
-      {/* Bouncing dots */}
-      <div className="flex gap-2 mb-10">
-        {[0, 1, 2].map((i) => (
-          <div
-            key={i}
-            className="w-2.5 h-2.5 bg-black rounded-full animate-bounce"
-            style={{ animationDelay: `${i * 0.15}s` }}
-          />
-        ))}
-      </div>
-
-      {/* Back to Home button */}
-      <Link
-        to="/"
-        className="bg-black text-white px-8 py-3 rounded-full font-bold hover:bg-gray-800 transition-all text-sm sm:text-base shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform duration-200"
-      >
-        ← Back to Home
-      </Link>
+    <div
+      ref={ref}
+      className={className}
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(32px)",
+        transition: `opacity 0.65s ease ${delay}s, transform 0.65s ease ${delay}s`,
+      }}
+    >
+      {children}
     </div>
   );
 }
+
+// ── WhatsApp Icon ─────────────────────────────────────────────────────────────
+const WaIcon = ({ size = 20 }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+  </svg>
+);
+
+
+
+// ── Contact Details ───────────────────────────────────────────────────────────
+const contactDetails = [
+  {
+    icon: "📞",
+    label: "Phone",
+    value: "+91 96638 94499",
+    link: "tel:+919663894499",
+    color: "bg-blue-50 border-blue-200 text-blue-700",
+    iconBg: "bg-blue-100",
+  },
+  {
+    icon: "📧",
+    label: "Email",
+    value: "info@swarnakamalyoga.com",
+    link: "mailto:info@swarnakamalyoga.com",
+    color: "bg-amber-50 border-amber-200 text-amber-700",
+    iconBg: "bg-amber-100",
+  },
+  {
+    icon: "📍",
+    label: "Address",
+    value: "Celebrity Classic Layout, Electronic City, Bengaluru, India",
+    link: "https://maps.google.com",
+    color: "bg-green-50 border-green-200 text-green-700",
+    iconBg: "bg-green-100",
+  },
+];
+
+const timings = [
+  { batch: "Morning Batch", time: "0:00 AM – 0:00 AM" },
+  { batch: "Evening Batch", time: "0:00 PM – 0:00 PM" },
+];
+
+
+// ── Contact Page ──────────────────────────────────────────────────────────────
+const Contact = () => {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [errors, setErrors] = useState({});
+  const [sent, setSent] = useState(false);
+
+  const WHATSAPP_NUMBER = "919663894499";
+
+  const validate = () => {
+    const e = {};
+    if (!form.name.trim()) e.name = "Name is required";
+    if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
+      e.email = "Enter a valid email";
+    if (!form.message.trim()) e.message = "Message is required";
+    return e;
+  };
+
+  const handleChange = (ev) => {
+    const { name, value } = ev.target;
+    setForm((p) => ({ ...p, [name]: value }));
+    if (errors[name]) setErrors((p) => ({ ...p, [name]: "" }));
+  };
+
+  const handleSubmit = () => {
+    const e = validate();
+    if (Object.keys(e).length > 0) { setErrors(e); return; }
+
+    const msg = [
+      `🙏 *New Message – Swarna Kamal Yoga*`,
+      ``,
+      `👤 *Name:* ${form.name}`,
+      `📧 *Email:* ${form.email}`,
+      `💬 *Message:* ${form.message}`,
+      ``,
+      `_Sent via Contact Page_`,
+    ].join("\n");
+
+    const a = document.createElement("a");
+    a.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+    a.target = "_blank";
+    a.rel = "noreferrer";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    setSent(true);
+    setForm({ name: "", email: "", message: "" });
+  };
+
+  return (
+    <div className="w-full font-sans overflow-x-hidden pt-15 border-t border-white/20">
+
+      {/* ── HERO BANNER ── */}
+      <div className="relative w-full h-[38vh] sm:h-[45vh] overflow-hidden">
+        <img src="Home1.jpg" alt="Contact" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/55 to-black/80" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
+          <p className="uppercase tracking-[0.25em] text-[10px] sm:text-xs text-amber-400 mb-2 font-semibold">
+            Swarna Kamal Yoga Center
+          </p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight drop-shadow-lg mb-3 leading-tight">
+            Contact Us
+          </h1>
+          <p className="text-sm sm:text-base opacity-85 max-w-lg">
+            Have questions or want to know more about our yoga classes? Feel free to reach out — we'd love to help you start your yoga journey.
+          </p>
+          <div className="flex items-center gap-2 mt-4 text-xs sm:text-sm text-white/70">
+            <Link to="/" className="hover:text-amber-400 transition-colors">Home</Link>
+            <span>/</span>
+            <span className="text-amber-400 font-semibold">Contact</span>
+          </div>
+        </div>
+      </div>
+
+      {/* ── CONTACT DETAILS + YOGA GIRL ── */}
+      <div className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-white">
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 items-center">
+
+          {/* Left — details */}
+          <div className="flex-1 w-full">
+            <FadeIn>
+              <p className="text-amber-600 font-semibold uppercase tracking-widest text-xs sm:text-sm mb-2">Get In Touch</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
+                We're Here For You 
+              </h2>
+            </FadeIn>
+
+            {/* Contact cards */}
+            <div className="flex flex-col gap-3 mb-8">
+              {contactDetails.map((d, i) => (
+                <FadeIn key={i} delay={i * 0.1}>
+                  <a
+                    href={d.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`flex items-center gap-4 border-2 rounded-2xl px-4 py-3.5 transition-all hover:-translate-y-0.5 hover:shadow-md ${d.color}`}
+                  >
+                    <div className={`w-11 h-11 rounded-xl flex items-center justify-center text-xl shrink-0 ${d.iconBg}`}>
+                      {d.icon}
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wider opacity-70">{d.label}</p>
+                      <p className="text-sm sm:text-base font-bold">{d.value}</p>
+                    </div>
+                  </a>
+                </FadeIn>
+              ))}
+            </div>
+
+            {/* Timings */}
+            <FadeIn delay={0.3}>
+              <div className="bg-amber-50 border-2 border-amber-200 rounded-2xl px-5 py-4 mb-6">
+                <p className="text-amber-700 font-bold text-sm uppercase tracking-wider mb-3">🕒 Working Hours</p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  {timings.map((t, i) => (
+                    <div key={i} className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 flex-1 border border-amber-100 shadow-sm">
+                      <span className="text-2xl">{t.icon}</span>
+                      <div>
+                        <p className="text-xs text-gray-500 font-medium">{t.batch}</p>
+                        <p className="text-sm font-bold text-gray-800">{t.time}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+
+           
+          </div>
+
+        
+        </div>
+      </div>
+
+      <div className="w-full overflow-hidden py-10 bg-amber-100">
+      <div className="slider-track flex gap-6">
+        {[...images, ...images].map((img, i) => (
+          <div
+            key={i}
+            className="min-w-62.5 sm:min-w-75 h-45 sm:h-55 rounded-2xl overflow-hidden shadow-lg"
+          >
+            <img
+              src={img}
+              alt="yoga"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* CSS */}
+      <style>
+        {`
+          .slider-track {
+            width: max-content;
+            animation: scroll 25s linear infinite;
+          }
+
+          @keyframes scroll {
+            from {
+              transform: translateX(0);
+            }
+            to {
+              transform: translateX(-50%);
+            }
+          }
+        `}
+      </style>
+    </div>
+
+      
+
+      {/* ── MAP SECTION ── */}
+      <div className="py-12 sm:py-16 px-4 sm:px-6 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <p className="text-center text-amber-600 font-semibold uppercase tracking-widest text-xs sm:text-sm mb-2">Location</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-8">
+              Find Us Here 
+            </h2>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <div className="rounded-3xl overflow-hidden shadow-xl border-4 border-amber-100">
+              <iframe
+                title="Swarna Kamal Yoga Center Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.3!2d77.6600!3d12.8450!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDUwJzQyLjAiTiA3N8KwMzknMzYuMCJF!5e0!3m2!1sen!2sin!4v1700000000000"
+                width="100%"
+                height="380"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+            
+          </FadeIn>
+        </div>
+      </div>
+
+      {/* ── CTA BANNER ── */}
+      
+        <div className="py-10 sm:py-12 px-4 sm:px-6 bg-amber-500 text-white text-center">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3">
+              Ready to Start Your Yoga Journey? 
+            </h2>
+            <p className="opacity-90 text-sm sm:text-base mb-6">
+              Join thousands of students who have transformed their lives at Swarna Kamal Yoga Center.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href="https://wa.me/919663894499"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold text-sm px-6 py-3.5 rounded-full transition-all shadow-lg hover:-translate-y-0.5"
+              >
+                <WaIcon size={20} /> Chat on WhatsApp
+              </a>
+              <Link
+                to="/apply"
+                className="inline-flex items-center justify-center bg-white text-amber-600 font-bold text-sm px-6 py-3.5 rounded-full hover:bg-amber-50 transition-all shadow-lg hover:-translate-y-0.5"
+              >
+                Apply Now →
+              </Link>
+            </div>
+          </div>
+        </div>
+    
+
+      {/* ── FLOATING WHATSAPP ── */}
+      <a
+        href="https://wa.me/919663894499"
+        target="_blank"
+        rel="noreferrer"
+        className="fixed bottom-6 right-5 z-50 flex items-center justify-center w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-2xl hover:scale-110 transition-all duration-300"
+        title="Chat on WhatsApp"
+      >
+        <WaIcon size={200} />
+      </a>
+    </div>
+  );
+};
 
 export default Contact;

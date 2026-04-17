@@ -1,182 +1,160 @@
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import React from "react";
 
-const messages = [
-  "Writing clean code... ✨",
-  "Designing beautiful layouts... 🎨",
-  "Testing on all devices... 📱",
-  "Almost there... 🚀",
-  "Adding final touches... 🛠️",
-];
-
-function Team() {
-  const [msgIndex, setMsgIndex] = useState(0);
-  const [dots, setDots]         = useState("");
-
-  // Cycle through messages
-  useEffect(() => {
-    const t = setInterval(() => {
-      setMsgIndex((prev) => (prev + 1) % messages.length);
-    }, 2000);
-    return () => clearInterval(t);
-  }, []);
-
-  // Animated dots
-  useEffect(() => {
-    const t = setInterval(() => {
-      setDots((prev) => (prev.length >= 3 ? "" : prev + "."));
-    }, 400);
-    return () => clearInterval(t);
-  }, []);
-
+export default function Team() {
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4 text-center">
+    <div className="w-full bg-white py-16 px-4 sm:px-8">
 
-      {/* ── Developer SVG Illustration ── */}
-      <div className="mb-8 sm:mb-10">
-        <svg
-          width="260"
-          height="260"
-          viewBox="0 0 260 260"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="mx-auto"
-        >
-          {/* Desk */}
-          <rect x="30" y="190" width="200" height="12" rx="6" fill="#111"/>
-          <rect x="55" y="202" width="12" height="40" rx="4" fill="#333"/>
-          <rect x="193" y="202" width="12" height="40" rx="4" fill="#333"/>
 
-          {/* Monitor */}
-          <rect x="70" y="120" width="120" height="75" rx="8" fill="#111"/>
-          <rect x="78" y="128" width="104" height="58" rx="4" fill="#1a1a2e"/>
-          {/* Screen glow */}
-          <rect x="82" y="132" width="96" height="50" rx="3" fill="#0f0f23"/>
-
-          {/* Code lines on screen */}
-          <rect x="88" y="140" width="55" height="3" rx="1.5" fill="#4ade80"/>
-          <rect x="88" y="148" width="40" height="3" rx="1.5" fill="#60a5fa"/>
-          <rect x="95" y="156" width="65" height="3" rx="1.5" fill="#f9a8d4"/>
-          <rect x="95" y="164" width="45" height="3" rx="1.5" fill="#fbbf24"/>
-          <rect x="88" y="172" width="30" height="3" rx="1.5" fill="#4ade80"/>
-
-          {/* Blinking cursor */}
-          <rect x="120" y="172" width="2" height="10" rx="1" fill="white">
-            <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
-          </rect>
-
-          {/* Monitor stand */}
-          <rect x="122" y="195" width="16" height="10" rx="2" fill="#333"/>
-          <rect x="110" y="203" width="40" height="6" rx="3" fill="#222"/>
-
-          {/* Keyboard */}
-          <rect x="80" y="210" width="100" height="18" rx="5" fill="#222"/>
-          {[0,1,2,3,4,5,6,7,8,9].map((i) => (
-            <rect key={i} x={86 + i * 9} y="214" width="6" height="5" rx="1.5" fill="#444"/>
-          ))}
-          {[0,1,2,3,4,5,6,7,8].map((i) => (
-            <rect key={i} x={90 + i * 9} y="221" width="6" height="4" rx="1.5" fill="#444"/>
-          ))}
-
-          {/* Person body */}
-          <rect x="108" y="82" width="44" height="42" rx="14" fill="white" stroke="#111" strokeWidth="2"/>
-
-          {/* Person neck */}
-          <rect x="125" y="76" width="10" height="10" rx="5" fill="white" stroke="#111" strokeWidth="2"/>
-
-          {/* Person head */}
-          <circle cx="130" cy="58" r="22" fill="white" stroke="#111" strokeWidth="2"/>
-
-          {/* Hair */}
-          <path d="M108 52 Q110 32 130 30 Q150 32 152 52" fill="#111"/>
-
-          {/* Eyes */}
-          <ellipse cx="122" cy="56" rx="4" ry="4.5" fill="#111"/>
-          <ellipse cx="138" cy="56" rx="4" ry="4.5" fill="#111"/>
-          <circle cx="123" cy="54" r="1.5" fill="white"/>
-          <circle cx="139" cy="54" r="1.5" fill="white"/>
-
-          {/* Glasses */}
-          <rect x="116" y="51" width="12" height="10" rx="4" fill="none" stroke="#111" strokeWidth="1.5"/>
-          <rect x="132" y="51" width="12" height="10" rx="4" fill="none" stroke="#111" strokeWidth="1.5"/>
-          <line x1="128" y1="56" x2="132" y2="56" stroke="#111" strokeWidth="1.5"/>
-          <line x1="108" y1="56" x2="116" y2="56" stroke="#111" strokeWidth="1.5"/>
-          <line x1="144" y1="56" x2="152" y2="56" stroke="#111" strokeWidth="1.5"/>
-
-          {/* Smile */}
-          <path d="M122 67 Q130 74 138 67" stroke="#111" strokeWidth="2" strokeLinecap="round" fill="none"/>
-
-          {/* Left arm — typing */}
-          <line x1="108" y1="96" x2="88" y2="118" stroke="#111" strokeWidth="4" strokeLinecap="round">
-            <animateTransform attributeName="transform" type="rotate" values="0 108 96;-5 108 96;0 108 96" dur="0.5s" repeatCount="indefinite"/>
-          </line>
-          <ellipse cx="85" cy="121" rx="7" ry="5" fill="white" stroke="#111" strokeWidth="2"/>
-
-          {/* Right arm — typing */}
-          <line x1="152" y1="96" x2="172" y2="118" stroke="#111" strokeWidth="4" strokeLinecap="round">
-            <animateTransform attributeName="transform" type="rotate" values="0 152 96;5 152 96;0 152 96" dur="0.5s" repeatCount="indefinite" begin="0.25s"/>
-          </line>
-          <ellipse cx="175" cy="121" rx="7" ry="5" fill="white" stroke="#111" strokeWidth="2"/>
-
-          {/* Coffee mug */}
-          <rect x="32" y="178" width="24" height="18" rx="4" fill="white" stroke="#111" strokeWidth="2"/>
-          <path d="M56 183 Q64 183 64 189 Q64 195 56 195" stroke="#111" strokeWidth="2" fill="none"/>
-          {/* Steam */}
-          <path d="M38 175 Q40 170 38 165" stroke="#aaa" strokeWidth="1.5" strokeLinecap="round" fill="none">
-            <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
-          </path>
-          <path d="M46 174 Q48 168 46 162" stroke="#aaa" strokeWidth="1.5" strokeLinecap="round" fill="none">
-            <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" begin="0.5s"/>
-          </path>
-
-          {/* Stars / sparkles around head */}
-          <text x="158" y="46" fontSize="14" fill="#111">✦</text>
-          <text x="96"  y="42" fontSize="12" fill="#111">✦</text>
-          <text x="170" y="72" fontSize="10" fill="#111">✦</text>
-        </svg>
-      </div>
-
-      {/* ── Text ── */}
-      <p className="text-xs uppercase tracking-[0.4em] text-gray-400 mb-3">Page Under Construction</p>
-      <h1 className="text-4xl sm:text-5xl font-extrabold text-black mb-4">Coming Soon</h1>
-
-      {/* Polite message */}
-      <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-md mx-auto mb-3">
-        We are working hard to bring you something wonderful. This page is currently under development and will be ready very soon.
-      </p>
-      <p className="text-gray-400 text-sm max-w-sm mx-auto mb-8">
-        Thank you for your patience and support. We appreciate you visiting Swarna Kamal Yoga! 🙏
-      </p>
-
-      {/* Animated status */}
-      <div className="flex items-center gap-3 mb-8 bg-gray-50 border border-gray-200 rounded-full px-5 py-2.5">
-        <span className="w-2 h-2 bg-black rounded-full animate-pulse shrink-0" />
-        <p className="text-sm font-medium text-gray-700 min-w-55 text-left">
-          {messages[msgIndex]}
+      {/* TITLE */}
+      <div className="text-center mb-16">
+        <h1 className="text-3xl sm:text-5xl font-bold text-gray-800">
+          Our Expert Yoga Instructors
+        </h1>
+        <p className="text-gray-500 mt-3 text-sm sm:text-base">
+          Dedicated teachers blending tradition, science & transformation
         </p>
       </div>
 
-      {/* Bouncing dots */}
-      <div className="flex gap-2 mb-10">
-        {[0, 1, 2].map((i) => (
-          <div
-            key={i}
-            className="w-2.5 h-2.5 bg-black rounded-full animate-bounce"
-            style={{ animationDelay: `${i * 0.15}s` }}
-          />
-        ))}
+      <div className="max-w-6xl mx-auto space-y-24">
+
+        {/* ─────────────────────────────────────────────
+            INSTRUCTOR 1 - SARITA SAHU
+        ───────────────────────────────────────────── */}
+        <div className="flex flex-col lg:flex-row items-center gap-12">
+
+          {/* IMAGE */}
+          <div className="w-full lg:w-1/2">
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <img
+                src="/P.Shree.Vilasitha.jpeg" 
+                alt="Sarita Sahu"
+                className="w-full h-full object-cover hover:scale-105 transition duration-500"
+              />
+            </div>
+          </div>
+
+          {/* DETAILS */}
+          <div className="w-full lg:w-1/2">
+            <h2 className="text-3xl font-bold text-gray-800">
+              Sarita Sahu
+            </h2>
+            <p className="text-amber-600 font-semibold mt-1">
+              Yoga Instructor
+            </p>
+
+            <p className="mt-4 text-gray-600 leading-relaxed">
+              I believe that Yoga is a bridge between physical effort and the stillness of the soul.
+              My teaching style is rooted in functional alignment and flow, focusing on physical resilience
+              and mental clarity.
+            </p>
+
+            {/* EDUCATION */}
+            <div className="mt-6">
+              <h3 className="font-semibold text-gray-800">Education & Credentials</h3>
+              <ul className="text-sm text-gray-600 mt-2 space-y-1">
+                <li>• M.Com in International Banking & Financial Management</li>
+                <li>• Certified Yoga Teacher Training (Yoga Alliance – RYT 200)</li>
+                <li>• Certified Yoga Therapist</li>
+                <li>• Yin Yoga & Face Yoga Certified</li>
+                <li>• Pre & Postnatal Yoga (WYORS / Ekam Yoga)</li>
+                <li>• Patanjali Assistant Yoga Teacher Certified</li>
+                <li>• Asana, Props & Alignment Specialist (50 hrs Yoga Alliance)</li>
+                <li>• Fitness Program & Pilates Training</li>
+              </ul>
+            </div>
+
+            {/* APPROACH */}
+            <div className="mt-6">
+              <h3 className="font-semibold text-gray-800">Teaching Approach</h3>
+              <p className="text-sm text-gray-600 mt-2 leading-relaxed">
+                Fluid movement, breath awareness, controlled transitions, alignment correction,
+                deep body sensing, adaptability in poses, and integration of fitness with traditional yoga.
+              </p>
+            </div>
+
+            {/* EXPERIENCE + PHILOSOPHY */}
+            <div className="mt-6 text-sm text-gray-600">
+              <p><b>Experience:</b> 10+ Years</p>
+              <p className="mt-2 italic">
+                “Yoga is about sensing the internal state of the body, reconnecting with self-awareness,
+                and developing emotional strength.”
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* ─────────────────────────────────────────────
+            INSTRUCTOR 2 - P SHREE VILASITHA
+        ───────────────────────────────────────────── */}
+        <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
+
+          {/* IMAGE */}
+          <div className="w-full lg:w-1/2">
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <img
+                src="/P.Shree.Vilasitha.jpeg" 
+                alt="P Shree Vilasitha"
+                className="w-full h-full object-cover hover:scale-105 transition duration-500"
+              />
+            </div>
+          </div>
+
+          {/* DETAILS */}
+          <div className="w-full lg:w-1/2">
+            <h2 className="text-3xl font-bold text-gray-800">
+              P. Shree Vilasitha
+            </h2>
+            <p className="text-amber-600 font-semibold mt-1">
+              Yoga Instructor
+            </p>
+
+            <p className="mt-4 text-gray-600 leading-relaxed">
+              Making yoga simple, accessible, and transformative. A dedicated instructor
+              with strong academic and scientific foundation blended with traditional yoga wisdom.
+            </p>
+
+            {/* HIGHLIGHTS */}
+            <div className="mt-6 text-sm text-gray-600">
+              <p>✔ 500+ Students Trained</p>
+              <p>✔ 4+ Years Teaching Experience</p>
+              <p>✔ Dual Academic Background (Science + Education)</p>
+            </div>
+
+            {/* EDUCATION */}
+            <div className="mt-6">
+              <h3 className="font-semibold text-gray-800">Credentials</h3>
+              <ul className="text-sm text-gray-600 mt-2 space-y-1">
+                <li>• Certified Yoga Instructor</li>
+                <li>• M.Sc Biochemistry</li>
+                <li>• B.Ed (Education)</li>
+                <li>• Hatha Yoga YTT 300 & 500 hrs (Jeevan Yoga Studio)</li>
+                <li>• Yoga Therapy Certified</li>
+                <li>• Pre & Postnatal Yoga (Yogakulam)</li>
+                <li>• Mat Pilates (Shubhyoga)</li>
+                <li>• Diet & Nutrition (Tratak Yoga)</li>
+                <li>• HIIT Training & Weight Loss Yoga</li>
+                <li>• Mudgar Training Specialist</li>
+              </ul>
+            </div>
+
+            {/* SPECIALIZATION */}
+            <div className="mt-6">
+              <h3 className="font-semibold text-gray-800">Specialisations</h3>
+              <p className="text-sm text-gray-600 mt-2">
+                Women’s wellness, hormonal balance, menopause support,
+                breathwork, therapeutic yoga, holistic health, and root-based traditional practice.
+              </p>
+            </div>
+
+            {/* PHILOSOPHY */}
+            <p className="mt-6 italic text-gray-600 text-sm">
+              “Yoga is not about how flexible you are — it is about how present you can be.
+              My mission is to simplify yoga for every student.”
+            </p>
+          </div>
+        </div>
+
       </div>
-
-      {/* Back to Home button */}
-      <Link
-        to="/"
-        className="bg-black text-white px-8 py-3 rounded-full font-bold hover:bg-gray-800 transition-all text-sm sm:text-base shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform duration-200"
-      >
-        ← Back to Home
-      </Link>
-
     </div>
   );
 }
-
-export default Team;

@@ -2,7 +2,6 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SplashScreen from "./Components/SplashScreen";
 import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
 import Home from "./Components/Home";
 import About from "./Pages/About";
 import Apply from "./Pages/Apply";
@@ -68,7 +67,7 @@ function App() {
             <Route path="/courses/therapy" element={<TherapyTeacher />} />
             <Route path="/courses/kids-training" element={<KidsTraining />} />
           </Routes>
-          <Footer />
+          
         </Router>
       </div>
     </>
