@@ -76,10 +76,10 @@ export default function About() {
   }, []);
 
   return (
-    <div className="bg-gradient-to-b from-white to-gray-100 text-center">
+    <div className="bg-linear-to-b from-white to-gray-100 text-center pt-15 border-t border-white/2">
 
       {/* ── Hero Banner ── */}
-      <div className="w-full bg-gradient-to-br from-amber-400 via-yellow-400 to-amber-500 py-20 px-4">
+      <div className="w-full bg-linear-to-br from-amber-400 via-yellow-400 to-amber-500 py-20 px-4">
         <div ref={heroRef}>
           <p className="text-sm tracking-[0.25em] uppercase text-amber-900 font-semibold mb-3">
             Meet Your Guide

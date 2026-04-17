@@ -30,7 +30,7 @@ function Contact() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4 text-center">
+    <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4 text-center pt-15 border-t border-white/2">
       {/* ── Developer SVG Illustration ── */}
       <div className="mb-8 sm:mb-10">
         <svg

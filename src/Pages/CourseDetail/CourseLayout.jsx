@@ -10,7 +10,7 @@ export default function CourseLayout({
   benefits = [],
 }) {
   return (
-    <div className="bg-white text-black min-h-screen">
+    <div className="bg-white text-black min-h-screen pt-15 border-t border-white/2">
 
       {/* 🔥 HERO SECTION */}
       <section className="relative py-20 px-4 text-center text-white overflow-hidden">
