@@ -1,111 +1,126 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { MdLiveTv } from "react-icons/md";
+import { CiMobile3 } from "react-icons/ci";
+import { IoMdMailUnread } from "react-icons/io";
+import { TiStopwatch } from "react-icons/ti";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaYoutube,
+  FaLinkedinIn,
+} from "react-icons/fa";
+
 export default function Footer() {
   return (
-    <div>
-      <footer className="bg-stone-900 text-white">
-        <div className="max-w-6xl mx-auto px-6 py-12 sm:py-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
-            <div className="sm:col-span-2 lg:col-span-1">
-              <h3 className="text-lg font-extrabold tracking-widest mb-3">
-                🪷 Swarna Kamal Yoga
-              </h3>
-              <p className="text-stone-400 text-sm leading-relaxed mb-4">
-                Yoga Alliance certified yoga courses. Transform your mind, body
-                & soul since 2012.
-              </p>
-              <span className="inline-flex items-center gap-2 border border-stone-700 rounded-full px-4 py-1.5 text-xs text-stone-400">
-                🎓 YACEP Certified
-              </span>
+    <footer className="bg-stone-900 text-white">
+      <div className="max-w-7xl mx-auto px-4 py-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">
+          {/* Logo + About */}
+          <div className="lg:col-span-2">
+            <div className="flex flex-col items-start mb-4">
+              <img
+                src="/Start.png"
+                alt="logo"
+                className="w-28 sm:w-52  object-contain"
+              />
+
+              <h3 className="text-2xl font-bold">Swarna Kamal Yoga</h3>
             </div>
-            <div>
-              <h4 className="font-bold uppercase tracking-widest text-xs mb-5 text-stone-300">
-                Quick Links
-              </h4>
-              <ul className="space-y-2.5 text-sm text-stone-400">
-                {[
-                  ["Home", "/"],
-                  ["Courses", "/courses"],
-                  ["About", "/about"],
-                  ["Contact", "/contact"],
-                  ["Apply", "/apply"],
-                  ["Blog", "/blog"],
-                  ["Gallery", "/gallery"],
-                  ["Testimonials", "/testimonials"],
-                ].map(([l, t], i) => (
-                  <li key={i}>
-                    <Link to={t} className="hover:text-white transition-colors">
-                      {l}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold uppercase tracking-widest text-xs mb-5 text-stone-300">
-                Top Courses
-              </h4>
-              <ul className="space-y-2.5 text-sm text-stone-400">
-                {[
-                  ["Pranayama & Meditation", "/courses/pranayama"],
-                  ["Weight Loss Coach", "/courses/weight-loss"],
-                  ["Women's Wellness", "/courses/womens-wellness"],
-                  ["Hatha Yoga TTC", "/courses/hatha-yoga"],
-                  ["Yin Yoga TTC", "/courses/yin-yoga"],
-                  ["MAT Pilates", "/courses/mat-pilates"],
-                ].map(([l, t], i) => (
-                  <li key={i}>
-                    <Link to={t} className="hover:text-white transition-colors">
-                      {l}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold uppercase tracking-widest text-xs mb-5 text-stone-300">
-                Contact Us
-              </h4>
-              <ul className="space-y-3 text-sm text-stone-400">
-                <li className="flex items-start gap-2">
-                  📧 info@swarnakamalyoga.com
-                </li>
-                <li className="flex items-start gap-2">📱 +91 96638 94499</li>
-                <li className="flex items-start gap-2">
-                  🌐 Live Classes on Zoom
-                </li>
-                <li className="flex items-start gap-2">
-                  🕐 Mon–Sat • 6 AM – 8 PM IST
-                </li>
-              </ul>
-             
-            </div>
-          </div>
-          <div className="border-t border-stone-800 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-stone-500">
-            <p>
-              © {new Date().getFullYear()} Swarna Kamal Yoga Center, Bengaluru.
-              All rights reserved.
+
+            <p className="text-stone-400 text-sm leading-relaxed mb-5 max-w-sm">
+              Yoga Alliance certified yoga courses. Transform your mind, body &
+              soul since 2012.
             </p>
-            <div className="flex gap-5">
-              <Link to="/blog" className="hover:text-white transition-colors">
-                Blog
-              </Link>
-              <Link
-                to="/gallery"
-                className="hover:text-white transition-colors"
-              >
-                Gallery
-              </Link>
-              <Link
-                to="/testimonials"
-                className="hover:text-white transition-colors"
-              >
-                Testimonials
-              </Link>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-semibold uppercase text-xs mb-5 text-stone-300 tracking-wider">
+              Quick Links
+            </h4>
+            <ul className="space-y-3 text-sm text-stone-400">
+              {[
+                ["About", "/about"],
+                ["Contact", "/contact"],
+                ["Apply", "/apply"],
+                ["Gallery", "/gallery"],
+                ["Testimonials", "/testimonials"],
+              ].map(([l, t], i) => (
+                <li key={i}>
+                  <Link to={t} className="hover:text-white transition">
+                    {l}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Top Courses */}
+          <div>
+            <h4 className="font-semibold uppercase text-xs mb-5 text-stone-300 tracking-wider">
+              Top Courses
+            </h4>
+            <ul className="space-y-3 text-sm text-stone-400">
+              {[
+                ["Pranayama & Meditation", "/courses/pranayama"],
+                ["Weight Loss Coach", "/courses/weight-loss"],
+                ["Women's Wellness", "/courses/womens-wellness"],
+                ["Hatha Yoga TTC", "/courses/hatha-yoga"],
+                ["Yin Yoga TTC", "/courses/yin-yoga"],
+                ["MAT Pilates", "/courses/mat-pilates"],
+              ].map(([l, t], i) => (
+                <li key={i}>
+                  <Link to={t} className="hover:text-white transition">
+                    {l}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact + Social */}
+          <div>
+            <h4 className="font-semibold uppercase text-xs mb-5 text-stone-300 tracking-wider">
+              Contact Us
+            </h4>
+
+            <ul className="space-y-3 text-sm text-stone-400 mb-6">
+              <li className="flex items-center gap-3">
+                <IoMdMailUnread /> info@swarnakamalyoga.com
+              </li>
+              <li className="flex items-center gap-3">
+                <CiMobile3 className="text-blue-400" /> +91 96638 94499
+              </li>
+              <li className="flex items-center gap-3">
+                <MdLiveTv className="text-red-500" /> Live Classes on Zoom
+              </li>
+              <li className="flex items-center gap-3">
+                <TiStopwatch className="text-yellow-400" /> Mon–Sat • 6 AM – 8
+                PM IST
+              </li>
+            </ul>
+
+            {/* 🔥 Connect With Us */}
+            <h4 className="font-semibold uppercase text-xs mb-3 text-stone-300 tracking-wider">
+              Connect With Us
+            </h4>
+
+            <div className="flex gap-4">
+              <a href="#"className="p-2 bg-stone-800 rounded-full hover:bg-blue-600 transition"><FaFacebookF /></a>
+              <a href="#"className="p-2 bg-stone-800 rounded-full hover:bg-linear-to-tr hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#8134af] transition"><FaInstagram /></a>
+              <a href="#"className="p-2 bg-stone-800 rounded-full hover:bg-red-600 transition"><FaYoutube /></a>
+              <a href="#"className="p-2 bg-stone-800 rounded-full hover:bg-blue-500 transition"><FaLinkedinIn /></a>
             </div>
           </div>
         </div>
-      </footer>
-    </div>
+
+        {/* Bottom */}
+        <div className="border-t border-stone-800 mt-12 pt-6 text-center text-xs text-stone-500">
+          © {new Date().getFullYear()} Swarna Kamal Yoga Center, Bengaluru. All
+          rights reserved.
+        </div>
+      </div>
+    </footer>
   );
 }
