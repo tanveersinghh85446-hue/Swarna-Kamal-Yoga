@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
+  const timeoutRef = useRef(null);
 
   const navLink = ({ isActive }) =>
     `relative px-2 py-1 transition duration-300 ${
@@ -10,6 +13,15 @@ function Navbar() {
         ? "text-amber-400 font-semibold"
         : "text-white hover:text-amber-300"
     }`;
+
+  const handleMouseEnter = () => {
+    clearTimeout(timeoutRef.current);
+    setAboutOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => setAboutOpen(false), 150);
+  };
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-black/60 backdrop-blur-xl border-b border-white/10">
@@ -31,23 +43,57 @@ function Navbar() {
           <NavLink to="/" className={navLink}>
             Home
           </NavLink>
-          <NavLink to="/about" className={navLink}>
-            About
-          </NavLink>
+
+          {/* About with Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <NavLink to="/about" className={navLink}>
+              About
+              <span className="ml-1 text-xs">▾</span>
+            </NavLink>
+
+            {/* Dropdown Menu */}
+            {aboutOpen && (
+              <div
+                className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-40 bg-black/90 backdrop-blur-xl border border-white/10 rounded-xl shadow-xl overflow-hidden"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <NavLink
+                  to="/team"
+                  onClick={() => setAboutOpen(false)}
+                  className="flex items-center gap-2 px-4 py-3 text-white hover:text-amber-300 hover:bg-white/5 transition duration-200 text-sm"
+                >
+                   Team
+                </NavLink>
+                <div className="border-t border-white/10" />
+                <NavLink
+                  to="/gallery"
+                  onClick={() => setAboutOpen(false)}
+                  className="flex items-center gap-2 px-4 py-3 text-white hover:text-amber-300 hover:bg-white/5 transition duration-200 text-sm"
+                >
+                   Gallery
+                </NavLink>
+                <div className="border-t border-white/10" />
+                <NavLink
+                  to="/blog"
+                  onClick={() => setAboutOpen(false)}
+                  className="flex items-center gap-2 px-4 py-3 text-white hover:text-amber-300 hover:bg-white/5 transition duration-200 text-sm"
+                >
+                   Blog
+                </NavLink>
+              </div>
+            )}
+          </div>
+
           <NavLink to="/courses" className={navLink}>
             Courses
           </NavLink>
-          <NavLink to="/blog" className={navLink}>
-            Blog
-          </NavLink>
           <NavLink to="/contact" className={navLink}>
             Contact
-          </NavLink>
-          <NavLink to="/Team" className={navLink}>
-            Team
-          </NavLink>
-          <NavLink to="/Gallery" className={navLink}>
-            Gallery
           </NavLink>
 
           {/* CTA */}
@@ -59,7 +105,7 @@ function Navbar() {
           </NavLink>
         </div>
 
-        {/* Mobile Button */}
+        {/* Mobile Hamburger Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden text-white text-2xl"
@@ -87,9 +133,7 @@ function Navbar() {
       {/* Mobile Menu */}
       <div
         className={`md:hidden transition-all duration-300 ease-in-out ${
-          menuOpen
-            ? "max-h-100 opacity-100"
-            : "max-h-0 opacity-0 overflow-hidden"
+          menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0 overflow-hidden"
         }`}
       >
         <div className="bg-black/90 backdrop-blur-xl flex flex-col items-center gap-6 py-6 border-t border-white/10">
@@ -100,13 +144,53 @@ function Navbar() {
           >
             Home
           </NavLink>
-          <NavLink
-            to="/about"
-            className={navLink}
-            onClick={() => setMenuOpen(false)}
-          >
-            About
-          </NavLink>
+
+          {/* Mobile About Accordion */}
+          <div className="flex flex-col items-center w-full">
+            <button
+              onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+              className="text-white hover:text-amber-300 transition duration-300 font-medium flex items-center gap-1"
+            >
+              About
+              <span
+                className={`text-xs transition-transform duration-300 ${
+                  mobileAboutOpen ? "rotate-180" : ""
+                }`}
+              >
+                ▾
+              </span>
+            </button>
+
+            {/* Mobile Sub-links */}
+            <div
+              className={`flex flex-col items-center gap-3 overflow-hidden transition-all duration-300 ${
+                mobileAboutOpen ? "max-h-40 mt-3 opacity-100" : "max-h-0 opacity-0"
+              }`}
+            >
+              <NavLink
+                to="/team"
+                className={navLink}
+                onClick={() => { setMenuOpen(false); setMobileAboutOpen(false); }}
+              >
+                 Team
+              </NavLink>
+              <NavLink
+                to="/gallery"
+                className={navLink}
+                onClick={() => { setMenuOpen(false); setMobileAboutOpen(false); }}
+              >
+                 Gallery
+              </NavLink>
+              <NavLink
+                to="/blog"
+                className={navLink}
+                onClick={() => { setMenuOpen(false); setMobileAboutOpen(false); }}
+              >
+                 Blog
+              </NavLink>
+            </div>
+          </div>
+
           <NavLink
             to="/courses"
             className={navLink}
@@ -115,32 +199,11 @@ function Navbar() {
             Courses
           </NavLink>
           <NavLink
-            to="/blog"
-            className={navLink}
-            onClick={() => setMenuOpen(false)}
-          >
-            Blog
-          </NavLink>
-          <NavLink
             to="/contact"
             className={navLink}
             onClick={() => setMenuOpen(false)}
           >
             Contact
-          </NavLink>
-          <NavLink
-            to="/Team"
-            className={navLink}
-            onClick={() => setMenuOpen(false)}
-          >
-            Team
-          </NavLink>
-          <NavLink
-            to="/Gallery"
-            className={navLink}
-            onClick={() => setMenuOpen(false)}
-          >
-            Gallery
           </NavLink>
 
           <NavLink
