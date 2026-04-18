@@ -5,6 +5,7 @@ const images = [
   "/G1.jpeg", "/G2.jpeg", "/G3.jpeg", "/G4.jpeg", "/G5.jpeg",
   "/G6.jpeg", "/G7.jpeg", "/G8.jpeg", "/G9.jpeg", "/G10.jpeg",
   "/G11.jpeg", "/G12.jpeg", "/G13.jpeg", "/G14.jpeg", "/G15.jpeg",
+  "/G16.jpeg", "/G17.jpeg", "/G18.jpeg", "/G19.jpeg",
 ];
 
 // ── Lightweight fade-in hook (reusable) ──────────────────────────────────────
@@ -252,7 +253,7 @@ export default function Gallery() {
       {/* ── CTA ── */}
       <div className="bg-amber-500 text-white text-center py-12 sm:py-16 px-4">
         <h2 className="text-2xl sm:text-3xl font-bold mb-2">
-          Join Our Yoga Community 🧘‍♀️
+          Join Our Yoga Community 
         </h2>
         <p className="text-sm sm:text-base opacity-90 mb-6 max-w-md mx-auto">
           Experience peace, strength &amp; transformation with us.

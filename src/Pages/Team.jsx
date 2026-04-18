@@ -26,7 +26,7 @@ export default function Team() {
           <div className="w-full lg:w-1/2">
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="/P.Shree.Vilasitha.jpeg" 
+                src="/Sarita Sahu.jpeg" 
                 alt="Sarita Sahu"
                 className="w-full h-full object-cover hover:scale-105 transition duration-500"
               />
