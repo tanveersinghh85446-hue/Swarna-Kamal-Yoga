@@ -134,7 +134,7 @@ const faqs = [
   {
     question: "Do you offer online classes?",
     answer:
-      "Yes, we offer both offline and online yoga sessions. Our flexible learning model allows students from any part of the world to learn from Smita Karakavalasa directly.",
+      "Yes, we offer both online yoga sessions. Our flexible learning model allows students from any part of the world to learn from Smita Karakavalasa directly.",
     to: "/courses",
   },
   {
@@ -528,7 +528,7 @@ const Home = () => {
               Flexible Learning & Real Returns
             </h2>
             <p className="opacity-90 leading-relaxed text-sm sm:text-base md:text-lg px-2">
-              Learn at your own pace with our flexible online and offline
+              Learn at your own pace with our flexible online
               programs. Expert guidance, practical knowledge, and long-term
               personal growth benefits.
             </p>

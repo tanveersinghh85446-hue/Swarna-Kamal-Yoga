@@ -3,7 +3,7 @@ import { TiTick } from "react-icons/ti";
 
 export default function Team() {
   return (
-    <div className="w-full bg-gray-50 py-16 px-4 sm:px-8">
+    <div className="w-full bg-gray-50 py-30 px-4 sm:px-8 ">
       {/* TITLE */}
       <div className="text-center mb-16">
         <h1 className="text-3xl sm:text-5xl font-bold text-gray-800">
@@ -184,9 +184,9 @@ export default function Team() {
                   STRENGTHS & GROWTH
                 </h2>
                 <div className="text-gray-700 text-sm space-y-1 ">
-                  <p className="flex"><TiTick className="text-2xl"/> 500+ Students Trained</p>
-                  <p className="flex"><TiTick className="text-2xl"/> 4+ Years Teaching Experience</p>
-                  <p className="flex"><TiTick className="text-2xl"/> Dual Academic Background (Science + Education)</p>
+                  <p className="flex"><TiTick className="text-2xl text-green-500"/> 500+ Students Trained</p>
+                  <p className="flex"><TiTick className="text-2xl text-green-500"/> 4+ Years Teaching Experience</p>
+                  <p className="flex"><TiTick className="text-2xl text-green-500"/> Dual Academic Background (Science + Education)</p>
                 </div>
               </div>
             </div>
@@ -273,8 +273,8 @@ export default function Team() {
                   STRENGTHS & GROWTH
                 </h2>
                 <div className="text-gray-700 text-sm space-y-1">
-                  <p className="flex"><TiTick className="text-2xl"/> 10+ Years Teaching Experience</p>
-                  <p className="flex"><TiTick className="text-2xl"/> M.Sc (Nutrition & Dietetics)</p>
+                  <p className="flex"><TiTick className="text-2xl text-green-400"/> 10+ Years Teaching Experience</p>
+                  <p className="flex"><TiTick className="text-2xl text-green-400"/> M.Sc (Nutrition & Dietetics)</p>
                 </div>
               </div>
             </div>
