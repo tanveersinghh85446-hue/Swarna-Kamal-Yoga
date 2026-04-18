@@ -94,7 +94,6 @@ export default function About() {
 
       <div
         className="py-20 px-4 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url(BG.png)" }}
       >
         {/* ── Image Section ── */}
         <div ref={imageRef} className="relative w-full max-w-4xl mx-auto group">
