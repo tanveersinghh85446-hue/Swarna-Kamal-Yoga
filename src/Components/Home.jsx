@@ -28,7 +28,7 @@ const slides = [
   },
   {
     img: "Home1.jpg",
-    title: "ONLINE & OFFLINE CLASSES",
+    title: "ONLINE CLASSES",
     sub: "Learn from anywhere — flexible batches available",
     btn: "Apply Now",
     to: "/apply",
@@ -146,7 +146,7 @@ const faqs = [
   {
     question: "How experienced is the faculty?",
     answer:
-      "Our founder, Smita Karakavalasa, has over 12 years of dedicated yoga teaching experience and has trained hundreds of students with warmth and expertise.",
+      "Our founder, Smita Karakavalasa, has over 16 years of dedicated yoga teaching experience and has trained hundreds of students with warmth and expertise.",
     to: "/about",
   },
 ];
