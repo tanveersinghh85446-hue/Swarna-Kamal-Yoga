@@ -90,8 +90,8 @@ const contactDetails = [
 ];
 
 const timings = [
-  { batch: "Morning Batch", time: "0:00 AM – 0:00 AM" },
-  { batch: "Evening Batch", time: "0:00 PM – 0:00 PM" },
+  { batch: "Morning Batch", time: "6:00 AM – 1:00 PM" },
+  { batch: "Evening Batch", time: "5:00 PM – 9:00 PM" },
 ];
 
 
