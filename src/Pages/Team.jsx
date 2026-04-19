@@ -255,7 +255,7 @@ export default function Team() {
             <div className="w-full md:w-1/3 bg-linear-to-b from-red-50 to-white p-8 flex flex-col items-center justify-start">
               <div className="w-48 h-48 rounded-lg overflow-hidden mb-4 shadow-lg">
                 <img
-                  src="/P.Shree.Vilasitha.jpeg"
+                  src="/P.Shree.Vilasith.jpeg"
                   alt="P Shree Vilasitha"
                   className="w-full h-full"
                 />
