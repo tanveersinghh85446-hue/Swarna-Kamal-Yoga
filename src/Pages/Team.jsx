@@ -16,260 +16,245 @@ export default function Team() {
 
       <div className="max-w-5xl mx-auto space-y-16">
         {/* ─────────────────────────────────────────────
-            INSTRUCTOR 1 - SARITA SAHU
-        ───────────────────────────────────────────── */}
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="flex flex-col md:flex-row">
-            {/* LEFT CONTENT */}
-            <div className="w-full md:w-2/3 p-8 md:p-10">
-              {/* PROFILE SUMMARY */}
-              <div className="mb-6">
-                <h2 className="text-red-700 font-bold text-lg mb-3">
-                  PROFILE SUMMARY
-                </h2>
-                <p className="text-gray-700 text-sm leading-relaxed"></p>
-              </div>
+    INSTRUCTOR 1 - SARITA SAHU
+───────────────────────────────────────────── */}
+<div className="bg-white rounded-lg shadow-lg overflow-hidden">
+  <div className="flex flex-col md:flex-row">
+    {/* LEFT CONTENT */}
+    <div className="w-full md:w-2/3 p-8 md:p-10">
 
-              {/* EDUCATION & CREDENTIALS */}
-              <div className="mb-6">
-                <h2 className="text-red-700 font-bold text-lg mb-3">
-                  EDUCATION & YOGA CREDENTIALS
-                </h2>
-                <ul className="text-gray-700 text-sm space-y-1.5">
-                  <li>
-                    • M.Com in International Banking & Financial Management
-                  </li>
-                  <li>
-                    • Certified Yoga Teacher Training (Yoga Alliance – RYT 200)
-                  </li>
-                  <li>• Certified Yoga Therapist</li>
-                  <li>• Certified in Yin Yoga & Face Yoga</li>
-                  <li>
-                    • Certified in Pre and Postnatal Yoga (WYORS / Ekam Yoga and
-                    Wellness Institute)
-                  </li>
-                  <li>
-                    • Certified Patanjali Assistant Yoga Teacher (Yoga Samiti)
-                  </li>
-                  <li>
-                    • Completed and certified in "Shree Radhaji Aasham" - Asana,
-                    Props and Alignment Specialist course (50 hrs.) from Yoga
-                    Alliance
-                  </li>
-                  <li>
-                    • Trained in Fitness Program and Pilates and teaches as well
-                  </li>
-                  <li>• Teaches Breathe work, Relaxation & Meditation</li>
-                </ul>
-              </div>
+      {/* PROFILE SUMMARY */}
+      <div className="mb-6">
+        <h2 className="text-red-700 font-bold text-lg mb-3">
+          PROFILE SUMMARY
+        </h2>
+        <p className="text-gray-700 text-sm leading-relaxed">
+          I believe that Yoga is a bridge between the physical effort and the
+          quite stillness of the soul. My teaching style is rooted in functional
+          alignment and flow with physical resilience and mental clarity.
+        </p>
+      </div>
 
-              {/* PHILOSOPHY */}
-              <div className="mb-6">
-                <h2 className="text-red-700 font-bold text-lg mb-3">
-                  PHILOSOPHY
-                </h2>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  Yoga is impact and ability to sense the internal state of the
-                  body.  Moving to  remember who we are beneat & knowing self awareness & Emotional .
-                </p>
-              </div>
+      {/* EDUCATION & CREDENTIALS */}
+      <div className="mb-6">
+        <h2 className="text-red-700 font-bold text-lg mb-3">
+          EDUCATION & YOGA CREDENTIALS
+        </h2>
+        <ul className="text-gray-700 text-sm space-y-1.5">
+          <li>• M.Com in International Banking & Financial Management</li>
+          <li>• Certified Yoga Teacher Training (Yoga Alliance – RYT 200)</li>
+          <li>• Certified Yoga Therapist</li>
+          <li>• Certified in Yin Yoga & Face Yoga</li>
+          <li>• Certified in Pre and Postnatal Yoga (WYORS / Ekam Yoga and Wellness Institute)</li>
+          <li>• Certified Patanjali Assistant Yoga Teacher by completing the training course from Patanjali Yoga Samiti</li>
+          <li>• Completed and certified in "Sthira Sukham Asanam - Asana, Props and Alignment Specialist" course (50 hrs.) from Yoga Alliance</li>
+          <li>• Trained in Fitness Program and Pilates and teaches as well</li>
+          <li>• Teaches Breathe work, Relaxation & Meditation</li>
+        </ul>
+      </div>
 
-              {/* TEACHING APPROACH */}
-              <div className="mb-6">
-                <h2 className="text-red-700 font-bold text-lg mb-3">
-                  TEACHING APPROACH & CORE COMPETENCIES
-                </h2>
-                <ul className="text-gray-700 text-sm space-y-1.5">
-                  <li>• A blend of fluid movement</li>
-                  <li>• Intentional Breathe</li>
-                  <li>• Radical Yoga act of slowing down</li>
-                  <li>
-                    • Power and Grace in a steady warrior to pose or quiet fold
-                  </li>
-                  <li>• Moving to remember who we are beneath</li>
-                  <li>• Command and Control</li>
-                  <li>• Contemporary fitness setting</li>
-                  <li>• Style to one that prioritizes</li>
-                  <li>• Self awareness</li>
-                  <li>
-                    • Impact and ability to sense the internal state of the body
-                  </li>
-                  <li>• Aesthetic alignment and adaptability</li>
-                  <li>• Shape the pose to fit the body</li>
-                  <li>• Validation on the power of the pause</li>
-                  <li>• Deep understanding of musculoskeletal</li>
-                </ul>
-              </div>
+      {/* PHILOSOPHY */}
+      <div className="mb-6">
+        <h2 className="text-red-700 font-bold text-lg mb-3">
+          PHILOSOPHY
+        </h2>
+        <p className="text-gray-700 text-sm leading-relaxed">
+          Yoga is impact and ability to sense the internal state of the body;
+          moving to remember who we are beneath & knowing self awareness &
+          emotional.
+        </p>
+      </div>
 
-              {/* STRENGTHS & GROWTH */}
-              <div>
-                <h2 className="text-red-700 font-bold text-lg mb-3">
-                  STRENGTHS & GROWTH
-                </h2>
-                <p className="text-gray-700 text-sm font-semibold">
-                  10+ years of experience
-                </p>
-              </div>
-            </div>
+      {/* TEACHING APPROACH */}
+      <div className="mb-6">
+        <h2 className="text-red-700 font-bold text-lg mb-3">
+          TEACHING APPROACH & CORE COMPETENCIES
+        </h2>
+        <ul className="text-gray-700 text-sm space-y-1.5">
+          <li>• A blend of fluid movement</li>
+          <li>• Intentional Breathe</li>
+          <li>• Radical Yoga act of slowing down</li>
+          <li>• Power and Grace in a steady warrior pose or quiet fold</li>
+          <li>• Moving to remember who we are beneath</li>
+          <li>• Command and Control</li>
+          <li>• Contemporary fitness setting</li>
+          <li>• Style to one that prioritizes</li>
+          <li>• Self awareness</li>
+          <li>• Impact and ability to sense the internal state of the body</li>
+          <li>• Aesthetic alignment and adaptability</li>
+          <li>• Shape the pose to fit the body</li>
+          <li>• Validation on the power of the pause</li>
+          <li>• Deep understanding of musculoskeletal</li>
+        </ul>
+      </div>
 
-            {/* RIGHT - PHOTO & NAME */}
-            <div className="w-full md:w-1/3 bg-linear-to-b from-red-50 to-white p-8 flex flex-col items-center justify-start">
-              <div className="w-48 h-48 rounded-lg overflow-hidden mb-4 shadow-lg">
-                <img
-                  src="/Sarita Sahu.png"
-                  alt="Sarita Sahu"
-                  className="w-full h-full"
-                />
-              </div>
-              <h3 className="text-red-700 font-bold text-2xl text-center">
-                SARITA SAHU
-              </h3>
-              <p className="text-red-600 font-semibold text-center mt-1">
-                YOGA INSTRUCTOR
-              </p>
-            </div>
-          </div>
-        </div>
+      {/* STRENGTHS & GROWTH */}
+      <div>
+        <h2 className="text-red-700 font-bold text-lg mb-3">
+          STRENGTHS & GROWTH
+        </h2>
+        <p className="text-gray-700 text-sm font-semibold">
+          10+ years of experience
+        </p>
+      </div>
+
+    </div>
+
+    {/* RIGHT - PHOTO & NAME */}
+    <div className="w-full md:w-1/3 bg-linear-to-b from-red-50 to-white p-8 flex flex-col items-center justify-start">
+      <div className="w-48 h-48 rounded-lg overflow-hidden mb-4 shadow-lg">
+        <img
+          src="/Sarita Sahu.png"
+          alt="Sarita Sahu"
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <h3 className="text-red-700 font-bold text-2xl text-center">
+        SARITA SAHU
+      </h3>
+      <p className="text-red-600 font-semibold text-center mt-1">
+        YOGA INSTRUCTOR
+      </p>
+    </div>
+  </div>
+</div>
 
         {/* ─────────────────────────────────────────────
-            INSTRUCTOR 2 - P SHREE VILASITHA
-        ───────────────────────────────────────────── */}
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="flex flex-col md:flex-row">
-            {/* LEFT CONTENT */}
-            <div className="w-full md:w-2/3 p-8 md:p-10">
-              {/* PROFILE SUMMARY */}
-              <div className="mb-6">
-                <h2 className="text-red-700 font-bold text-lg mb-3">
-                  PROFILE SUMMARY
-                </h2>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  Making yoga simple, accessible, and transformative. A
-                  dedicated yoga instructor with 4+ years of experience rooted
-                  in discipline, foundation, and lasting progress — blending
-                  biochemistry with traditional yoga wisdom.
-                </p>
-              </div>
+    INSTRUCTOR 2 - P SHREE VILASITHA
+───────────────────────────────────────────── */}
+<div className="bg-white rounded-lg shadow-lg overflow-hidden">
+  <div className="flex flex-col md:flex-row">
+    {/* LEFT CONTENT */}
+    <div className="w-full md:w-2/3 p-8 md:p-10">
 
-              {/* EDUCATION & CREDENTIALS */}
-              <div className="mb-6">
-                <h2 className="text-red-700 font-bold text-lg mb-3">
-                  EDUCATION & YOGA CREDENTIALS
-                </h2>
-                <ul className="text-gray-700 text-sm space-y-1.5">
-                  <li>• Certified Yoga Instructor</li>
-                  <li>• M.Sc Biochemistry</li>
-                  <li>• B.Ed (Education)</li>
-                  <li>• Yoga Therapy (Jeevan Yoga Studio)</li>
-                  <li>• Pre & Postnatal Yoga (Yogakulam)</li>
-                  <li>• Mat Pilates (Shubhyoga)</li>
-                  <li>• Diet & Nutrition (Tratak Yoga)</li>
-                  <li>• Weight Loss Yoga (Jeevan Yoga Studio)</li>
-                  <li>• HIIT Training (Jeevan Yoga Studio)</li>
-                  <li>• Hatha Yoga YTT 500 & 300hrs (Jeevan Yoga Studio)</li>
-                </ul>
-              </div>
+      {/* PROFILE SUMMARY */}
+      <div className="mb-6">
+        <h2 className="text-red-700 font-bold text-lg mb-3">
+          PROFILE SUMMARY
+        </h2>
+        <p className="text-gray-700 text-sm leading-relaxed">
+          Making yoga simple, accessible, and transformative. A dedicated yoga
+          instructor with 4+ years of experience rooted in discipline,
+          foundation, and lasting progress — blending biochemistry with
+          traditional yoga wisdom.
+        </p>
+      </div>
 
-              {/* PHILOSOPHY */}
-              <div className="mb-6">
-                <h2 className="text-red-700 font-bold text-lg mb-3">
-                  PHILOSOPHY
-                </h2>
-                <strong className="text-gray-700 text-sm leading-relaxed">
-                  Yoga is not about how flexible you are — it is about how
-                  present you can be. My mission is to strip away the complexity
-                  and give every student a practice they can truly call their
-                  own.
-                </strong>
-                <p>
-                  With a background in both science and education{" "}
-                  <strong>P. Shree Vilasitha</strong> brings intellectual rigour
-                  and compassionate instruction together.{" "}
-                  <strong>Her work with 500+ students</strong> reflects a
-                  commitment to depth — building practitioners who understand
-                  their bodies and move with intention
-                </p>
-              </div>
+      {/* EDUCATION & CREDENTIALS */}
+      <div className="mb-6">
+        <h2 className="text-red-700 font-bold text-lg mb-3">
+          EDUCATION & YOGA CREDENTIALS
+        </h2>
+        <ul className="text-gray-700 text-sm space-y-1.5">
+          <li>• Certified Yoga Instructor</li>
+          <li>• M.Sc Biochemistry</li>
+          <li>• B.Ed (Education)</li>
+          <li>• Yoga Therapy (Jeevan Yoga Studio)</li>
+          <li>• Pre & Postnatal Yoga (Yogakulam)</li>
+          <li>• Mat Pilates (Shubhyoga)</li>
+          <li>• Diet & Nutrition (Tratak Yoga)</li>
+          <li>• Weight Loss Yoga (Jeevan Yoga Studio)</li>
+          <li>• HIIT Training (Jeevan Yoga Studio)</li>
+          <li>• Hatha Yoga YTT 500 & 300hrs (Jeevan Yoga Studio)</li>
+          <li>• Mudgar (Mudgar Club)</li>
+        </ul>
+      </div>
 
-              {/* SPECIALIZATIONS */}
-              <div className="mb-6">
-                <h2 className="text-red-700 font-bold text-lg mb-3">
-                  SPECIALIZATIONS
-                </h2>
-                <bold className="text-gray-700 text-sm leading-relaxed">
-                  • Root-based practice <br />
-                  • Women's wellness <br />
-                  • Menopause & hormones <br />
-                  • Breathwork <br />
-                  • Holistic health <br />
-                  •Therapeutic yoga <br />
-                </bold>
-              </div>
+      {/* PHILOSOPHY */}
+      <div className="mb-6">
+        <h2 className="text-red-700 font-bold text-lg mb-3">
+          PHILOSOPHY
+        </h2>
+        <p className="text-gray-700 text-sm leading-relaxed">
+          <strong>
+            Yoga is not about how flexible you are — it is about how present
+            you can be. My mission is to strip away the complexity and give
+            every student a practice they can truly call their own.
+          </strong>
+        </p>
+        <p className="text-gray-700 text-sm leading-relaxed mt-2">
+          With a background in both science and education,{" "}
+          <strong>P. Shree Vilasitha</strong> brings intellectual rigour and
+          compassionate instruction together.{" "}
+          <strong>Her work with 500+ students</strong> reflects a commitment
+          to depth — building practitioners who understand their bodies and
+          move with intention.
+        </p>
+      </div>
 
-              {/*Workshops & Programmes*/}
-              <div className="mb-6">
-                <h2 className="text-red-700 font-bold text-lg mb-3">
-                  Workshops & Programmes
-                </h2>
-                <bold className="text-gray-700 text-sm leading-relaxed">
-                  • Menopause & Yoga – Hormonal transitions addressed through
-                  targeted asana and breathwork <br />
-                  • Women's Wellness Circle – Holistic sessions covering
-                  physical, emotional and hormonal well-being
-                  <br />
-                  • Foundations Programme – Structured beginner course building
-                  correct form, breath, and discipline
-                  <br />
-                  • Root-Based Practice – Traditional yoga combined with modern
-                  anatomical understanding <br />
-                </bold>
-              </div>
+      {/* SPECIALIZATIONS */}
+      <div className="mb-6">
+        <h2 className="text-red-700 font-bold text-lg mb-3">
+          SPECIALIZATIONS
+        </h2>
+        <ul className="text-gray-700 text-sm space-y-1.5">
+          <li>• Root-based practice</li>
+          <li>• Women's wellness</li>
+          <li>• Menopause & hormones</li>
+          <li>• Breathwork</li>
+          <li>• Holistic health</li>
+          <li>• Therapeutic yoga</li>
+        </ul>
+      </div>
 
-              {/*Teaching Approach */}
-              <div>
-                <h2 className="text-red-700 font-bold text-lg mb-3">
-                  Teaching Approach
-                </h2>
-                <div className="text-gray-700 text-sm space-y-1 ">
-                  <p className="flex">
-                    <TiTick className="text-2xl text-green-500" />
-                    Progress over perfection
-                  </p>
-                  <p className="flex">
-                    <TiTick className="text-2xl text-green-500" />
-                    Science meets tradition
-                  </p>
-                  <p className="flex">
-                    <TiTick className="text-2xl text-green-500" />
-                    Foundation first
-                  </p>
-                  <p className="flex">
-                    <TiTick className="text-2xl text-green-500" />
-                    Accessible to all
-                  </p>
-                </div>
-              </div>
-            </div>
+      {/* WORKSHOPS & PROGRAMMES */}
+      <div className="mb-6">
+        <h2 className="text-red-700 font-bold text-lg mb-3">
+          WORKSHOPS & PROGRAMMES
+        </h2>
+        <ul className="text-gray-700 text-sm space-y-1.5">
+          <li>
+            • <strong>Menopause & Yoga</strong> – Hormonal transitions
+            addressed through targeted asana and breathwork
+          </li>
+          <li>
+            • <strong>Women's Wellness Circle</strong> – Holistic sessions
+            covering physical, emotional and hormonal well-being
+          </li>
+          <li>
+            • <strong>Foundations Programme</strong> – Structured beginner
+            course building correct form, breath, and discipline
+          </li>
+          <li>
+            • <strong>Root-Based Practice</strong> – Traditional yoga combined
+            with modern anatomical understanding
+          </li>
+        </ul>
+      </div>
 
-            {/* RIGHT - PHOTO & NAME */}
-            <div className="w-full md:w-1/3 bg-linear-to-b from-red-50 to-white p-8 flex flex-col items-center justify-start">
-              <div className="w-48 h-48 rounded-lg overflow-hidden mb-4 shadow-lg">
-                <img
-                  src="/P.Shree.Vilasith.jpeg"
-                  alt="P Shree Vilasitha"
-                  className="w-full h-full"
-                />
-              </div>
-              <h3 className="text-red-700 font-bold text-2xl text-center">
-                P. SHREE VILASITHA
-              </h3>
-              <p className="text-red-600 font-semibold text-center mt-1">
-                YOGA INSTRUCTOR
-              </p>
-            </div>
-          </div>
-        </div>
+      {/* TEACHING APPROACH */}
+      <div>
+        <h2 className="text-red-700 font-bold text-lg mb-3">
+          TEACHING APPROACH
+        </h2>
+        <ul className="text-gray-700 text-sm space-y-1.5">
+          <li>• Progress over perfection</li>
+          <li>• Science meets tradition</li>
+          <li>• Foundation first</li>
+          <li>• Accessible to all</li>
+        </ul>
+      </div>
 
+    </div>
+
+    {/* RIGHT - PHOTO & NAME */}
+    <div className="w-full md:w-1/3 bg-linear-to-b from-red-50 to-white p-8 flex flex-col items-center justify-start">
+      <div className="w-48 h-48 rounded-lg overflow-hidden mb-4 shadow-lg">
+        <img
+          src="/P.Shree.Vilasith.jpeg"
+          alt="P Shree Vilasitha"
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <h3 className="text-red-700 font-bold text-2xl text-center">
+        P. SHREE VILASITHA
+      </h3>
+      <p className="text-red-600 font-semibold text-center mt-1">
+        YOGA INSTRUCTOR
+      </p>
+    </div>
+  </div>
+</div>
         {/* ─────────────────────────────────────────────
             INSTRUCTOR 3 - DASARI NANDITHA
         ───────────────────────────────────────────── */}
@@ -368,8 +353,8 @@ export default function Team() {
         </div>
 
         {/* ─────────────────────────────────────────────
-            INSTRUCTOR 4 - SANGEETA SIL
-        ───────────────────────────────────────────── */}
+    INSTRUCTOR - SANGEETA SIL
+───────────────────────────────────────────── */}
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="flex flex-col md:flex-row">
             {/* LEFT CONTENT */}
@@ -377,17 +362,27 @@ export default function Team() {
               {/* PROFILE SUMMARY */}
               <div className="mb-6">
                 <h2 className="text-red-700 font-bold text-lg mb-3">
-                  PROFILE SUMMARY
+                  SANGEETA SIL
+                </h2>
+                <h2 className="text-red-700 font-bold text-lg mb-3">
+                  Yoga and Fitness Instructor
                 </h2>
                 <p className="text-gray-700 text-sm leading-relaxed">
                   Dedicated to exploring and mastering various yoga styles to
-                  promote holis6c well-being and mindfulness. Exper6se in Hatha,
-                  Vinyasa, Ashtanga Yoga, Strength training, Circuit training
-                  and Pilates. Proficient in designing impacFul classes by
-                  incorpora6ng innova6ve teaching methods with proper breathing
-                  techniques and correct alignment.
+                  promote holistic well-being and mindfulness. Expertise in
+                  Hatha, Vinyasa, Ashtanga Yoga, Strength training, Circuit
+                  training and Pilates. Proficient in designing impactful
+                  classes by incorporating innovative teaching methods with
+                  proper breathing techniques and correct alignment.
                 </p>
               </div>
+
+            {/* HIGHLIGHTS */}
+<div className="mb-6 flex flex-wrap gap-4">
+  <li className="text-gray-700 text-sm"> 1000+ Students Trained</li> <br />
+  <li className="text-gray-700 text-sm"> 13 years of Teaching Experience</li> <br />
+  <li className="text-gray-700 text-sm"> Dual Academic Background (Science + Physical Education)</li>
+</div>
 
               {/* EDUCATION & CREDENTIALS */}
               <div className="mb-6">
@@ -400,23 +395,23 @@ export default function Team() {
                     University
                   </li>
                   <li>
-                    • Completed Level 1- Yoga Instructor by The Yoga
+                    • Completed Level 1 - Yoga Instructor by The Yoga
                     Certification Board
                   </li>
                   <li>
-                    • Completed Kapila Yoga Teacher Training Diploma Course ,
+                    • Completed Kapila Yoga Teacher Training Diploma Course,
                     Hyderabad
                   </li>
                   <li>
                     • Certified for 500-hour Master Yoga Teacher Training from
-                    Yoga Alliance Interna6onal
+                    Yoga Alliance International
                   </li>
                   <li>
                     • MSc in Yoga Therapy from Swami Vivekananda Yoga
                     Anusandhana Samathana University (SVYASA)
                   </li>
                   <li>
-                    • Certified for Pilates on Mat -Level 1 from Zone Education
+                    • Certified for Pilates on Mat - Level 1 from Zone Education
                     Program
                   </li>
                   <li>
@@ -428,11 +423,6 @@ export default function Team() {
                     Centre
                   </li>
                   <li>• BSc in Computer Science, Mathematics, Electronics</li>
-                  <li>
-                    • Post Graduate Diploma in Computer Application from Bhopal
-                    University (M.P)
-                  </li>
-                  <li>• Winner of Na6onal Level Open Yoga Championship 2017</li>
                 </ul>
               </div>
 
@@ -454,28 +444,11 @@ export default function Team() {
                   SPECIALIZATIONS
                 </h2>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  Vinyasa yoga, Ashtanga yoga, Therapeu6c prac6ces for
-                  Rehabilita6on, Strength training with and without weights,
-                  Weight loss program, Pilates
-                </p>{" "}
+                  Hatha Yoga, Vinyasa Yoga, Ashtanga Yoga, Strength Training,
+                  Circuit Training, Pilates, Therapeutic practices for
+                  Rehabilitation, Weight loss programs
+                </p>
               </div>
-
-              {/* STRENGTHS & GROWTH */}
-              {/* <div>
-                <h2 className="text-red-700 font-bold text-lg mb-3">
-                  STRENGTHS & GROWTH
-                </h2>
-                <div className="text-gray-700 text-sm space-y-1">
-                  <p className="flex">
-                    <TiTick className="text-2xl text-green-400" /> 10+ Years
-                    Teaching Experience
-                  </p>
-                  <p className="flex">
-                    <TiTick className="text-2xl text-green-400" /> M.Sc
-                    (Nutrition & Dietetics)
-                  </p>
-                </div>
-              </div> */}
             </div>
 
             {/* RIGHT - PHOTO & NAME */}
@@ -483,15 +456,15 @@ export default function Team() {
               <div className="w-48 h-48 rounded-lg overflow-hidden mb-4 shadow-lg">
                 <img
                   src="/Sangeeta Sil.jpeg"
-                  alt="Dasari Nanditha"
+                  alt="Sangeeta Sil"
                   className="w-full h-full"
                 />
               </div>
               <h3 className="text-red-700 font-bold text-2xl text-center">
-                DASARI NANDITHA
+                SANGEETA SIL
               </h3>
               <p className="text-red-600 font-semibold text-center mt-1">
-                YOGA INSTRUCTOR
+                YOGA & FITNESS INSTRUCTOR
               </p>
             </div>
           </div>
