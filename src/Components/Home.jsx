@@ -64,13 +64,7 @@ const courses = [
     to: "/courses/ashtanga",
     badge: "Advanced",
   },
-  {
-    title: "500 Hour TTC",
-    desc: "Master-level program combining 200Hr + 300Hr for complete mastery.",
-    img: "500 Hour TTC.jpg",
-    to: "/courses",
-    badge: "Master Level",
-  },
+ 
 ];
 
 const whyUs = [
@@ -93,9 +87,9 @@ const whyUs = [
     to: "/about",
   },
   {
-    title: "Online & Offline Modes",
+    title: "Online",
     desc: "Can't visit in person? Our hybrid learning model lets you practice from home.",
-    img: "Online & Offline Modes.jpg",
+    img: "Online.jpg",
     to: "/courses",
   },
   {
@@ -441,7 +435,7 @@ const Home = () => {
               Our Teacher Training Courses
             </h2>
           </FadeIn>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {courses.map((c, i) => (
               <FadeIn key={i} delay={i * 0.1}>
                 <Link

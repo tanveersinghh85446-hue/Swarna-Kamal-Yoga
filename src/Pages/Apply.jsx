@@ -53,12 +53,36 @@ const WaIcon = ({ size = 20 }) => (
 
 // ── Course options ────────────────────────────────────────────────────────────
 const courseOptions = [
-  { label: "100 Hour TTC", badge: "Beginner", color: "bg-green-100 text-black border-green-300" },
-  { label: "200 Hour TTC", badge: "Most Popular", color: "bg-amber-100 text-black border-amber-300" },
-  { label: "300 Hour TTC", badge: "Advanced", color: "bg-orange-100 text-black border-orange-300" },
-  { label: "500 Hour TTC", badge: "Master Level", color: "bg-purple-100 text-black border-purple-300" },
-  { label: "Regular Yoga Classes", badge: "All Levels", color: "bg-blue-100 text-black border-blue-300" },
-  { label: "Women's Wellness Yoga", badge: "Special", color: "bg-pink-100 text-black border-pink-300" },
+  {
+    label: "100 Hour TTC",
+    badge: "Beginner",
+    color: "bg-green-100 text-black border-green-300",
+  },
+  {
+    label: "200 Hour TTC",
+    badge: "Most Popular",
+    color: "bg-amber-100 text-black border-amber-300",
+  },
+  {
+    label: "300 Hour TTC",
+    badge: "Advanced",
+    color: "bg-orange-100 text-black border-orange-300",
+  },
+  {
+    label: "500 Hour TTC",
+    badge: "Master Level",
+    color: "bg-purple-100 text-black border-purple-300",
+  },
+  {
+    label: "Regular Yoga Classes",
+    badge: "All Levels",
+    color: "bg-blue-100 text-black border-blue-300",
+  },
+  {
+    label: "Women's Wellness Yoga",
+    badge: "Special",
+    color: "bg-pink-100 text-black border-pink-300",
+  },
 ];
 
 const modeOptions = ["Online", "Offline", "Both (Hybrid)"];
@@ -177,7 +201,6 @@ const Apply = () => {
     const encoded = encodeURIComponent(msg);
     const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
 
-  
     const a = document.createElement("a");
     a.href = waUrl;
     a.target = "_blank";
@@ -222,10 +245,11 @@ const Apply = () => {
       </div>
 
       {/* ── FORM SECTION ── */}
-      <div className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-stone-50 bg-cover bg-center"
-           style={{ backgroundImage: "url('God.jpg')" }}>
+      <div
+        className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-stone-50 bg-cover bg-center"
+        style={{ backgroundImage: "url('God.jpg')" }}
+      >
         <div className="max-w-3xl mx-auto">
-
           {/* ── Success State ── */}
           {submitted && (
             <FadeIn>
@@ -241,7 +265,14 @@ const Apply = () => {
                 <button
                   onClick={() => {
                     setSubmitted(false);
-                    setForm({ name: "", phone: "", email: "", course: "", mode: "", message: "" });
+                    setForm({
+                      name: "",
+                      phone: "",
+                      email: "",
+                      course: "",
+                      mode: "",
+                      message: "",
+                    });
                   }}
                   className="text-sm text-green-700 underline hover:text-green-900 transition-colors"
                 >
@@ -255,11 +286,10 @@ const Apply = () => {
           {!submitted && (
             <FadeIn>
               <div className="bg-white rounded-3xl shadow-xl border border-stone-100 overflow-hidden">
-
                 {/* Card Header */}
                 <div className="bg-amber-500 px-6 sm:px-8 py-5 sm:py-6">
                   <h2 className="text-xl sm:text-2xl font-extrabold text-white">
-                     Enquiry Form
+                    Enquiry Form
                   </h2>
                   <p className="text-amber-100 text-xs sm:text-sm mt-1">
                     Fill the details below — we'll reach out within 24 hours!
@@ -267,7 +297,6 @@ const Apply = () => {
                 </div>
 
                 <div className="px-6 sm:px-8 py-6 sm:py-8 flex flex-col gap-6">
-
                   {/* ── Name ── */}
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-1.5">
@@ -280,7 +309,9 @@ const Apply = () => {
                       onChange={handleChange}
                       placeholder="Enter Your Full Name"
                       className={`w-full border-2 rounded-xl px-4 py-3 text-sm sm:text-base outline-none transition-all focus:border-amber-400 focus:bg-amber-50 ${
-                        errors.name ? "border-red-400 bg-red-50" : "border-stone-200 bg-stone-50"
+                        errors.name
+                          ? "border-red-400 bg-red-50"
+                          : "border-stone-200 bg-stone-50"
                       }`}
                     />
                     {errors.name && (
@@ -302,17 +333,23 @@ const Apply = () => {
                         placeholder="Enter Your Mobile Number"
                         maxLength={10}
                         className={`w-full border-2 rounded-xl px-4 py-3 text-sm sm:text-base outline-none transition-all focus:border-amber-400 focus:bg-amber-50 ${
-                          errors.phone ? "border-red-400 bg-red-50" : "border-stone-200 bg-stone-50"
+                          errors.phone
+                            ? "border-red-400 bg-red-50"
+                            : "border-stone-200 bg-stone-50"
                         }`}
                       />
                       {errors.phone && (
-                        <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.phone}
+                        </p>
                       )}
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-1.5">
                         Email{" "}
-                        <span className="text-gray-400 font-normal">(Optional)</span>
+                        <span className="text-gray-400 font-normal">
+                          (Optional)
+                        </span>
                       </label>
                       <input
                         type="email"
@@ -321,11 +358,15 @@ const Apply = () => {
                         onChange={handleChange}
                         placeholder="Enter Your Email Address"
                         className={`w-full border-2 rounded-xl px-4 py-3 text-sm sm:text-base outline-none transition-all focus:border-amber-400 focus:bg-amber-50 ${
-                          errors.email ? "border-red-400 bg-red-50" : "border-stone-200 bg-stone-50"
+                          errors.email
+                            ? "border-red-400 bg-red-50"
+                            : "border-stone-200 bg-stone-50"
                         }`}
                       />
                       {errors.email && (
-                        <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.email}
+                        </p>
                       )}
                     </div>
                   </div>
@@ -333,7 +374,8 @@ const Apply = () => {
                   {/* ── Course Selection ── */}
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Interested Course <span className="text-amber-500">*</span>
+                      Interested Course{" "}
+                      <span className="text-amber-500">*</span>
                     </label>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                       {courseOptions.map((c) => (
@@ -359,7 +401,9 @@ const Apply = () => {
                       ))}
                     </div>
                     {errors.course && (
-                      <p className="text-red-500 text-xs mt-1">{errors.course}</p>
+                      <p className="text-red-500 text-xs mt-1">
+                        {errors.course}
+                      </p>
                     )}
                   </div>
 
@@ -392,7 +436,7 @@ const Apply = () => {
                   {/* ── Message ── */}
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-1.5">
-                      Your Message 
+                      Your Message
                     </label>
                     <textarea
                       name="message"
@@ -420,7 +464,9 @@ const Apply = () => {
                   {/* ── Divider ── */}
                   <div className="flex items-center gap-3">
                     <div className="flex-1 h-px bg-stone-200" />
-                    <span className="text-xs text-gray-400 font-medium">OR</span>
+                    <span className="text-xs text-gray-400 font-medium">
+                      OR
+                    </span>
                     <div className="flex-1 h-px bg-stone-200" />
                   </div>
 
@@ -442,43 +488,41 @@ const Apply = () => {
       </div>
 
       {/* ── WHY APPLY CTA BAR ── */}
-    
-        <div className="py-10 sm:py-12 px-4 sm:px-6 bg-amber-500 text-white text-center">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3">
-              Still Thinking? 
-            </h2>
-            <p className="opacity-90 text-sm sm:text-base mb-6">
-              Book a{" "}
-              <strong>FREE trial class</strong> — experience the magic of Swarna
-              Kamal Yoga before committing!
-            </p>
-            <div className="flex flex-wrap justify-center gap-3 text-sm">
-              {[
-                " No commitment required",
-                " Expert guidance",
-                " All levels welcome",
-                " Flexible batches",
-              ].map((tag, i) => (
-                <div
-                  key={i}
-                  className="bg-white/20 border border-white/30 rounded-xl px-4 py-2 font-medium hover:bg-white/30 transition-all"
-                >
-                  {tag}
-                </div>
-              ))}
-            </div>
-            <div className="mt-6">
-              <Link
-                to="/courses"
-                className="bg-white text-amber-600 font-extrabold text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-3.5 rounded-full hover:bg-amber-50 transition-all shadow-lg hover:-translate-y-0.5 transform inline-block"
+
+      <div className="py-10 sm:py-12 px-4 sm:px-6 bg-amber-500 text-white text-center">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3">
+            Still Thinking?
+          </h2>
+          <p className="opacity-90 text-sm sm:text-base mb-6">
+            Book a <strong>FREE trial class</strong> — experience the magic of
+            Swarna Kamal Yoga before committing!
+          </p>
+          <div className="flex flex-wrap justify-center gap-3 text-sm">
+            {[
+              " No commitment required",
+              " Expert guidance",
+              " All levels welcome",
+              " Flexible batches",
+            ].map((tag, i) => (
+              <div
+                key={i}
+                className="bg-white/20 border border-white/30 rounded-xl px-4 py-2 font-medium hover:bg-white/30 transition-all"
               >
-                Explore Our Courses →
-              </Link>
-            </div>
+                {tag}
+              </div>
+            ))}
+          </div>
+          <div className="mt-6">
+            <Link
+              to="/courses"
+              className="bg-white text-amber-600 font-extrabold text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-3.5 rounded-full hover:bg-amber-50 transition-all shadow-lg hover:-translate-y-0.5 transform inline-block"
+            >
+              Explore Our Courses →
+            </Link>
           </div>
         </div>
-      
+      </div>
 
       {/* ── FLOATING WHATSAPP BUTTON ── */}
       <a
@@ -490,6 +534,11 @@ const Apply = () => {
       >
         <WaIcon size={28} />
       </a>
+      {/* BOTTOM */}
+      <div className="border-t border-stone-800 mt-10 pt-4 mb-8 text-center text-xs text-stone-500">
+        © {new Date().getFullYear()} Swarna Kamal Yoga Center, Bengaluru. All
+        rights reserved.
+      </div>
     </div>
   );
 };

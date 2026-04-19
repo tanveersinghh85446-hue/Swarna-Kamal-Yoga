@@ -68,20 +68,6 @@ const courses = [
     ],
   },
   {
-    id: 4,
-    title: "Pregnancy and Postnatal",
-    slug: "pregnancy",
-    badge: "Live on Zoom",
-    icon: <FaPersonPregnant />,
-    sessions: "Live + Recorded",
-    highlights: [
-      "Prenatal Yoga",
-      "Postnatal Recovery",
-      "Breathing Techniques",
-      "Safe Asana Practice",
-    ],
-  },
-  {
     id: 5,
     title: "Hatha Yoga TTC",
     slug: "hatha-yoga",
@@ -264,6 +250,11 @@ function Courses() {
           </Link>
         </div>
       </section>
+      {/* BOTTOM */}
+      <div className="border-t border-stone-800 mt-10 pt-4 mb-8 text-center text-xs text-stone-500">
+        © {new Date().getFullYear()} Swarna Kamal Yoga Center, Bengaluru. All
+        rights reserved.
+      </div>
     </div>
   );
 }

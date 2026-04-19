@@ -28,10 +28,10 @@ export default function Team() {
                   PROFILE SUMMARY
                 </h2>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  I believe that Yoga is a bridge between physical effort and the
-                  stillness of the soul. My teaching style is rooted in functional
-                  alignment and flow, focusing on physical resilience and mental
-                  clarity.
+                  I believe that Yoga is a bridge between physical effort and
+                  the stillness of the soul. My teaching style is rooted in
+                  functional alignment and flow, focusing on physical resilience
+                  and mental clarity.
                 </p>
               </div>
 
@@ -41,24 +41,38 @@ export default function Team() {
                   EDUCATION & YOGA CREDENTIALS
                 </h2>
                 <ul className="text-gray-700 text-sm space-y-1.5">
-                  <li>• M.Com in International Banking & Financial Management</li>
-                  <li>• Certified Yoga Teacher Training (Yoga Alliance – RYT 200)</li>
+                  <li>
+                    • M.Com in International Banking & Financial Management
+                  </li>
+                  <li>
+                    • Certified Yoga Teacher Training (Yoga Alliance – RYT 200)
+                  </li>
                   <li>• Certified Yoga Therapist</li>
                   <li>• Yin Yoga & Face Yoga</li>
-                  <li>• Certified in Pre and Postnatal Yoga (WYORS / Ekam Yoga and Wellness Institute)</li>
-                  <li>• Certified Patanjali Assistant Yoga Teacher (Yoga Samiti)</li>
+                  <li>
+                    • Certified in Pre and Postnatal Yoga (WYORS / Ekam Yoga and
+                    Wellness Institute)
+                  </li>
+                  <li>
+                    • Certified Patanjali Assistant Yoga Teacher (Yoga Samiti)
+                  </li>
                   <li>
                     • Completed and certified in "Shree Radhaji Aasham" - Asana,
-                    Props and Alignment Specialist course (50 hrs.) from Yoga Alliance
+                    Props and Alignment Specialist course (50 hrs.) from Yoga
+                    Alliance
                   </li>
-                  <li>• Trained in Fitness Program and Pilates and teaches as well</li>
+                  <li>
+                    • Trained in Fitness Program and Pilates and teaches as well
+                  </li>
                   <li>• Teaches Breathe work, Relaxation & Meditation</li>
                 </ul>
               </div>
 
               {/* PHILOSOPHY */}
               <div className="mb-6">
-                <h2 className="text-red-700 font-bold text-lg mb-3">PHILOSOPHY</h2>
+                <h2 className="text-red-700 font-bold text-lg mb-3">
+                  PHILOSOPHY
+                </h2>
                 <p className="text-gray-700 text-sm leading-relaxed">
                   Yoga is impact and ability to sense the internal state of the
                   body. It's more to remember who we are beneath knowing self
@@ -75,13 +89,17 @@ export default function Team() {
                   <li>• A blend of fluid movement</li>
                   <li>• Intentional Breathe</li>
                   <li>• Radical Yoga act of slowing down</li>
-                  <li>• Power and Grace in a steady warrior to pose or quiet fold</li>
+                  <li>
+                    • Power and Grace in a steady warrior to pose or quiet fold
+                  </li>
                   <li>• Moving to remember who we are beneath</li>
                   <li>• Command and Control</li>
                   <li>• Contemporary fitness setting</li>
                   <li>• Style to one that prioritizes</li>
                   <li>• Self awareness</li>
-                  <li>• Impact and ability to sense the internal state of the body</li>
+                  <li>
+                    • Impact and ability to sense the internal state of the body
+                  </li>
                   <li>• Aesthetic alignment and adaptability</li>
                   <li>• Shape the pose to fit the body</li>
                   <li>• Validation on the power of the pause</li>
@@ -132,9 +150,9 @@ export default function Team() {
                   PROFILE SUMMARY
                 </h2>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  Making yoga simple, accessible, and transformative. A dedicated
-                  instructor with strong academic and scientific foundation blended
-                  with traditional yoga wisdom.
+                  Making yoga simple, accessible, and transformative. A
+                  dedicated instructor with strong academic and scientific
+                  foundation blended with traditional yoga wisdom.
                 </p>
               </div>
 
@@ -159,10 +177,13 @@ export default function Team() {
 
               {/* PHILOSOPHY */}
               <div className="mb-6">
-                <h2 className="text-red-700 font-bold text-lg mb-3">PHILOSOPHY</h2>
+                <h2 className="text-red-700 font-bold text-lg mb-3">
+                  PHILOSOPHY
+                </h2>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  "Yoga is not about how flexible you are — it is about how present
-                  you can be. My mission is to simplify yoga for every student."
+                  "Yoga is not about how flexible you are — it is about how
+                  present you can be. My mission is to simplify yoga for every
+                  student."
                 </p>
               </div>
 
@@ -172,9 +193,9 @@ export default function Team() {
                   SPECIALIZATIONS
                 </h2>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  Women's wellness, hormonal balance, menopause support, breathwork,
-                  therapeutic yoga, holistic health, and root-based traditional
-                  practice.
+                  Women's wellness, hormonal balance, menopause support,
+                  breathwork, therapeutic yoga, holistic health, and root-based
+                  traditional practice.
                 </p>
               </div>
 
@@ -184,9 +205,18 @@ export default function Team() {
                   STRENGTHS & GROWTH
                 </h2>
                 <div className="text-gray-700 text-sm space-y-1 ">
-                  <p className="flex"><TiTick className="text-2xl text-green-500"/> 500+ Students Trained</p>
-                  <p className="flex"><TiTick className="text-2xl text-green-500"/> 4+ Years Teaching Experience</p>
-                  <p className="flex"><TiTick className="text-2xl text-green-500"/> Dual Academic Background (Science + Education)</p>
+                  <p className="flex">
+                    <TiTick className="text-2xl text-green-500" /> 500+ Students
+                    Trained
+                  </p>
+                  <p className="flex">
+                    <TiTick className="text-2xl text-green-500" /> 4+ Years
+                    Teaching Experience
+                  </p>
+                  <p className="flex">
+                    <TiTick className="text-2xl text-green-500" /> Dual Academic
+                    Background (Science + Education)
+                  </p>
                 </div>
               </div>
             </div>
@@ -223,9 +253,9 @@ export default function Team() {
                   PROFILE SUMMARY
                 </h2>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  Making yoga simple, accessible, and transformative. A dedicated
-                  instructor with strong academic and scientific foundation blended
-                  with traditional yoga wisdom.
+                  Making yoga simple, accessible, and transformative. A
+                  dedicated instructor with strong academic and scientific
+                  foundation blended with traditional yoga wisdom.
                 </p>
               </div>
 
@@ -248,10 +278,13 @@ export default function Team() {
 
               {/* PHILOSOPHY */}
               <div className="mb-6">
-                <h2 className="text-red-700 font-bold text-lg mb-3">PHILOSOPHY</h2>
+                <h2 className="text-red-700 font-bold text-lg mb-3">
+                  PHILOSOPHY
+                </h2>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  "Yoga is not about how flexible you are — it is about how present
-                  you can be. My mission is to simplify yoga for every student."
+                  "Yoga is not about how flexible you are — it is about how
+                  present you can be. My mission is to simplify yoga for every
+                  student."
                 </p>
               </div>
 
@@ -261,9 +294,9 @@ export default function Team() {
                   SPECIALIZATIONS
                 </h2>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  Women's wellness, hormonal balance, menopause support, breathwork,
-                  therapeutic yoga, holistic health, and root-based traditional
-                  practice.
+                  Women's wellness, hormonal balance, menopause support,
+                  breathwork, therapeutic yoga, holistic health, and root-based
+                  traditional practice.
                 </p>
               </div>
 
@@ -273,8 +306,14 @@ export default function Team() {
                   STRENGTHS & GROWTH
                 </h2>
                 <div className="text-gray-700 text-sm space-y-1">
-                  <p className="flex"><TiTick className="text-2xl text-green-400"/> 10+ Years Teaching Experience</p>
-                  <p className="flex"><TiTick className="text-2xl text-green-400"/> M.Sc (Nutrition & Dietetics)</p>
+                  <p className="flex">
+                    <TiTick className="text-2xl text-green-400" /> 10+ Years
+                    Teaching Experience
+                  </p>
+                  <p className="flex">
+                    <TiTick className="text-2xl text-green-400" /> M.Sc
+                    (Nutrition & Dietetics)
+                  </p>
                 </div>
               </div>
             </div>
@@ -297,6 +336,11 @@ export default function Team() {
             </div>
           </div>
         </div>
+      </div>
+      {/* BOTTOM */}
+      <div className="border-t border-stone-800 mt-10 pt-4 mb-8 text-center text-xs text-stone-500">
+        © {new Date().getFullYear()} Swarna Kamal Yoga Center, Bengaluru. All
+        rights reserved.
       </div>
     </div>
   );

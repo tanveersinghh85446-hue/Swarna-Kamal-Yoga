@@ -9,19 +9,25 @@ function BlogDetail() {
     return (
       <div className="min-h-screen bg-white flex flex-col items-center justify-center text-center px-4">
         <h2 className="text-3xl font-extrabold mb-3">Blog Not Found</h2>
-        <p className="text-gray-400 mb-6 text-sm">The article you're looking for doesn't exist.</p>
-        <Link to="/blog" className="bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-gray-800 transition-all text-sm">
+        <p className="text-gray-400 mb-6 text-sm">
+          The article you're looking for doesn't exist.
+        </p>
+        <Link
+          to="/blog"
+          className="bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-gray-800 transition-all text-sm"
+        >
           ← Back to Blog
         </Link>
       </div>
     );
   }
 
-  const related = blogs.filter((b) => b.category === blog.category && b.slug !== blog.slug).slice(0, 2);
+  const related = blogs
+    .filter((b) => b.category === blog.category && b.slug !== blog.slug)
+    .slice(0, 2);
 
   return (
     <div className="bg-white text-black min-h-screen">
-
       {/* ── Hero Image ── */}
       <div className="w-full h-64 sm:h-80 md:h-96 overflow-hidden relative">
         <img
@@ -33,7 +39,10 @@ function BlogDetail() {
         {/* <div className="absolute inset-0 bg-black/50" /> */}
         {/* Text on image */}
         <div className="absolute inset-0 flex flex-col justify-end px-4 sm:px-8 pb-8 sm:pb-12 max-w-4xl mx-auto left-0 right-0">
-          <Link to="/blog" className="text-gray-300 text-xs sm:text-sm hover:text-white mb-4 inline-block transition-colors w-fit">
+          <Link
+            to="/blog"
+            className="text-gray-300 text-xs sm:text-sm hover:text-white mb-4 inline-block transition-colors w-fit"
+          >
             ← Back to Blog
           </Link>
           <div className="flex flex-wrap items-center gap-3 mb-3">
@@ -51,7 +60,6 @@ function BlogDetail() {
 
       {/* ── Article Body ── */}
       <article className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-
         {/* Intro */}
         <p className="text-lg sm:text-xl text-gray-600 leading-relaxed border-l-4 border-black pl-5 mb-12 font-light italic">
           {blog.intro}
@@ -79,18 +87,26 @@ function BlogDetail() {
 
         {/* CTA Box */}
         <div className="bg-black text-white rounded-2xl p-7 sm:p-10 text-center">
-          <p className="text-xs uppercase tracking-widest text-gray-400 mb-2">Ready to Practice?</p>
-          <h3 className="text-2xl sm:text-3xl font-extrabold mb-3">Join Swarna Kamal Yoga</h3>
+          <p className="text-xs uppercase tracking-widest text-gray-400 mb-2">
+            Ready to Practice?
+          </p>
+          <h3 className="text-2xl sm:text-3xl font-extrabold mb-3">
+            Join Swarna Kamal Yoga
+          </h3>
           <p className="text-gray-400 text-sm mb-7 max-w-sm mx-auto">
             Live certified yoga courses on Zoom — taught by expert trainers.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link to="/courses"
-              className="bg-white text-black px-6 py-2.5 rounded-full font-bold hover:bg-gray-200 transition-all text-sm">
+            <Link
+              to="/courses"
+              className="bg-white text-black px-6 py-2.5 rounded-full font-bold hover:bg-gray-200 transition-all text-sm"
+            >
               View Courses
             </Link>
-            <Link to="/apply"
-              className="border-2 border-white text-white px-6 py-2.5 rounded-full font-bold hover:bg-white hover:text-black transition-all text-sm">
+            <Link
+              to="/apply"
+              className="border-2 border-white text-white px-6 py-2.5 rounded-full font-bold hover:bg-white hover:text-black transition-all text-sm"
+            >
               Apply Now
             </Link>
           </div>
@@ -100,7 +116,9 @@ function BlogDetail() {
       {/* ── Related Articles ── */}
       {related.length > 0 && (
         <section className="max-w-3xl mx-auto px-4 sm:px-6 pb-14 sm:pb-20">
-          <p className="text-xs uppercase tracking-widest text-gray-400 mb-6 font-semibold">Related Articles</p>
+          <p className="text-xs uppercase tracking-widest text-gray-400 mb-6 font-semibold">
+            Related Articles
+          </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
             {related.map((b) => (
               <Link
@@ -122,7 +140,9 @@ function BlogDetail() {
                   <h4 className="font-extrabold text-sm sm:text-base mt-3 mb-1 leading-snug group-hover:underline underline-offset-2">
                     {b.title}
                   </h4>
-                  <p className="text-gray-500 text-xs line-clamp-2">{b.intro}</p>
+                  <p className="text-gray-500 text-xs line-clamp-2">
+                    {b.intro}
+                  </p>
                 </div>
               </Link>
             ))}
@@ -130,6 +150,11 @@ function BlogDetail() {
         </section>
       )}
 
+       {/* BOTTOM */}
+      <div className="border-t border-stone-800 mt-10 pt-4 mb-8 text-center text-xs text-stone-500">
+        © {new Date().getFullYear()} Swarna Kamal Yoga Center, Bengaluru. All
+        rights reserved.
+      </div>
     </div>
   );
 }

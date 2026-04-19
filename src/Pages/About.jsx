@@ -92,9 +92,7 @@ export default function About() {
         </div>
       </div>
 
-      <div
-        className="py-20 px-4 bg-cover bg-center bg-no-repeat"
-      >
+      <div className="py-20 px-4 bg-cover bg-center bg-no-repeat">
         {/* ── Image Section ── */}
         <div ref={imageRef} className="relative w-full max-w-4xl mx-auto group">
           <img
@@ -197,6 +195,11 @@ export default function About() {
           animation: marquee 18s linear infinite;
         }
       `}</style>
+       {/* BOTTOM */}
+      <div className="border-t border-stone-800 mt-10 pt-4 mb-8 text-center text-xs text-stone-500">
+        © {new Date().getFullYear()} Swarna Kamal Yoga Center, Bengaluru. All
+        rights reserved.
+      </div>
     </div>
   );
 }

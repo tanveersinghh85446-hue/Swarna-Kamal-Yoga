@@ -14,7 +14,6 @@ import Testimonials from "./Pages/Testimonials";
 import PranayamaCourse from "./Pages/CourseDetail/PranayamaCourse";
 import WeightLossCourse from "./Pages/CourseDetail/WeightLossCourse";
 import WomensWellness from "./Pages/CourseDetail/WomensWellness";
-import Pregnancy from "./Pages/CourseDetail/Pregnancy";
 import HathaYoga from "./Pages/CourseDetail/HathaYoga";
 import AshtangaVinyasa from "./Pages/CourseDetail/AshtangaVinyasa";
 import AsanaAnatomy from "./Pages/CourseDetail/AsanaAnatomy";
@@ -55,7 +54,6 @@ function App() {
             <Route path="/courses/pranayama" element={<PranayamaCourse />} />
             <Route path="/courses/weight-loss" element={<WeightLossCourse />} />
             <Route path="/courses/womens-wellness"element={<WomensWellness />}/>
-            <Route path="/courses/pregnancy" element={<Pregnancy />} />
             <Route path="/courses/hatha-yoga" element={<HathaYoga />} />
             <Route path="/courses/ashtanga" element={<AshtangaVinyasa />} />
             <Route path="/courses/asana-anatomy" element={<AsanaAnatomy />} />

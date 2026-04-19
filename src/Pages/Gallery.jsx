@@ -334,6 +334,11 @@ export default function Gallery() {
       >
         <WaIcon />
       </a>
+      {/* BOTTOM */}
+      <div className="border-t border-stone-800 mt-10 pt-4 mb-8 text-center text-xs text-stone-500">
+        © {new Date().getFullYear()} Swarna Kamal Yoga Center, Bengaluru. All
+        rights reserved.
+      </div>
     </div>
   );
 }
