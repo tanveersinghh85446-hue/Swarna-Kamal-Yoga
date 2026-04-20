@@ -364,34 +364,32 @@ export default function Team() {
           </div>
         </div>
 
-        {/*INSTRUCTOR - SANGEETA SIL*/}
+        {/* INSTRUCTOR - SANGEETA SIL */}
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="flex flex-col md:flex-row">
-            {/* LEFT CONTENT */}
-            <div className="w-full md:w-2/3 p-8 md:p-10">
-              {/* RIGHT - PHOTO & NAME */}
-              <div className="w-full md:w-1/3 bg-linear-to-b from-red-50 to-white p-8 flex flex-col items-center justify-start">
-                <div className="w-48 h-48 rounded-lg overflow-hidden mb-4 shadow-lg">
-                  <img
-                    src="/Sangeeta Sil.jpeg"
-                    alt="Sangeeta Sil"
-                    className="w-full h-full"
-                  />
-                </div>
-                <h3 className="text-red-700 font-bold text-2xl text-center">
-                  SANGEETA SIL
-                </h3>
-                <p className="text-red-600 font-semibold text-center mt-1">
-                  YOGA & FITNESS INSTRUCTOR
-                </p>
+            {/* LEFT - PHOTO & NAME */}
+            <div className="w-full md:w-1/3 bg-linear-to-b from-red-50 to-white p-8 flex flex-col items-center justify-start">
+              <div className="w-48 h-48 rounded-lg overflow-hidden mb-4 shadow-lg">
+                <img
+                  src="/Sangeeta Sil.jpeg"
+                  alt="Sangeeta Sil"
+                  className="w-full h-full"
+                />
               </div>
+              <h3 className="text-red-700 font-bold text-2xl text-center">
+                SANGEETA SIL
+              </h3>
+              <p className="text-red-600 font-semibold text-center mt-1">
+                YOGA & FITNESS INSTRUCTOR
+              </p>
+            </div>
+
+            {/* RIGHT CONTENT */}
+            <div className="w-full md:w-2/3 p-8 md:p-10">
               {/* PROFILE SUMMARY */}
               <div className="mb-6">
                 <h2 className="text-red-700 font-bold text-lg mb-3">
-                  SANGEETA SIL
-                </h2>
-                <h2 className="text-red-700 font-bold text-lg mb-3">
-                  Yoga and Fitness Instructor
+                  PROFILE SUMMARY
                 </h2>
                 <p className="text-gray-700 text-sm leading-relaxed">
                   Dedicated to exploring and mastering various yoga styles to
@@ -401,24 +399,6 @@ export default function Team() {
                   classes by incorporating innovative teaching methods with
                   proper breathing techniques and correct alignment.
                 </p>
-              </div>
-
-              {/* HIGHLIGHTS */}
-              <div className="mb-6 flex flex-wrap gap-4">
-                <li className="text-gray-700 text-sm">
-                  {" "}
-                  1000+ Students Trained
-                </li>{" "}
-                <br />
-                <li className="text-gray-700 text-sm">
-                  {" "}
-                  13 years of Teaching Experience
-                </li>{" "}
-                <br />
-                <li className="text-gray-700 text-sm">
-                  {" "}
-                  Dual Academic Background (Science + Physical Education)
-                </li>
               </div>
 
               {/* EDUCATION & CREDENTIALS */}
@@ -485,6 +465,27 @@ export default function Team() {
                   Circuit Training, Pilates, Therapeutic practices for
                   Rehabilitation, Weight loss programs
                 </p>
+              </div>
+
+              {/* STRENGTHS & GROWTH */}
+              <div>
+                <h2 className="text-red-700 font-bold text-lg mb-3">
+                  STRENGTHS & GROWTH
+                </h2>
+                <div className="text-gray-700 text-sm space-y-1">
+                  <p className="flex">
+                    <TiTick className="text-2xl text-green-400" /> 1000+
+                    Students Trained
+                  </p>
+                  <p className="flex">
+                    <TiTick className="text-2xl text-green-400" /> 13 Years
+                    Teaching Experience
+                  </p>
+                  <p className="flex">
+                    <TiTick className="text-2xl text-green-400" /> Dual Academic
+                    Background (Science + Physical Education)
+                  </p>
+                </div>
               </div>
             </div>
           </div>
