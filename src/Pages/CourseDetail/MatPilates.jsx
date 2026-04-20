@@ -31,14 +31,14 @@ export default function PilatesCourse() {
         prepare the body.
       </p>
       <ul className="list-disc pl-6 mb-6 text-gray-800 space-y-1">
-        <li>Mountain Pose &amp; Variations (6)</li>
+        <li>Mountain Pose &a Variations (6)</li>
         <li>Shoulder Rolls</li>
         <li>Side Bends</li>
         <li>Arm Circles</li>
         <li>Flop Downs</li>
         <li>Chair Pose (Variations)</li>
         <li>Lunges</li>
-        <li>Forward Fold &amp; Ragdoll</li>
+        <li>Forward Fold & Ragdoll</li>
         <li>Downward Facing Dog</li>
         <li>Windshield Wipers</li>
         <li>Toe Touches</li>
@@ -46,9 +46,9 @@ export default function PilatesCourse() {
         <li>Wide Leg Forward Bend</li>
         <li>Side Leg Kicks</li>
         <li>Chest Opener</li>
-        <li>Plank &amp; Plank Push-Ups</li>
+        <li>Plank & Plank Push-Ups</li>
         <li>Neck Stretch</li>
-        <li>Hip &amp; Pelvic Rotations</li>
+        <li>Hip & Pelvic Rotations</li>
       </ul>
 
       {/* 2. Classical Pilates */}
@@ -77,7 +77,7 @@ export default function PilatesCourse() {
       </ul>
 
       <p className="font-semibold text-gray-800 mb-1">
-        Spine &amp; Balance Work
+        Spine & Balance Work
       </p>
       <ul className="list-disc pl-6 mb-4 text-gray-800 space-y-1">
         <li>Spine Stretch (2 Levels)</li>
@@ -88,16 +88,16 @@ export default function PilatesCourse() {
       </ul>
 
       <p className="font-semibold text-gray-800 mb-1">
-        Back Extension &amp; Strength
+        Back Extension & Strength
       </p>
       <ul className="list-disc pl-6 mb-4 text-gray-800 space-y-1">
         <li>Swan Dive (2 Levels)</li>
-        <li>Single &amp; Double Leg Kicks</li>
+        <li>Single & Double Leg Kicks</li>
         <li>Swimming</li>
       </ul>
 
       <p className="font-semibold text-gray-800 mb-1">
-        Advanced Core &amp; Control
+        Advanced Core & Control
       </p>
       <ul className="list-disc pl-6 mb-4 text-gray-800 space-y-1">
         <li>Scissors</li>
@@ -109,13 +109,13 @@ export default function PilatesCourse() {
       </ul>
 
       <p className="font-semibold text-gray-800 mb-1">
-        Dynamic &amp; Functional Strength
+        Dynamic & Functional Strength
       </p>
       <ul className="list-disc pl-6 mb-6 text-gray-800 space-y-1">
         <li>Side Kicks</li>
-        <li>Leg Pull Front &amp; Back</li>
+        <li>Leg Pull Front & Back</li>
         <li>Boomerang</li>
-        <li>Seal &amp; Crab</li>
+        <li>Seal & Crab</li>
         <li>Rocking</li>
         <li>Control Balance</li>
         <li>Pilates Push-Ups (3 Levels)</li>
@@ -128,8 +128,8 @@ export default function PilatesCourse() {
       </p>
       <ul className="list-disc pl-6 mb-6 text-gray-800 space-y-1">
         <li>Tendon Stretch Footwork</li>
-        <li>Back Stroke &amp; Coordination</li>
-        <li>Seated Sway Back &amp; Twists</li>
+        <li>Back Stroke & Coordination</li>
+        <li>Seated Sway Back & Twists</li>
         <li>Tree Crunch Variations</li>
         <li>Elephant Planks</li>
         <li>Down Dog Leg Lifts</li>
@@ -138,15 +138,15 @@ export default function PilatesCourse() {
         <li>Chest Expansion</li>
         <li>Camel Pulse</li>
         <li>Pulling Straps</li>
-        <li>Snake &amp; Star</li>
+        <li>Snake & Star</li>
         <li>Side Plank Thread the Needle</li>
         <li>Rowing Series (1–4 Variations)</li>
-        <li>V-Up Teaser &amp; Superman Teaser</li>
+        <li>V-Up Teaser & Superman Teaser</li>
       </ul>
 
       {/* 4. Power Pilates */}
       <h3 className="font-bold mb-2">
-        4. Power Pilates (Advanced Strength &amp; Conditioning)
+        4. Power Pilates (Advanced Strength & Conditioning)
       </h3>
       <p className="text-gray-800 mb-2">
         High-intensity Pilates for strength, endurance, and fat burn:
@@ -164,7 +164,7 @@ export default function PilatesCourse() {
         <li>Pendulum with Reach</li>
         <li>Reverse Swimming</li>
         <li>Bridge to Boat</li>
-        <li>Spiderman &amp; Superman Burpees</li>
+        <li>Spiderman & Superman Burpees</li>
       </ul>
 
       <p className="font-semibold text-gray-800 mb-1">Side Leg Series (1–6)</p>
@@ -178,14 +178,14 @@ export default function PilatesCourse() {
       </ul>
 
       {/* 5. Cool Down */}
-      <h3 className="font-bold mb-2">5. Cool Down &amp; Stretching</h3>
+      <h3 className="font-bold mb-2">5. Cool Down & Stretching</h3>
       <p className="text-gray-800 mb-2">
         Relaxation and flexibility to restore the body:
       </p>
       <ul className="list-disc pl-6 mb-6 text-gray-800 space-y-1">
         <li>Child's Pose</li>
-        <li>Cobra &amp; Upward Facing Dog</li>
-        <li>Pigeon &amp; Figure Four</li>
+        <li>Cobra & Upward Facing Dog</li>
+        <li>Pigeon & Figure Four</li>
         <li>Scorpion Stretch</li>
         <li>Pyramid Pose</li>
         <li>Butterfly</li>
@@ -201,8 +201,8 @@ export default function PilatesCourse() {
         <li>20 Pilates Flow Sequences</li>
         <li>Yogalates (30 Sets)</li>
         <li>Shiva Sequences</li>
-        <li>Earth Sequences (Level 1 &amp; 2)</li>
-        <li>Ring &amp; Ball Pilates Training</li>
+        <li>Earth Sequences (Level 1 & 2)</li>
+        <li>Ring & Ball Pilates Training</li>
       </ul>
 
       <hr className="border-gray-200 my-7" />
@@ -211,8 +211,8 @@ export default function PilatesCourse() {
       <h2 className="text-lg font-bold underline mb-3">Who Can Join?</h2>
       <ul className="list-disc pl-6 mb-2 text-gray-800 space-y-1">
         <li>Beginners to Advanced Practitioners</li>
-        <li>Yoga Teachers &amp; Fitness Trainers</li>
-        <li>Rehabilitation &amp; Wellness Enthusiasts</li>
+        <li>Yoga Teachers & Fitness Trainers</li>
+        <li>Rehabilitation & Wellness Enthusiasts</li>
         <li>Anyone looking to improve posture, strength, and flexibility</li>
       </ul>
 
@@ -221,9 +221,9 @@ export default function PilatesCourse() {
       {/* Course Benefits */}
       <h2 className="text-lg font-bold underline mb-3">Course Benefits</h2>
       <ul className="list-disc pl-6 mb-2 text-gray-800 space-y-1">
-        <li>Strong Core &amp; Better Posture</li>
-        <li>Improved Flexibility &amp; Mobility</li>
-        <li>Injury Prevention &amp; Rehabilitation</li>
+        <li>Strong Core & Better Posture</li>
+        <li>Improved Flexibility & Mobility</li>
+        <li>Injury Prevention & Rehabilitation</li>
         <li>Enhanced Mind-Body Connection</li>
         <li>Professional Teaching Skills</li>
       </ul>
@@ -238,7 +238,7 @@ export default function PilatesCourse() {
         <li>Blended approach of Yoga + Pilates</li>
         <li>Step-by-step progression (Beginner to Advanced)</li>
         <li>Practical teaching methodology</li>
-        <li>Suitable for both personal practice &amp; professional career</li>
+        <li>Suitable for both personal practice & professional career</li>
       </ul>
     </div>
   );

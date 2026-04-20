@@ -16,10 +16,10 @@ export default function YinYogaCourse() {
       <ul className="list-disc pl-6 mb-6 text-gray-800 space-y-1">
         <li>Meaning of Yin Yoga</li>
         <li>What is Yin Yoga</li>
-        <li>Origin &amp; History of Yin Yoga</li>
+        <li>Origin & History of Yin Yoga</li>
         <li>Key Characteristics of Yin Yoga</li>
         <li>Breathing Patterns</li>
-        <li>Understanding the Meaning of Yin &amp; Yang in Yoga</li>
+        <li>Understanding the Meaning of Yin & Yang in Yoga</li>
       </ul>
 
       {/* Yin & Yang Tissues */}
@@ -57,7 +57,7 @@ export default function YinYogaCourse() {
         <li>Enhances recovery and reduces stiffness</li>
       </ul>
 
-      <h3 className="font-bold mb-2">Mental &amp; Emotional Benefits</h3>
+      <h3 className="font-bold mb-2">Mental & Emotional Benefits</h3>
       <ul className="list-disc pl-6 mb-4 text-gray-800 space-y-1">
         <li>Reduces stress and anxiety</li>
         <li>Cultivates mindfulness and inner stillness</li>
@@ -106,7 +106,7 @@ export default function YinYogaCourse() {
         <li>Half Saddle</li>
         <li>Shoelace</li>
         <li>Snail</li>
-        <li>Sphinx &amp; Seal</li>
+        <li>Sphinx & Seal</li>
         <li>Square</li>
         <li>Squat</li>
         <li>Straddle (Dragonfly)</li>
@@ -123,7 +123,7 @@ export default function YinYogaCourse() {
       <ul className="list-disc pl-6 mb-6 text-gray-800 space-y-1">
         <li>Cat's Breath</li>
         <li>Crocodile</li>
-        <li>Down Dog &amp; All Its Variations</li>
+        <li>Down Dog & All Its Variations</li>
         <li>Fish</li>
         <li>Hinge</li>
         <li>Table Top or Slide</li>
@@ -138,17 +138,17 @@ export default function YinYogaCourse() {
         <li>Neck and Upper Body</li>
         <li>Spine</li>
         <li>Hips</li>
-        <li>Shoulders, Arms &amp; Wrists, Legs</li>
-        <li>Liver &amp; Gall Bladder</li>
+        <li>Shoulders, Arms & Wrists, Legs</li>
+        <li>Liver & Gall Bladder</li>
         <li>Menstrual Cramps</li>
-        <li>Kidney &amp; Urinary Bladder Meridian Lines</li>
-        <li>Stomach &amp; Spleen</li>
+        <li>Kidney & Urinary Bladder Meridian Lines</li>
+        <li>Stomach & Spleen</li>
         <li>Whole Body</li>
         <li>Wall Yin</li>
         <li>Lower Back Disorders</li>
         <li>Postnatal Yin Yoga</li>
         <li>Stressing Our Tissue</li>
-        <li>Hip &amp; Knee Issues</li>
+        <li>Hip & Knee Issues</li>
       </ul>
 
       <hr className="border-gray-200 my-7" />

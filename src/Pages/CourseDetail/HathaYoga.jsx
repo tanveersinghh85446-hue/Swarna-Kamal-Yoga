@@ -11,7 +11,8 @@ const messages = [
 
 function HathaYoga() {
   const [msgIndex, setMsgIndex] = useState(0);
-  const [dots, setDots]         = useState("");
+  const [dots, setDots] = useState("");
+  const [timeLeft, setTimeLeft] = useState("");
 
   // Cycle through messages
   useEffect(() => {
@@ -27,6 +28,43 @@ function HathaYoga() {
       setDots((prev) => (prev.length >= 3 ? "" : prev + "."));
     }, 400);
     return () => clearInterval(t);
+  }, []);
+
+  // 24 Hour Timer
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      // Get current time
+      const now = new Date();
+      
+      // Get midnight (start of today)
+      const midnight = new Date();
+      midnight.setHours(0, 0, 0, 0);
+      
+      // Calculate next midnight (24 hours from midnight)
+      const nextMidnight = new Date(midnight);
+      nextMidnight.setDate(nextMidnight.getDate() + 1);
+      
+      // Time left in ms
+      const diff = nextMidnight - now;
+      
+      if (diff <= 0) {
+        return "00:00:00";
+      }
+      
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      
+      return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+    };
+
+    setTimeLeft(calculateTimeLeft());
+    
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+    
+    return () => clearInterval(timer);
   }, []);
 
   return (
@@ -137,8 +175,8 @@ function HathaYoga() {
       </div>
 
       {/* ── Text ── */}
-      <p className="text-xs uppercase tracking-[0.4em] text-gray-400 mb-3"> HathaYoga Page Under Construction</p>
-      <h1 className="text-4xl sm:text-5xl font-extrabold text-black mb-4"> HathaYoga Page Coming Soon</h1>
+      <p className="text-xs uppercase tracking-[0.4em] text-gray-400 mb-3">Blog Page Under Construction</p>
+      <h1 className="text-4xl sm:text-5xl font-extrabold text-black mb-4">Our Blog Page Coming Soon</h1>
 
       {/* Polite message */}
       <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-md mx-auto mb-3">
@@ -147,6 +185,15 @@ function HathaYoga() {
       <p className="text-gray-400 text-sm max-w-sm mx-auto mb-8">
         Thank you for your patience and support. We appreciate you visiting Swarna Kamal Yoga! 🙏
       </p>
+
+      {/* 24 Hour Timer */}
+      <div className="mb-8  px-8 py-6 max-w-sm">
+        <p className="text-xs uppercase tracking-widest text-black font-bold mb-3">Time until reset</p>
+        <div className="font-mono text-5xl font-extrabold text-black tracking-tight">
+          {timeLeft || "00:00:00"}
+        </div>
+        <p className="text-xs text-black mt-3">Resets daily at midnight</p>
+      </div>
 
       {/* Animated status */}
       <div className="flex items-center gap-3 mb-8 bg-gray-50 border border-gray-200 rounded-full px-5 py-2.5">
