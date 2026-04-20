@@ -223,7 +223,7 @@ function Lightbox({ images, index, onClose }) {
       </div>
 
       {/* Dot indicators */}
-      <div className="absolute bottom-12 left-0 right-0 flex justify-center gap-1.5">
+      {/* <div className="absolute bottom-12 left-0 right-0 flex justify-center gap-1.5">
         {images.map((_, i) => (
           <button
             key={i}
@@ -239,7 +239,7 @@ function Lightbox({ images, index, onClose }) {
             }}
           />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
