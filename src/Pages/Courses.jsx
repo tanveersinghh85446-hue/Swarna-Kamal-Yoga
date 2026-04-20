@@ -29,7 +29,6 @@ const courses = [
     id: 1,
     title: "Pranayama Mudra Meditations Certificate Course",
     slug: "pranayama",
-    badge: "YACEP Certified",
     icon: <FaOm />,
     sessions: "Live + Recorded",
     highlights: [
@@ -43,7 +42,6 @@ const courses = [
     id: 2,
     title: "Weight Loss Coach Certification",
     slug: "weight-loss",
-    badge: "June 4th • 7 PM IST",
     icon: <GiWeightLiftingUp />,
     sessions: "Live on Zoom",
     highlights: [
@@ -57,7 +55,6 @@ const courses = [
     id: 3,
     title: "Women's Wellness Coach",
     slug: "womens-wellness",
-    badge: "June 4th • 12 PM IST",
     icon: <GiFlowerEmblem />,
     sessions: "40 Sessions • ₹9000",
     highlights: [
@@ -71,7 +68,6 @@ const courses = [
     id: 5,
     title: "Hatha Yoga TTC",
     slug: "hatha-yoga",
-    badge: "Yoga Alliance",
     icon: <GiMeditation />,
     sessions: "Live + Recorded",
     highlights: ["Asanas", "Pranayama", "Teaching", "Anatomy"],
@@ -80,7 +76,6 @@ const courses = [
     id: 6,
     title: "Ashtanga Vinyasa TTC",
     slug: "ashtanga",
-    badge: "Yoga Alliance",
     icon: <SiLoop />,
     sessions: "Live + Recorded",
     highlights: ["Primary Series", "Flow", "Bandhas", "Adjustments"],
@@ -89,7 +84,6 @@ const courses = [
     id: 7,
     title: "Asana Anatomy",
     slug: "asana-anatomy",
-    badge: "Certificate",
     icon: <PiBoneThin />,
     sessions: "Live + Recorded",
     highlights: ["Muscles", "Alignment", "Injury", "Safety"],
@@ -98,7 +92,6 @@ const courses = [
     id: 8,
     title: "Face Yoga",
     slug: "face-yoga",
-    badge: "Certificate",
     icon: <RiShiningFill />,
     sessions: "Live + Recorded",
     highlights: ["Glow", "Anti-Aging", "Acupressure", "Routine"],
@@ -107,7 +100,6 @@ const courses = [
     id: 9,
     title: "Nutrition Course",
     slug: "nutrition",
-    badge: "Certificate",
     icon: <FaNutritionix />,
     sessions: "Live + Recorded",
     highlights: ["Diet", "Meals", "Water", "Balance"],
@@ -116,7 +108,6 @@ const courses = [
     id: 10,
     title: "Power Yoga",
     slug: "power-yoga",
-    badge: "Certificate",
     icon: <IoIosFlash />,
     sessions: "Live + Recorded",
     highlights: ["Strength", "Core", "Flow", "Energy"],
@@ -125,7 +116,6 @@ const courses = [
     id: 11,
     title: "Yin Yoga TTC",
     slug: "yin-yoga",
-    badge: "Yoga Alliance",
     icon: <IoMoon />,
     sessions: "Live + Recorded",
     highlights: ["Yin", "Fascia", "Meditation", "Teaching"],
@@ -134,7 +124,6 @@ const courses = [
     id: 12,
     title: "MAT Pilates",
     slug: "mat-pilates",
-    badge: "Certificate",
     icon: <GiSportMedal />,
     sessions: "Live + Recorded",
     highlights: ["Core", "Flexibility", "Balance", "Training"],
@@ -143,7 +132,6 @@ const courses = [
     id: 13,
     title: "Therapy Course",
     slug: "therapy",
-    badge: "Certificate",
     icon: <RiPsychotherapyFill />,
     sessions: "Live + Recorded",
     highlights: ["Therapy", "Healing", "Relaxation", "Naturopathy"],
@@ -152,7 +140,6 @@ const courses = [
     id: 14,
     title: "Kids Yoga TTC",
     slug: "kids-training",
-    badge: "Certificate",
     icon: <LuBaby />,
     sessions: "Live + Recorded",
     highlights: ["Kids Yoga", "Fun", "Safety", "Play"],
@@ -201,9 +188,7 @@ function Courses() {
                   <span className="text-4xl text-purple-600">
                     {course.icon}
                   </span>
-                  <span className="text-xs font-bold bg-gray-100 px-3 py-1 rounded-full">
-                    {course.badge}
-                  </span>
+                 
                 </div>
 
                 <h3 className="font-bold text-lg mb-2">{course.title}</h3>

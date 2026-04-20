@@ -168,7 +168,7 @@ export default function CourseLayout({
       {/* 🌍 TRUST LINE */}
       <div className="text-center my-10">
         <p className="text-sm text-gray-500 italic">
-          Trusted by 1000+ students worldwide 🌍
+          Trusted by 8000+ students worldwide 🌍
         </p>
       </div>
 
