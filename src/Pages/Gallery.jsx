@@ -27,6 +27,30 @@ const images = [
   "/G23.jpeg",
   "/G24.jpeg",
   "/G25.jpeg",
+  "/G26.jpeg",
+  "/G27.jpeg",
+  "/G28.jpeg",
+  "/G29.jpeg",
+  "/G30.jpeg",
+  "/G31.jpeg",
+  "/G32.jpeg",
+  "/G33.jpeg",
+  "/G34.jpeg",
+  "/G35.jpeg",
+  "/G36.jpeg",
+  "/G37.jpeg",
+  "/G38.jpeg",
+  "/G39.jpeg",
+  "/G40.jpeg",
+  "/G41.jpeg",
+  "/G42.jpeg",
+  "/G43.jpeg",
+  "/G44.jpeg",
+  "/G45.jpeg",
+  "/G46.jpeg",
+  "/G47.jpeg",
+  "/G48.jpeg",
+  "/G49.jpeg",
 ];
 
 // ── Lightweight fade-in hook (reusable) ──────────────────────────────────────
@@ -270,7 +294,7 @@ export default function Gallery() {
         {/* Section label */}
         <div className="text-center mb-8 sm:mb-10">
           <p className="text-amber-600 font-semibold uppercase tracking-widest text-xs sm:text-sm mb-1">
-            Photo Gallery
+            SWARNA KAMAL  GALLERY
           </p>
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
             Glimpses of Our Journey
