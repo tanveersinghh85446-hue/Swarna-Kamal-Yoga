@@ -85,7 +85,7 @@ const courseOptions = [
   },
 ];
 
-const modeOptions = ["Online", "Offline", "Both (Hybrid)"];
+const modeOptions = ["Online",];
 
 // ── How It Works (Collapsible) ───────────────────────────────────────────────
 function HowItWorks() {

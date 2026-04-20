@@ -128,20 +128,6 @@ export default function YogaCourse() {
         <li>Recorded + Live Sessions</li>
         <li>Step-by-step structured modules</li>
         <li>Practical demonstrations</li>
-        <li>Certification from Swarna Kamal Yoga Academy</li>
-      </ul>
-
-      <hr className="border-gray-200 my-7" />
-
-      {/* Who Is This Course For */}
-      <h2 className="text-lg font-bold underline mb-3">
-        Who Is This Course For?
-      </h2>
-      <ul className="list-disc pl-6 mb-2 text-gray-800 space-y-1">
-        <li>Yoga Teachers (200 / 300 Hour TTC Graduates)</li>
-        <li>Fitness Trainers &amp; Wellness Coaches</li>
-        <li>Yoga Students wanting deeper understanding</li>
-        <li>Beginners who want to build a strong foundation</li>
       </ul>
 
       <hr className="border-gray-200 my-7" />

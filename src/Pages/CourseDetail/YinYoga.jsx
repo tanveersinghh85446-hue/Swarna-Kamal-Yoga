@@ -6,7 +6,6 @@ export default function YinYogaCourse() {
         Swarna Kamal Yoga Academy
       </p>
       <h1 className="text-2xl font-bold underline mb-1">Yin Yoga Course</h1>
-      <p className="text-sm text-gray-500 mb-4">By Dr. Smita K.</p>
 
       <hr className="border-gray-200 my-7" />
 
