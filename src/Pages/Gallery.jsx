@@ -69,6 +69,9 @@ const images = [
   "/G65.jpeg",
   "/G66.jpeg",
   "/G67.jpeg",
+  "/G68.jpeg",
+  "/G69.jpeg",
+  "/G70.jpeg",
 ];
 
 // ── Lightweight fade-in hook (reusable) ──────────────────────────────────────
