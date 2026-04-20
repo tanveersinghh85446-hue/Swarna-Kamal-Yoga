@@ -175,8 +175,8 @@ function KidsTraining() {
       </div>
 
       {/* ── Text ── */}
-      <p className="text-xs uppercase tracking-[0.4em] text-gray-400 mb-3">Blog Page Under Construction</p>
-      <h1 className="text-4xl sm:text-5xl font-extrabold text-black mb-4">Our Blog Page Coming Soon</h1>
+      <p className="text-xs uppercase tracking-[0.4em] text-gray-400 mb-3">Kids Training Page Under Construction</p>
+      <h1 className="text-4xl sm:text-5xl font-extrabold text-black mb-4">Our Kids Training Page Coming Soon</h1>
 
       {/* Polite message */}
       <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-md mx-auto mb-3">
@@ -188,11 +188,11 @@ function KidsTraining() {
 
       {/* 24 Hour Timer */}
       <div className="mb-8  px-8 py-6 max-w-sm">
-        <p className="text-xs uppercase tracking-widest text-black font-bold mb-3">Time until reset</p>
+        {/* <p className="text-xs uppercase tracking-widest text-black font-bold mb-3">Time until reset</p> */}
         <div className="font-mono text-5xl font-extrabold text-black tracking-tight">
           {timeLeft || "00:00:00"}
         </div>
-        <p className="text-xs text-black mt-3">Resets daily at midnight</p>
+        {/* <p className="text-xs text-black mt-3">Resets daily at midnight</p> */}
       </div>
 
       {/* Animated status */}
