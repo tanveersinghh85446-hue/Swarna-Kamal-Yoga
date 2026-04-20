@@ -161,12 +161,8 @@ export default function YinYogaCourse() {
         <li>Relaxation</li>
       </ul>
 
-      <hr className="border-gray-200 my-7" />
 
-      <p className="text-gray-600 text-sm italic">
-        Course curated and taught by <strong>Dr. Smita K.</strong> — Swarna
-        Kamal Yoga Academy
-      </p>
+    
     </div>
   );
 }
