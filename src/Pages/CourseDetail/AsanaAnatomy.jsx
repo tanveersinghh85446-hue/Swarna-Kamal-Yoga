@@ -62,7 +62,7 @@ export default function YogaCourse() {
         Detailed anatomical understanding of key yoga postures:
       </p>
       <ul className="list-disc pl-6 mb-3 text-gray-800 space-y-1">
-        <li>Standing Poses (Tadasana, Warrior Series, Trikonasana)</li>
+        <li>Standing Poses</li>
         <li>Forward Bends</li>
         <li>Backbends</li>
         <li>Twists</li>

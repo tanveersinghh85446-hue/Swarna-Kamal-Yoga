@@ -490,6 +490,83 @@ export default function Team() {
             </div>
           </div>
         </div>
+
+        {/* INSTRUCTOR - KARAN */}
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="flex flex-col md:flex-row">
+            {/* LEFT - PHOTO & NAME */}
+            <div className="w-full md:w-1/3 bg-linear-to-b from-red-50 to-white p-8 flex flex-col items-center justify-start">
+              <div className="w-48 h-48 rounded-lg overflow-hidden mb-4 shadow-lg">
+                <img src="/Karan.jpeg" alt="Karan" className="w-full h-full" />
+              </div>
+              <h3 className="text-red-700 font-bold text-2xl text-center">
+                KARAN
+              </h3>
+              <p className="text-red-600 font-semibold text-center mt-1">
+                YOGA INSTRUCTOR
+              </p>
+            </div>
+
+            {/* RIGHT CONTENT */}
+            <div className="w-full md:w-2/3 p-8 md:p-10">
+              {/* PROFILE SUMMARY */}
+              <div className="mb-6">
+                <h2 className="text-red-700 font-bold text-lg mb-3">
+                  PROFILE SUMMARY
+                </h2>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  Dedicated and certified Personal Yoga Trainer with over 5+
+                  years of experience guiding individuals and groups toward
+                  improved strength, flexibility, and mindfulness. Skilled in
+                  designing customized yoga programs tailored to clients'
+                  fitness levels, goals, and physical conditions. Passionate
+                  about helping clients achieve balance, reduce stress, and
+                  cultivate lifelong healthy habits.
+                </p>
+              </div>
+
+              {/* EDUCATION & CREDENTIALS */}
+              <div className="mb-6">
+                <h2 className="text-red-700 font-bold text-lg mb-3">
+                  EDUCATION & YOGA CREDENTIALS
+                </h2>
+                <ul className="text-gray-700 text-sm space-y-1.5">
+                  <li>• Bachelor of Education (B.Ed) in Yoga</li>
+                  <li>• Ashtanga Vinyasa Yoga TTC</li>
+                  <li>• Mat Pilates TTC</li>
+                  <li>• Yoga Therapy TTC</li>
+                  <li>• Prenatal & Postnatal (Pregnancy) Yoga TTC</li>
+                  <li>• Diet & Nutrition TTC</li>
+                </ul>
+              </div>
+
+              {/* SPECIALIZATIONS */}
+              <div className="mb-6">
+                <h2 className="text-red-700 font-bold text-lg mb-3">
+                  SPECIALIZATIONS
+                </h2>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  Hatha Yoga, Vinyasa Yoga, Restorative Yoga, Ashtanga Vinyasa,
+                  Mat Pilates, Yoga Therapy, Prenatal & Postnatal Yoga, Diet &
+                  Nutrition.
+                </p>
+              </div>
+
+              {/* STRENGTHS & GROWTH */}
+              <div>
+                <h2 className="text-red-700 font-bold text-lg mb-3">
+                  STRENGTHS & GROWTH
+                </h2>
+                <div className="text-gray-700 text-sm space-y-1">
+                  <p className="flex">
+                    <TiTick className="text-2xl text-green-400" /> 5+ Years
+                    Teaching Experience
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       {/* BOTTOM */}
       <div className="border-t border-stone-800 mt-10 pt-4 mb-8 text-center text-xs text-stone-500">

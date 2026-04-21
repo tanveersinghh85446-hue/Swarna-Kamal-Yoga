@@ -43,7 +43,8 @@ const courses = [
     title: "Weight Loss Coach Certification",
     slug: "weight-loss",
     icon: <GiWeightLiftingUp />,
-    sessions: "Live on Zoom",
+    sessions:
+      " 35 Classess Live on Zoom  Course start June 4th from 7 PM to 8 IST  Fee : ₹8500",
     highlights: [
       "Asana Sequences",
       "HIIT & Tabata",
@@ -56,7 +57,7 @@ const courses = [
     title: "Women's Wellness Coach",
     slug: "womens-wellness",
     icon: <GiFlowerEmblem />,
-    sessions: "40 Sessions • ₹9000",
+    sessions: "40 Sessions • ₹9000 Course Date June 4th from 12 PM to 1 PM IST",
     highlights: [
       "PCOS & Thyroid Therapy",
       "Hormonal Balance",
@@ -154,17 +155,18 @@ function Courses() {
         className="relative text-white py-16 text-center bg-cover bg-center"
         style={{ backgroundImage: "url('/God.png')" }}
       >
-        {/* dark overlay for readability */}
         <div className="absolute inset-0 bg-black/50"></div>
 
         <div className="relative">
-          <p className="uppercase tracking-[0.4em] text-xs mb-3 opacity-80">
+          <p className="uppercase tracking-[0.4em] text-xs mb-3 text-white/70">
             Live on Zoom
           </p>
 
-          <h1 className="text-5xl font-extrabold mb-4">Online Yoga Courses</h1>
+          <h1 className="text-5xl font-extrabold mb-4 text-white">
+            Online Yoga Courses
+          </h1>
 
-          <p className="max-w-xl mx-auto text-lg opacity-90">
+          <p className="max-w-xl mx-auto text-lg text-white/85">
             Certified courses with expert trainers — learn, grow & transform.
           </p>
         </div>
@@ -178,7 +180,6 @@ function Courses() {
               key={course.id}
               className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition"
             >
-              {/* Top Gradient */}
               <div
                 className={`h-2 bg-linear-to-r ${colors[i % colors.length]}`}
               />
@@ -188,16 +189,17 @@ function Courses() {
                   <span className="text-4xl text-purple-600">
                     {course.icon}
                   </span>
-                 
                 </div>
 
-                <h3 className="font-bold text-lg mb-2">{course.title}</h3>
-                <p className="text-gray-500 text-xs mb-4">{course.sessions}</p>
+                <h3 className="font-bold text-lg mb-2 text-gray-900">
+                  {course.title}
+                </h3>
+                <p className="text-gray-400 text-xs mb-4">{course.sessions}</p>
 
                 <ul className="space-y-2 mb-6">
                   {course.highlights.map((h, j) => (
-                    <li key={j} className="text-sm text-gray-600 flex gap-2">
-                      <span className="text-purple-500">•</span>
+                    <li key={j} className="text-sm text-gray-700 flex gap-2">
+                      <span className="text-purple-500 font-bold">•</span>
                       {h}
                     </li>
                   ))}
@@ -217,13 +219,15 @@ function Courses() {
 
       {/* CTA */}
       <section className="bg-linear-to-r from-black to-gray-900 text-white py-16 text-center">
-        <h2 className="text-3xl font-bold mb-4">Not sure which course?</h2>
-        <p className="mb-6 opacity-70">We’ll guide you to the perfect one.</p>
+        <h2 className="text-3xl font-bold mb-4 text-white">
+          Not sure which course?
+        </h2>
+        <p className="mb-6 text-white/60">We'll guide you to the perfect one.</p>
 
         <div className="flex justify-center gap-4">
           <Link
             to="/contact"
-            className="border px-6 py-3 rounded-full hover:bg-white hover:text-black transition"
+            className="border px-6 py-3 rounded-full hover:bg-white hover:text-black transition text-white/90"
           >
             Contact
           </Link>
@@ -235,7 +239,7 @@ function Courses() {
           </Link>
         </div>
       </section>
-      {/* BOTTOM */}
+
       <div className="border-t border-stone-800 mt-10 pt-4 mb-8 text-center text-xs text-stone-500">
         © {new Date().getFullYear()} Swarna Kamal Yoga Center, Bengaluru. All
         rights reserved.

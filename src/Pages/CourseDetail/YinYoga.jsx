@@ -160,9 +160,6 @@ export default function YinYogaCourse() {
         <li>Meditation</li>
         <li>Relaxation</li>
       </ul>
-
-
-    
     </div>
   );
 }

@@ -12,11 +12,11 @@ export default function WomensWellness() {
         Empower Women Through Yoga, Nutrition & Holistic Wellness
       </p>
       <p className="text-gray-800 mb-6">
-        The Women's Health Coach Certification Course at Swarna Kamal Yoga
-         is a specialized program designed to support women through every
-        stage of life — from menstruation to fertility, pregnancy, and menopause.
-        This comprehensive course combines yogic science, modern medicine,
-        nutrition, and emotional wellness to address hormonal imbalance, fertility
+        The Women's Health Coach Certification Course at Swarna Kamal Yoga is a
+        specialized program designed to support women through every stage of
+        life — from menstruation to fertility, pregnancy, and menopause. This
+        comprehensive course combines yogic science, modern medicine, nutrition,
+        and emotional wellness to address hormonal imbalance, fertility
         challenges, and reproductive health disorders.
       </p>
 
@@ -37,8 +37,8 @@ export default function WomensWellness() {
       <p className="text-gray-800">
         This course gives you{" "}
         <strong>
-          the expertise to transform women's health and build a meaningful coaching
-          practice.
+          the expertise to transform women's health and build a meaningful
+          coaching practice.
         </strong>
       </p>
 
@@ -48,14 +48,18 @@ export default function WomensWellness() {
       <h2 className="text-lg font-bold underline mb-4">What You Will Learn</h2>
 
       {/* Module 1 */}
-      <h3 className="font-bold mb-2">1. Theory & Philosophy of Women's Health</h3>
+      <h3 className="font-bold mb-2">
+        1. Theory & Philosophy of Women's Health
+      </h3>
       <p className="mb-2 text-gray-800">
         Master the science behind women's reproductive and hormonal health:
       </p>
       <ul className="list-disc pl-6 mb-5 text-gray-800 space-y-1">
         <li>Anatomy & Physiology – Reproductive & Endocrine System</li>
         <li>Hormonal Imbalance & Reproductive Health Disorders</li>
-        <li>Pathology of PCOS, Fibroids, Menstrual Irregularities, UTI & Thyroid</li>
+        <li>
+          Pathology of PCOS, Fibroids, Menstrual Irregularities, UTI & Thyroid
+        </li>
         <li>Prevention & Cure of Women's Health Disorders Through Yoga</li>
         <li>Infertility Causes & Evidence-Based Yoga Therapy</li>
         <li>Integration of Modern Science with Yogic Wisdom</li>
@@ -176,10 +180,13 @@ export default function WomensWellness() {
       {/* Course Details */}
       <h2 className="text-lg font-bold underline mb-3">Course Details</h2>
       <ul className="list-disc pl-6 mb-2 text-gray-800 space-y-1">
-        <li>Duration: 3 Months</li>
+        <li>Duration: 40 classes</li>
         <li>Sessions: 40 Live Zoom Classes</li>
         <li>Fee: ₹9,000</li>
-        <li>Access: Lifetime access to all recordings and materials</li>
+        <li>
+          {" "}
+          Recording access 3 or 4 months Access to all recordings and materials
+        </li>
         <li>Delivery: Online (100% Flexible Learning)</li>
         <li>Certification: Swarna Kamal Yoga Certificate</li>
       </ul>
@@ -199,8 +206,11 @@ export default function WomensWellness() {
         <li>Building a Sustainable Coaching Career</li>
       </ul>
       <p className="text-gray-800">
-        Our focus is on <strong>empowering women to take charge of their health and
-        building coaches who can guide others with expertise and compassion.</strong>
+        Our focus is on{" "}
+        <strong>
+          empowering women to take charge of their health and building coaches
+          who can guide others with expertise and compassion.
+        </strong>
       </p>
     </div>
   );
