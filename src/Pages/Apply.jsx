@@ -56,36 +56,31 @@ const courseOptions = [
   {
     label: "100 Hour TTC",
     badge: "Beginner",
-    color: "bg-green-100 text-black border-green-300",
   },
   {
     label: "200 Hour TTC",
     badge: "Most Popular",
-    color: "bg-amber-100 text-black border-amber-300",
   },
   {
     label: "300 Hour TTC",
     badge: "Advanced",
-    color: "bg-orange-100 text-black border-orange-300",
   },
   {
     label: "500 Hour TTC",
     badge: "Master Level",
-    color: "bg-purple-100 text-black border-purple-300",
   },
   {
     label: "Regular Yoga Classes",
     badge: "All Levels",
-    color: "bg-blue-100 text-black border-blue-300",
+    color: "",
   },
   {
     label: "Women's Wellness Yoga",
     badge: "Special",
-    color: "bg-pink-100 text-black border-pink-300",
   },
 ];
 
-const modeOptions = ["Online",];
+const modeOptions = ["Online"];
 
 // ── How It Works (Collapsible) ───────────────────────────────────────────────
 function HowItWorks() {
@@ -393,7 +388,7 @@ const Apply = () => {
                             {c.label}
                           </span>
                           <span
-                            className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${c.color} shrink-0`}
+                            className={`text-[10px] font-bold px-2 py-0.5  ${c.color} shrink-0`}
                           >
                             {c.badge}
                           </span>
@@ -460,26 +455,6 @@ const Apply = () => {
                     <WaIcon size={22} />
                     Submit via WhatsApp
                   </button>
-
-                  {/* ── Divider ── */}
-                  <div className="flex items-center gap-3">
-                    <div className="flex-1 h-px bg-stone-200" />
-                    <span className="text-xs text-gray-400 font-medium">
-                      OR
-                    </span>
-                    <div className="flex-1 h-px bg-stone-200" />
-                  </div>
-
-                  {/* ── Direct WhatsApp ── */}
-                  <a
-                    href="https://wa.me/919663894499"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-full flex items-center justify-center gap-2 border-2 border-green-400 text-green-700 hover:bg-green-50 font-bold text-sm px-6 py-3 rounded-full transition-all"
-                  >
-                    <WaIcon size={18} />
-                    Chat Directly on WhatsApp
-                  </a>
                 </div>
               </div>
             </FadeIn>
