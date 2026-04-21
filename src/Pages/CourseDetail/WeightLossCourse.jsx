@@ -12,12 +12,11 @@ export default function WeightLossCourse() {
         Transform Your Body & Master the Science of Sustainable Weight Loss
       </p>
       <p className="text-gray-800 mb-6">
-        The Weight Loss Coach Certification Course at Swarna Kamal Yoga
-        is a comprehensive program designed to help you achieve your fitness
-        goals and guide others on their weight loss journey. This course
-        combines ancient yogic wisdom with modern fitness science, nutrition
-        coaching, and wellness practices to create lasting, healthy
-        transformations.
+        The Weight Loss Coach Certification Course at Swarna Kamal Yoga is a
+        comprehensive program designed to help you achieve your fitness goals
+        and guide others on their weight loss journey. This course combines
+        ancient yogic wisdom with modern fitness science, nutrition coaching,
+        and wellness practices to create lasting, healthy transformations.
       </p>
 
       <hr className="border-gray-200 my-7" />
@@ -79,7 +78,9 @@ export default function WeightLossCourse() {
 
       {/* Module 3 */}
       <h3 className="font-bold mb-2">3. Advanced Training Methods</h3>
-      <p className="mb-2 text-gray-800">Learn high-intensity and specialized training approaches:</p>
+      <p className="mb-2 text-gray-800">
+        Learn high-intensity and specialized training approaches:
+      </p>
       <ul className="list-disc pl-6 mb-5 text-gray-800 space-y-1">
         <li>TABATA Training – Science and Practice</li>
         <li>HIIT (High-Intensity Interval Training)</li>
@@ -98,7 +99,9 @@ export default function WeightLossCourse() {
       <ul className="list-disc pl-6 mb-3 text-gray-800 space-y-1">
         <li>Yogic Diet Principles and Nutrition Basics</li>
         <li>Creating Personalized Meal Plans</li>
-        <li>Different Diet Types (Keto, Intermittent Fasting, Plant-Based, etc.)</li>
+        <li>
+          Different Diet Types (Keto, Intermittent Fasting, Plant-Based, etc.)
+        </li>
         <li>Macronutrients and Micronutrients for Weight Loss</li>
         <li>Importance of Hydration in Weight Management</li>
         <li>Role of Naturopathy in Healthy Weight Loss</li>
@@ -132,7 +135,7 @@ export default function WeightLossCourse() {
         <li>Practical demonstrations and real-world examples</li>
         <li>Complete study materials in PDF format</li>
         <li>Certification from Swarna Kamal Yoga</li>
-        <li>Lifetime access to course recordings and notes</li>
+        <li> Every 3 Month access to course recordings and notes</li>
       </ul>
 
       <hr className="border-gray-200 my-7" />
@@ -161,24 +164,6 @@ export default function WeightLossCourse() {
         <li>Build a sustainable coaching business</li>
         <li>Combine yoga, fitness, and nutrition expertise</li>
       </ul>
-
-      <hr className="border-gray-200 my-7" />
-
-      {/* Why Choose */}
-      <h2 className="text-lg font-bold underline mb-3">
-        Why Choose Swarna Kamal Yoga?
-      </h2>
-      <p className="mb-2 text-gray-800">At Swarna Kamal Yoga, we provide:</p>
-      <ul className="list-disc pl-6 mb-3 text-gray-800 space-y-1">
-        <li>Ancient Yogic Wisdom combined with Modern Science</li>
-        <li>Proven Coaching Methodologies</li>
-        <li>16+ Years of Experience in Yoga and Wellness</li>
-        <li>Expert Faculty with Real-World Results</li>
-      </ul>
-      <p className="text-gray-800">
-        Our focus is not just certification — but{" "}
-        <strong>real transformation and lasting success for you and your clients.</strong>
-      </p>
     </div>
   );
 }
