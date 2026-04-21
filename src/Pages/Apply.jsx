@@ -282,13 +282,16 @@ const Apply = () => {
             <FadeIn>
               <div className="bg-white rounded-3xl shadow-xl border border-stone-100 overflow-hidden">
                 {/* Card Header */}
-                <div className="bg-amber-500 px-6 sm:px-8 py-5 sm:py-6">
-                  <h2 className="text-xl sm:text-2xl font-extrabold text-white">
-                    Enquiry Form
+                <div className="bg-red-600 px-4 sm:px-8 py-4 sm:py-6 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 text-center sm:text-left">
+                  <h2 className="text-lg sm:text-2xl font-extrabold text-white leading-tight">
+                    Swarna Kamal Yoga Enquiry Form
                   </h2>
-                  <p className="text-amber-100 text-xs sm:text-sm mt-1">
-                    Fill the details below — we'll reach out within 24 hours!
-                  </p>
+
+                  <img
+                    src="/Start.png"
+                    alt="Logo"
+                    className="h-20 sm:h-16 object-contain"
+                  />
                 </div>
 
                 <div className="px-6 sm:px-8 py-6 sm:py-8 flex flex-col gap-6">
@@ -450,9 +453,9 @@ const Apply = () => {
                   <button
                     type="button"
                     onClick={handleSubmit}
-                    className="w-full flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 active:scale-95 text-white font-extrabold text-base sm:text-lg px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:-translate-y-0.5 transform"
+                    className="w-full flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 active:scale-95 text-white font-extrabold text-base sm:text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:-translate-y-0.5 transform"
                   >
-                    <WaIcon size={22} />
+                    <WaIcon size={40} />
                     Submit via WhatsApp
                   </button>
                 </div>
