@@ -71,7 +71,7 @@ const whyUs = [
   {
     title: "16+ Years of Excellence",
     desc: "Established in 2012, one of Bengaluru's most trusted yoga institutions.",
-    img: "16+ Years of Excellence.jpg",
+    img: "Excellence.jpg",
     to: "/about",
   },
   {
