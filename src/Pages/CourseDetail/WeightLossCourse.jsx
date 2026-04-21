@@ -135,7 +135,7 @@ export default function WeightLossCourse() {
         <li>Practical demonstrations and real-world examples</li>
         <li>Complete study materials in PDF format</li>
         <li>Certification from Swarna Kamal Yoga</li>
-        <li> Every 3 Month access to course recordings and notes</li>
+        <li>Recording available for 4 months access</li>
       </ul>
 
       <hr className="border-gray-200 my-7" />
