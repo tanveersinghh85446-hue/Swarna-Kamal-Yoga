@@ -3,7 +3,7 @@ export default function PilatesCourse() {
     <div className="max-w-3xl mx-auto px-5 py-10 bg-white text-gray-900 font-sans text-[15px] leading-relaxed pt-15 border-t border-white/2">
       {/* Header */}
       <p className="text-sm text-gray-500 mb-1 tracking-wide">
-        Swarna Kamal Yoga Academy
+        Swarna Kamal Yoga
       </p>
       <h1 className="text-2xl font-bold underline mb-1">
         Mat Pilates Yoga Course

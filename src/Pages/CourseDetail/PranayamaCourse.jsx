@@ -3,7 +3,7 @@ export default function PranayamaCourse() {
     <div className="max-w-3xl mx-auto px-5 py-10 bg-white text-gray-900 font-sans text-[15px] leading-relaxed">
 
       {/* Header */}
-      <p className="text-sm text-gray-500 mb-1 tracking-wide">Swarna Kamal Yoga Academy</p>
+      <p className="text-sm text-gray-500 mb-1 tracking-wide">Swarna Kamal Yoga</p>
       <h1 className="text-2xl font-bold underline mb-1">
         Pranayama, Mudra & Meditation Teaching Training Course
       </h1>

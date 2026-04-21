@@ -3,17 +3,17 @@ export default function YogaCourse() {
     <div className="max-w-3xl mx-auto px-5 py-10 bg-white text-gray-900 font-sans text-[15px] leading-relaxed pt-15 border-t border-white/2">
       {/* Header */}
       <p className="text-sm text-gray-500 mb-1 tracking-wide">
-        Swarna Kamal Yoga Academy
+        Swarna Kamal Yoga 
       </p>
       <h1 className="text-2xl font-bold underline mb-1">
-        Online Asana Anatomy &amp; Alignment Course
+        Online Asana Anatomy & Alignment Course
       </h1>
       <p className="italic text-gray-600 mb-4">
         Master the Science Behind Every Pose
       </p>
       <p className="text-gray-800 mb-6">
-        The Online Asana Anatomy &amp; Adjustment Alignment Course at Swarna
-        Kamal Yoga Academy is a deep-dive program designed to help you
+        The Online Asana Anatomy & Adjustment Alignment Course at Swarna
+        Kamal Yoga is a deep-dive program designed to help you
         understand the body, refine your practice, and teach with confidence.
         This course bridges the gap between traditional yoga wisdom and modern
         anatomical science, empowering you to practice safely and guide others
@@ -48,7 +48,7 @@ export default function YogaCourse() {
       {/* Module 1 */}
       <h3 className="font-bold mb-2">1. Fundamentals of Human Anatomy</h3>
       <ul className="list-disc pl-6 mb-5 text-gray-800 space-y-1">
-        <li>Skeletal System (Bones &amp; Joints)</li>
+        <li>Skeletal System (Bones & Joints)</li>
         <li>Muscular System (Major Muscle Groups)</li>
         <li>Types of Movements (Flexion, Extension, Rotation)</li>
         <li>Planes of Movement in Yoga</li>
@@ -84,7 +84,7 @@ export default function YogaCourse() {
       </p>
       <ul className="list-disc pl-6 mb-5 text-gray-800 space-y-1">
         <li>Spine alignment</li>
-        <li>Knee &amp; ankle safety</li>
+        <li>Knee & ankle safety</li>
         <li>Shoulder stability</li>
         <li>Hip positioning</li>
         <li>Core engagement</li>
@@ -92,7 +92,7 @@ export default function YogaCourse() {
 
       {/* Module 4 */}
       <h3 className="font-bold mb-2">
-        4. Adjustment Techniques (Hands-On &amp; Verbal)
+        4. Adjustment Techniques (Hands-On & Verbal)
       </h3>
       <ul className="list-disc pl-6 mb-5 text-gray-800 space-y-1">
         <li>When to adjust vs when not to</li>
@@ -102,11 +102,11 @@ export default function YogaCourse() {
       </ul>
 
       {/* Module 5 */}
-      <h3 className="font-bold mb-2">5. Injury Prevention &amp; Safety</h3>
+      <h3 className="font-bold mb-2">5. Injury Prevention & Safety</h3>
       <ul className="list-disc pl-6 mb-5 text-gray-800 space-y-1">
         <li>Common yoga injuries and causes</li>
         <li>Contraindications for different conditions</li>
-        <li>Safe practice for beginners &amp; special populations</li>
+        <li>Safe practice for beginners & special populations</li>
         <li>Recovery and rehabilitation basics</li>
       </ul>
 
@@ -146,7 +146,7 @@ export default function YogaCourse() {
 
       {/* Why Choose */}
       <h2 className="text-lg font-bold underline mb-3">
-        Why Choose Swarna Kamal Yoga Academy?
+        Why Choose Swarna Kamal Yoga?
       </h2>
       <p className="mb-2 text-gray-800">At Swarna Kamal Yoga, we combine:</p>
       <ul className="list-disc pl-6 mb-3 text-gray-800 space-y-1">

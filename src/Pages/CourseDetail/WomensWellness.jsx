@@ -3,7 +3,7 @@ export default function WomensWellness() {
     <div className="max-w-3xl mx-auto px-5 py-10 bg-white text-gray-900 font-sans text-[15px] leading-relaxed pt-15 border-t border-white/2">
       {/* Header */}
       <p className="text-sm text-gray-500 mb-1 tracking-wide">
-        Swarna Kamal Yoga Academy
+        Swarna Kamal Yoga
       </p>
       <h1 className="text-2xl font-bold underline mb-1">
         Women's Health Coach Certification Course
@@ -13,7 +13,7 @@ export default function WomensWellness() {
       </p>
       <p className="text-gray-800 mb-6">
         The Women's Health Coach Certification Course at Swarna Kamal Yoga
-        Academy is a specialized program designed to support women through every
+         is a specialized program designed to support women through every
         stage of life — from menstruation to fertility, pregnancy, and menopause.
         This comprehensive course combines yogic science, modern medicine,
         nutrition, and emotional wellness to address hormonal imbalance, fertility
@@ -135,7 +135,7 @@ export default function WomensWellness() {
         <li>Step-by-step structured modules with clear progression</li>
         <li>Complete PDF Study Materials and Notes</li>
         <li>Lifetime Access to Course Recordings</li>
-        <li>Certification from Swarna Kamal Yoga Academy</li>
+        <li>Certification from Swarna Kamal Yoga</li>
         <li>Interactive Q&A and Doubt Clearing Sessions</li>
       </ul>
 
@@ -181,14 +181,14 @@ export default function WomensWellness() {
         <li>Fee: ₹9,000</li>
         <li>Access: Lifetime access to all recordings and materials</li>
         <li>Delivery: Online (100% Flexible Learning)</li>
-        <li>Certification: Swarna Kamal Yoga Academy Certificate</li>
+        <li>Certification: Swarna Kamal Yoga Certificate</li>
       </ul>
 
       <hr className="border-gray-200 my-7" />
 
       {/* Why Choose */}
       <h2 className="text-lg font-bold underline mb-3">
-        Why Choose Swarna Kamal Yoga Academy?
+        Why Choose Swarna Kamal Yoga?
       </h2>
       <p className="mb-2 text-gray-800">At Swarna Kamal Yoga, we provide:</p>
       <ul className="list-disc pl-6 mb-3 text-gray-800 space-y-1">

@@ -3,7 +3,7 @@ export default function WeightLossCourse() {
     <div className="max-w-3xl mx-auto px-5 py-10 bg-white text-gray-900 font-sans text-[15px] leading-relaxed pt-15 border-t border-white/2">
       {/* Header */}
       <p className="text-sm text-gray-500 mb-1 tracking-wide">
-        Swarna Kamal Yoga Academy
+        Swarna Kamal Yoga
       </p>
       <h1 className="text-2xl font-bold underline mb-1">
         Weight Loss Coach Certification Course
@@ -12,7 +12,7 @@ export default function WeightLossCourse() {
         Transform Your Body & Master the Science of Sustainable Weight Loss
       </p>
       <p className="text-gray-800 mb-6">
-        The Weight Loss Coach Certification Course at Swarna Kamal Yoga Academy
+        The Weight Loss Coach Certification Course at Swarna Kamal Yoga
         is a comprehensive program designed to help you achieve your fitness
         goals and guide others on their weight loss journey. This course
         combines ancient yogic wisdom with modern fitness science, nutrition
@@ -131,7 +131,7 @@ export default function WeightLossCourse() {
         <li>Step-by-step structured modules with clear progression</li>
         <li>Practical demonstrations and real-world examples</li>
         <li>Complete study materials in PDF format</li>
-        <li>Certification from Swarna Kamal Yoga Academy</li>
+        <li>Certification from Swarna Kamal Yoga</li>
         <li>Lifetime access to course recordings and notes</li>
       </ul>
 
@@ -166,7 +166,7 @@ export default function WeightLossCourse() {
 
       {/* Why Choose */}
       <h2 className="text-lg font-bold underline mb-3">
-        Why Choose Swarna Kamal Yoga Academy?
+        Why Choose Swarna Kamal Yoga?
       </h2>
       <p className="mb-2 text-gray-800">At Swarna Kamal Yoga, we provide:</p>
       <ul className="list-disc pl-6 mb-3 text-gray-800 space-y-1">
