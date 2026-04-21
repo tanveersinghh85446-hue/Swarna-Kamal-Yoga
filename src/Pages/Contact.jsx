@@ -73,24 +73,24 @@ const contactDetails = [
     label: "Phone",
     value: "+91 96638 94499",
     link: "tel:+919663894499",
-    color: "bg-blue-50 border-blue-200 text-blue-700",
-    iconBg: "bg-blue-100",
+    color: "",
+    iconBg: "border",
   },
   {
     icon: "📧",
     label: "Email",
     value: "info@swarnakamalyoga.com",
     link: "mailto:info@swarnakamalyoga.com",
-    color: "bg-amber-50 border-amber-200 text-amber-700",
-    iconBg: "bg-amber-100",
+    color: "",
+    iconBg: "border",
   },
   {
     icon: "📍",
     label: "Address",
     value: "Celebrity Classic Layout, Electronic City, Bengaluru, India",
     link: "https://maps.google.com",
-    color: "bg-green-50 border-green-200 text-green-700",
-    iconBg: "bg-green-100",
+    color: "",
+    iconBg: "border",
   },
 ];
 
@@ -226,15 +226,15 @@ const Contact = () => {
 
             {/* Timings */}
             <FadeIn delay={0.3}>
-              <div className="bg-amber-50 border-2 border-amber-200 rounded-2xl px-5 py-4 mb-6">
-                <p className="text-amber-700 font-bold text-sm uppercase tracking-wider mb-3">
+              <div className=" border rounded-2xl px-5 py-4 mb-6">
+                <p className="font-bold text-sm uppercase tracking-wider mb-3">
                   🕒 Working Hours
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   {timings.map((t, i) => (
                     <div
                       key={i}
-                      className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 flex-1 border border-amber-100 shadow-sm"
+                      className="flex items-center gap-3  bg-white rounded-xl px-4 py-3 flex-1 border shadow-sm"
                     >
                       <span className="text-2xl">{t.icon}</span>
                       <div>
@@ -259,7 +259,7 @@ const Contact = () => {
           {[...images, ...images].map((img, i) => (
             <div
               key={i}
-              className="min-w-62.5 sm:min-w-75 h-45 sm:h-55 rounded-2xl overflow-hidden shadow-lg"
+              className="min-w-62.5 sm:min-w-50 h-40 sm:h-55 rounded-2xl overflow-hidden shadow-lg"
             >
               <img
                 src={img}
