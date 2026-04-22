@@ -122,13 +122,13 @@ const faqs = [
   {
     question: "Is the Teacher Training Course (TTC) recognized?",
     answer:
-      "Yes! All our TTC programs (100Hr, 200Hr, 300Hr, 500Hr) are internationally recognized and follow Yoga Alliance standards, making our certification globally accepted.",
+      "Yes! All our TTC programs (100Hr, 200Hr, 300Hr) are internationally recognized and follow Yoga Alliance standards, making our certification globally accepted.",
     to: "/courses",
   },
   {
     question: "Do you offer online classes?",
     answer:
-      "Yes, we offer both online yoga sessions. Our flexible learning model allows students from any part of the world to learn from Smita Karakavalasa directly.",
+      "Yes, we offer online yoga sessions. Our flexible learning model allows students from any part of the world to learn from Smita Karakavalasa directly.",
     to: "/courses",
   },
   {
@@ -140,7 +140,7 @@ const faqs = [
   {
     question: "How experienced is the faculty?",
     answer:
-      "Our founder, Smita Karakavalasa, has over 16 years of dedicated yoga teaching experience and has trained hundreds of students with warmth and expertise.",
+      "Our founder, Smita Karakavalasa, has over 16 years of dedicated yoga teaching experience and has trained 8000+ of students with warmth and expertise.",
     to: "/about",
   },
 ];
