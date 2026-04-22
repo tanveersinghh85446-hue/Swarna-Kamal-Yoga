@@ -45,7 +45,7 @@ export default function Team() {
                   I believe that Yoga is a bridge between the physical effort
                   and the quite stillness of the soul. My teaching style is
                   rooted in functional alignment and flow with physical
-                  resilience and mental clarity.
+                  resilence and mental clarity.
                 </p>
               </div>
 
@@ -59,13 +59,14 @@ export default function Team() {
                     • M.Com in International Banking & Financial Management
                   </li>
                   <li>
-                    • Certified Yoga Teacher Training (Yoga Alliance – RYT 200)
+                    • Certified Yoga Teacher Training from Yoga Alliance (RYT
+                    200)
                   </li>
                   <li>• Certified Yoga Therapist</li>
                   <li>• Certified in Yin Yoga & Face Yoga</li>
                   <li>
-                    • Certified in Pre and Postnatal Yoga (WYORS / Ekam Yoga and
-                    Wellness Institute)
+                    • Certified in Pre and Postnatal Yoga Teacher Training from
+                    Ekam Yoga and Wellness Institute, WYORS
                   </li>
                   <li>
                     • Certified Patanjali Assistant Yoga Teacher by completing
