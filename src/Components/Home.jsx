@@ -44,34 +44,26 @@ const slides = [
 
 const courses = [
   {
-    title: "100 Hour TTC",
-    desc: "Foundation level. Perfect for beginners stepping into yoga teaching.",
-    img: "100 Hour TTC.jpg",
-    to: "/courses/hatha-yoga",
-    badge: "Beginner",
-  },
-  {
     title: "200 Hour TTC",
     desc: "The globally recognized standard for certified yoga instructors.",
     img: "200 Hour TTC.jpg",
-    to: "/courses/pranayama ",
+    to: "/TwoHundred",
     badge: "Most Popular",
   },
   {
     title: "300 Hour TTC",
     desc: "Advanced training for deepening practice and teaching skills.",
     img: "Samita.png",
-    to: "/courses/ashtanga",
+    to: "TwoHundred",
     badge: "Advanced",
   },
- 
 ];
 
 const whyUs = [
   {
     title: "16+ Years of Excellence",
     desc: "Established in 2012, one of Bengaluru's most trusted yoga institutions.",
-    img: "Excellence.jpg",
+    img: "",
     to: "/about",
   },
   {
@@ -435,7 +427,7 @@ const Home = () => {
               Our Teacher Training Courses
             </h2>
           </FadeIn>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5 sm:gap-6">
             {courses.map((c, i) => (
               <FadeIn key={i} delay={i * 0.1}>
                 <Link
@@ -522,9 +514,9 @@ const Home = () => {
               Flexible Learning & Real Returns
             </h2>
             <p className="opacity-90 leading-relaxed text-sm sm:text-base md:text-lg px-2">
-              Learn at your own pace with our flexible online
-              programs. Expert guidance, practical knowledge, and long-term
-              personal growth benefits.
+              Learn at your own pace with our flexible online programs. Expert
+              guidance, practical knowledge, and long-term personal growth
+              benefits.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               {[

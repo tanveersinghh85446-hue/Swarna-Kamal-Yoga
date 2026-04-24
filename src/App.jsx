@@ -25,6 +25,8 @@ import MatPilates from "./Pages/CourseDetail/MatPilates";
 import TherapyTeacher from "./Pages/CourseDetail/TherapyTeacher";
 import KidsTraining from "./Pages/CourseDetail/KidsTraining";
 import Team from "./Pages/Team";
+import TwoHundred from "./Pages/TwoHundred";
+import ThreeHundred from "./Pages/ThreeHundred";
 
 function App() {
   const [splashDone, setSplashDone] = useState(false);
@@ -42,7 +44,9 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home splashDone={splashDone} />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/about" element={<About />} />\
+            <Route path="/twohundred" element={<TwoHundred />} />
+            <Route path="/threehundred" element={<ThreeHundred />} />
             <Route path="/team" element={<Team />} />
             <Route path="/apply" element={<Apply />} />
             <Route path="/blog" element={<Blog />} />
@@ -53,7 +57,10 @@ function App() {
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/courses/pranayama" element={<PranayamaCourse />} />
             <Route path="/courses/weight-loss" element={<WeightLossCourse />} />
-            <Route path="/courses/womens-wellness"element={<WomensWellness />}/>
+            <Route
+              path="/courses/womens-wellness"
+              element={<WomensWellness />}
+            />
             <Route path="/courses/hatha-yoga" element={<HathaYoga />} />
             <Route path="/courses/ashtanga" element={<AshtangaVinyasa />} />
             <Route path="/courses/asana-anatomy" element={<AsanaAnatomy />} />
@@ -65,7 +72,6 @@ function App() {
             <Route path="/courses/therapy" element={<TherapyTeacher />} />
             <Route path="/courses/kids-training" element={<KidsTraining />} />
           </Routes>
-          
         </Router>
       </div>
     </>
