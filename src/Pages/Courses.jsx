@@ -30,7 +30,9 @@ const courses = [
     title: "Pranayama Mudra Meditations Certificate Course",
     slug: "pranayama",
     icon: <FaOm />,
-    sessions: "Live + Recorded",
+    // price: "₹7,500",
+    // duration: "8 Weeks",
+    mode: "Live + Recorded",
     highlights: [
       "Pranayama × 35",
       "Mudra Therapy × 60",
@@ -43,8 +45,10 @@ const courses = [
     title: "Weight Loss Coach Certification",
     slug: "weight-loss",
     icon: <GiWeightLiftingUp />,
-    sessions:
-      " 35 Classess Live on Zoom  Course start June 4th from 7 PM to 8 IST  Fee : ₹8500",
+    price: "₹8,500",
+    duration: "35 Classes",
+    mode: "Live on Zoom",
+    startDate: "June 4th, 7-8 PM IST",
     highlights: [
       "Asana Sequences",
       "HIIT & Tabata",
@@ -57,7 +61,10 @@ const courses = [
     title: "Women's Wellness Coach",
     slug: "womens-wellness",
     icon: <GiFlowerEmblem />,
-    sessions: "40 Sessions • ₹9000 Course Date June 4th from 12 PM to 1 PM IST",
+    price: "₹9,000",
+    duration: "40 Sessions",
+    mode: "Live + Recorded",
+    startDate: "June 4th, 12-1 PM IST",
     highlights: [
       "PCOS & Thyroid Therapy",
       "Hormonal Balance",
@@ -70,7 +77,9 @@ const courses = [
     title: "Hatha Yoga TTC",
     slug: "hatha-yoga",
     icon: <GiMeditation />,
-    sessions: "Live + Recorded",
+    // price: "₹12,000",
+    // duration: "6-8 Weeks",
+    mode: "Live + Recorded",
     highlights: ["Asanas", "Pranayama", "Teaching", "Anatomy"],
   },
   {
@@ -78,7 +87,9 @@ const courses = [
     title: "Ashtanga Vinyasa TTC",
     slug: "ashtanga",
     icon: <SiLoop />,
-    sessions: "Live + Recorded",
+    // price: "₹15,000",
+    // duration: "8 Weeks",
+    mode: "Live + Recorded",
     highlights: ["Primary Series", "Flow", "Bandhas", "Adjustments"],
   },
   {
@@ -86,7 +97,10 @@ const courses = [
     title: "Asana Anatomy",
     slug: "asana-anatomy",
     icon: <PiBoneThin />,
-    sessions: "Live + Recorded From August 3rd  12 pm 1 pm IST  Fee 4500",
+    price: "₹4,500",
+    duration: "4 Weeks",
+    mode: "Live + Recorded",
+    startDate: "August 3rd, 12-1 PM IST",
     highlights: ["Muscles", "Alignment", "Injury", "Safety"],
   },
   {
@@ -94,7 +108,9 @@ const courses = [
     title: "Face Yoga",
     slug: "face-yoga",
     icon: <RiShiningFill />,
-    sessions: "Live + Recorded",
+    // price: "₹3,500",
+    // duration: "3 Weeks",
+    mode: "Live + Recorded",
     highlights: ["Glow", "Anti-Aging", "Acupressure", "Routine"],
   },
   {
@@ -102,7 +118,9 @@ const courses = [
     title: "Nutrition Course",
     slug: "nutrition",
     icon: <FaNutritionix />,
-    sessions: "Live + Recorded",
+    // price: "₹6,000",
+    // duration: "5 Weeks",
+    mode: "Live + Recorded",
     highlights: ["Diet", "Meals", "Water", "Balance"],
   },
   {
@@ -110,7 +128,9 @@ const courses = [
     title: "Power Yoga",
     slug: "power-yoga",
     icon: <IoIosFlash />,
-    sessions: "Live + Recorded",
+    // price: "₹5,500",
+    // duration: "4 Weeks",
+    mode: "Live + Recorded",
     highlights: ["Strength", "Core", "Flow", "Energy"],
   },
   {
@@ -118,7 +138,9 @@ const courses = [
     title: "Yin Yoga TTC",
     slug: "yin-yoga",
     icon: <IoMoon />,
-    sessions: "Live + Recorded",
+    // price: "₹10,000",
+    // duration: "6 Weeks",
+    mode: "Live + Recorded",
     highlights: ["Yin", "Fascia", "Meditation", "Teaching"],
   },
   {
@@ -126,7 +148,9 @@ const courses = [
     title: "MAT Pilates",
     slug: "mat-pilates",
     icon: <GiSportMedal />,
-    sessions: "Live + Recorded",
+    // price: "₹7,000",
+    // duration: "5 Weeks",
+    mode: "Live + Recorded",
     highlights: ["Core", "Flexibility", "Balance", "Training"],
   },
   {
@@ -134,7 +158,9 @@ const courses = [
     title: "Therapy Course",
     slug: "therapy",
     icon: <RiPsychotherapyFill />,
-    sessions: "Live + Recorded 35 classes Fee 8000 ",
+    price: "₹8,000",
+    duration: "35 Classes",
+    mode: "Live + Recorded",
     highlights: ["Therapy", "Healing", "Relaxation", "Naturopathy"],
   },
   {
@@ -142,7 +168,9 @@ const courses = [
     title: "Kids Yoga TTC",
     slug: "kids-training",
     icon: <LuBaby />,
-    sessions: "Live + Recorded",
+    // price: "₹6,500",
+    // duration: "4 Weeks",
+    mode: "Live + Recorded",
     highlights: ["Kids Yoga", "Fun", "Safety", "Play"],
   },
 ];
@@ -178,24 +206,48 @@ function Courses() {
           {courses.map((course, i) => (
             <div
               key={course.id}
-              className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition"
+              className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition bg-white"
             >
+              {/* Top Gradient Strip */}
               <div
                 className={`h-2 bg-linear-to-r ${colors[i % colors.length]}`}
               />
 
-              <div className="p-6 bg-white">
-                <div className="flex justify-between mb-4">
+              <div className="p-6">
+                {/* Icon */}
+                <div className="flex justify-between items-start mb-4">
                   <span className="text-4xl text-purple-600">
                     {course.icon}
                   </span>
+                  {/* Price Tag */}
+                  <div className="bg-linear-to-r from-amber-400 to-yellow-500 text-black px-3 py-1 rounded-full font-bold text-sm shadow-md">
+                    {course.price}
+                  </div>
                 </div>
 
-                <h3 className="font-bold text-lg mb-2 text-gray-900">
+                {/* Title */}
+                <h3 className="font-bold text-xl mb-3 text-gray-900 min-h-14">
                   {course.title}
                 </h3>
-                <p className="text-gray-400 text-xs mb-4">{course.sessions}</p>
 
+                {/* Info Tags */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-semibold">
+                    ⏱️ {course.duration}
+                  </span>
+                  <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-semibold">
+                    📹 {course.mode}
+                  </span>
+                </div>
+
+                {/* Start Date if available */}
+                {course.startDate && (
+                  <p className="text-purple-600 text-xs font-semibold mb-3">
+                    🗓️ Starts: {course.startDate}
+                  </p>
+                )}
+
+                {/* Highlights */}
                 <ul className="space-y-2 mb-6">
                   {course.highlights.map((h, j) => (
                     <li key={j} className="text-sm text-gray-700 flex gap-2">
@@ -205,9 +257,10 @@ function Courses() {
                   ))}
                 </ul>
 
+                {/* CTA Button */}
                 <Link
                   to={`/courses/${course.slug}`}
-                  className="block text-center bg-linear-to-r from-purple-500 to-indigo-500 text-white py-2 rounded-full font-semibold hover:opacity-90 transition"
+                  className="block text-center bg-linear-to-r from-purple-500 to-indigo-500 text-white py-3 rounded-full font-semibold hover:opacity-90 transition shadow-lg"
                 >
                   View Syllabus →
                 </Link>
@@ -222,7 +275,9 @@ function Courses() {
         <h2 className="text-3xl font-bold mb-4 text-white">
           Not sure which course?
         </h2>
-        <p className="mb-6 text-white/60">We'll guide you to the perfect one.</p>
+        <p className="mb-6 text-white/60">
+          We'll guide you to the perfect one.
+        </p>
 
         <div className="flex justify-center gap-4">
           <Link
