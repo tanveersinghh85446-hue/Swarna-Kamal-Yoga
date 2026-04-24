@@ -54,7 +54,7 @@ const courses = [
     title: "300 Hour TTC",
     desc: "Advanced training for deepening practice and teaching skills.",
     img: "Samita.png",
-    to: "TwoHundred",
+    to: "/ThreeHundred",
     badge: "Advanced",
   },
 ];
