@@ -97,7 +97,7 @@ const courses = [
     title: "Asana Anatomy",
     slug: "asana-anatomy",
     icon: <PiBoneThin />,
-    price: "₹4,500",
+    price: "₹5,500",
     duration: "4 Weeks",
     mode: "Live + Recorded",
     startDate: "August 3rd, 12-1 PM IST",
