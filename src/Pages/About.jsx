@@ -76,7 +76,7 @@ export default function About() {
   }, []);
 
   return (
-    <div className="bg-linear-to-b from-white to-gray-100 text-center pt-15 border-t border-white/2">
+    <div className="bg-linear-to-b from-white to-gray-100 text-center pt-16 border-t border-white/2">
       {/* ── Hero Banner ── */}
       <div className="w-full bg-linear-to-br from-amber-400 via-yellow-400 to-amber-500 py-20 px-4">
         <div ref={heroRef}>

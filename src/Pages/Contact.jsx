@@ -152,7 +152,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="w-full font-sans overflow-x-hidden pt-15 border-t border-white/20">
+    <div className="w-full font-sans overflow-x-hidden pt-16 border-t border-white/20">
       {/* ── HERO BANNER ── */}
       <div className="relative w-full h-[38vh] sm:h-[45vh] overflow-hidden">
         <img

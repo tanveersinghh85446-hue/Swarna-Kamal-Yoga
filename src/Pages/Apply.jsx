@@ -51,7 +51,7 @@ const WaIcon = ({ size = 20 }) => (
   </svg>
 );
 
-// ── Course options ────────────────────────────────────────────────────────────
+// Course options
 const courseOptions = [
   {
     label: "100 Hour TTC",
@@ -208,7 +208,7 @@ const Apply = () => {
   };
 
   return (
-    <div className="w-full font-sans overflow-x-hidden pt-15 border-t border-white/20">
+    <div className="w-full font-sans overflow-x-hidden pt-16 border-t border-white/20">
       {/* ── HERO BANNER ── */}
       <div className="relative w-full h-[38vh] sm:h-[45vh] overflow-hidden">
         <img
@@ -225,7 +225,7 @@ const Apply = () => {
             Apply Now
           </h1>
           <p className="text-sm sm:text-base opacity-85 max-w-md">
-            Take the first step towards your yoga journey — fill the form &amp;
+            Take the first step towards your yoga journey — fill the form &
             we'll connect with you on WhatsApp!
           </p>
           {/* Breadcrumb */}
@@ -282,8 +282,13 @@ const Apply = () => {
             <FadeIn>
               <div className="bg-white rounded-3xl shadow-xl border border-stone-100 overflow-hidden">
                 {/* Card Header */}
-                <div className="bg-red-600 px-4 sm:px-8 py-4 sm:py-6 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 text-center sm:text-left">
-                  <h2 className="text-lg sm:text-2xl font-extrabold text-white leading-tight">
+                <div className="bg-white px-4 sm:px-8 py-4 sm:py-6 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 text-center sm:text-left">
+                   <img
+                    src="/Start.png"
+                    alt="Logo"
+                    className="h-20 sm:h-16 object-contain"
+                  />
+                  <h2 className="text-lg sm:text-2xl font-extrabold text-black leading-tight">
                     Swarna Kamal Yoga Enquiry Form
                   </h2>
 

@@ -123,7 +123,7 @@ function GalleryCard({ img, index, onClick }) {
       <img
         src={img}
         alt={`yoga-${index + 1}`}
-        loading="lazy"
+        loading="eager"
         className="w-full h-44 sm:h-52 object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
       />
       {/* Hover overlay */}
@@ -231,26 +231,7 @@ function Lightbox({ images, index, onClose }) {
         <span className="bg-white/15 text-white text-xs px-4 py-1.5 rounded-full font-semibold tracking-wider">
           {current + 1} / {images.length}
         </span>
-      </div>
-
-      {/* Dot indicators */}
-      {/* <div className="absolute bottom-12 left-0 right-0 flex justify-center gap-1.5">
-        {images.map((_, i) => (
-          <button
-            key={i}
-            onClick={(e) => {
-              e.stopPropagation();
-              setCurrent(i);
-            }}
-            className="rounded-full transition-all duration-300"
-            style={{
-              width: i === current ? 20 : 6,
-              height: 6,
-              background: i === current ? "#F59E0B" : "rgba(255,255,255,0.4)",
-            }}
-          />
-        ))}
-      </div> */}
+      </div>      
     </div>
   );
 }
@@ -273,7 +254,7 @@ export default function Gallery() {
   const [lightbox, setLightbox] = useState(null); // index or null
 
   return (
-    <div className="w-full font-sans overflow-x-hidden pt-15 border-t border-white/20">
+    <div className="w-full font-sans overflow-x-hidden pt-16 border-t border-white/20">
       <style>{`
         @keyframes heroFadeUp {
           from { opacity: 0; transform: translateY(28px); }

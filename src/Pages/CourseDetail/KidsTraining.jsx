@@ -1,229 +1,227 @@
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-
-const messages = [
-  "Writing clean code... ✨",
-  "Designing beautiful layouts... 🎨",
-  "Testing on all devices... 📱",
-  "Almost there... 🚀",
-  "Adding final touches... 🛠️",
-];
-
-function KidsTraining() {
-  const [msgIndex, setMsgIndex] = useState(0);
-  const [dots, setDots] = useState("");
-  const [timeLeft, setTimeLeft] = useState("");
-
-  // Cycle through messages
-  useEffect(() => {
-    const t = setInterval(() => {
-      setMsgIndex((prev) => (prev + 1) % messages.length);
-    }, 2000);
-    return () => clearInterval(t);
-  }, []);
-
-  // Animated dots
-  useEffect(() => {
-    const t = setInterval(() => {
-      setDots((prev) => (prev.length >= 3 ? "" : prev + "."));
-    }, 400);
-    return () => clearInterval(t);
-  }, []);
-
-  // 24 Hour Timer
-  useEffect(() => {
-    const calculateTimeLeft = () => {
-      // Get current time
-      const now = new Date();
-      
-      // Get midnight (start of today)
-      const midnight = new Date();
-      midnight.setHours(0, 0, 0, 0);
-      
-      // Calculate next midnight (24 hours from midnight)
-      const nextMidnight = new Date(midnight);
-      nextMidnight.setDate(nextMidnight.getDate() + 1);
-      
-      // Time left in ms
-      const diff = nextMidnight - now;
-      
-      if (diff <= 0) {
-        return "00:00:00";
-      }
-      
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-      
-      return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
-    };
-
-    setTimeLeft(calculateTimeLeft());
-    
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-    
-    return () => clearInterval(timer);
-  }, []);
-
+export default function KidsYogaCourse() {
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4 text-center pt-15 border-t border-white/2">
-
-      {/* ── Developer SVG Illustration ── */}
-      <div className="mb-8 sm:mb-10">
-        <svg
-          width="260"
-          height="260"
-          viewBox="0 0 260 260"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="mx-auto"
-        >
-          {/* Desk */}
-          <rect x="30" y="190" width="200" height="12" rx="6" fill="#111"/>
-          <rect x="55" y="202" width="12" height="40" rx="4" fill="#333"/>
-          <rect x="193" y="202" width="12" height="40" rx="4" fill="#333"/>
-
-          {/* Monitor */}
-          <rect x="70" y="120" width="120" height="75" rx="8" fill="#111"/>
-          <rect x="78" y="128" width="104" height="58" rx="4" fill="#1a1a2e"/>
-          {/* Screen glow */}
-          <rect x="82" y="132" width="96" height="50" rx="3" fill="#0f0f23"/>
-
-          {/* Code lines on screen */}
-          <rect x="88" y="140" width="55" height="3" rx="1.5" fill="#4ade80"/>
-          <rect x="88" y="148" width="40" height="3" rx="1.5" fill="#60a5fa"/>
-          <rect x="95" y="156" width="65" height="3" rx="1.5" fill="#f9a8d4"/>
-          <rect x="95" y="164" width="45" height="3" rx="1.5" fill="#fbbf24"/>
-          <rect x="88" y="172" width="30" height="3" rx="1.5" fill="#4ade80"/>
-
-          {/* Blinking cursor */}
-          <rect x="120" y="172" width="2" height="10" rx="1" fill="white">
-            <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
-          </rect>
-
-          {/* Monitor stand */}
-          <rect x="122" y="195" width="16" height="10" rx="2" fill="#333"/>
-          <rect x="110" y="203" width="40" height="6" rx="3" fill="#222"/>
-
-          {/* Keyboard */}
-          <rect x="80" y="210" width="100" height="18" rx="5" fill="#222"/>
-          {[0,1,2,3,4,5,6,7,8,9].map((i) => (
-            <rect key={i} x={86 + i * 9} y="214" width="6" height="5" rx="1.5" fill="#444"/>
-          ))}
-          {[0,1,2,3,4,5,6,7,8].map((i) => (
-            <rect key={i} x={90 + i * 9} y="221" width="6" height="4" rx="1.5" fill="#444"/>
-          ))}
-
-          {/* Person body */}
-          <rect x="108" y="82" width="44" height="42" rx="14" fill="white" stroke="#111" strokeWidth="2"/>
-
-          {/* Person neck */}
-          <rect x="125" y="76" width="10" height="10" rx="5" fill="white" stroke="#111" strokeWidth="2"/>
-
-          {/* Person head */}
-          <circle cx="130" cy="58" r="22" fill="white" stroke="#111" strokeWidth="2"/>
-
-          {/* Hair */}
-          <path d="M108 52 Q110 32 130 30 Q150 32 152 52" fill="#111"/>
-
-          {/* Eyes */}
-          <ellipse cx="122" cy="56" rx="4" ry="4.5" fill="#111"/>
-          <ellipse cx="138" cy="56" rx="4" ry="4.5" fill="#111"/>
-          <circle cx="123" cy="54" r="1.5" fill="white"/>
-          <circle cx="139" cy="54" r="1.5" fill="white"/>
-
-          {/* Glasses */}
-          <rect x="116" y="51" width="12" height="10" rx="4" fill="none" stroke="#111" strokeWidth="1.5"/>
-          <rect x="132" y="51" width="12" height="10" rx="4" fill="none" stroke="#111" strokeWidth="1.5"/>
-          <line x1="128" y1="56" x2="132" y2="56" stroke="#111" strokeWidth="1.5"/>
-          <line x1="108" y1="56" x2="116" y2="56" stroke="#111" strokeWidth="1.5"/>
-          <line x1="144" y1="56" x2="152" y2="56" stroke="#111" strokeWidth="1.5"/>
-
-          {/* Smile */}
-          <path d="M122 67 Q130 74 138 67" stroke="#111" strokeWidth="2" strokeLinecap="round" fill="none"/>
-
-          {/* Left arm — typing */}
-          <line x1="108" y1="96" x2="88" y2="118" stroke="#111" strokeWidth="4" strokeLinecap="round">
-            <animateTransform attributeName="transform" type="rotate" values="0 108 96;-5 108 96;0 108 96" dur="0.5s" repeatCount="indefinite"/>
-          </line>
-          <ellipse cx="85" cy="121" rx="7" ry="5" fill="white" stroke="#111" strokeWidth="2"/>
-
-          {/* Right arm — typing */}
-          <line x1="152" y1="96" x2="172" y2="118" stroke="#111" strokeWidth="4" strokeLinecap="round">
-            <animateTransform attributeName="transform" type="rotate" values="0 152 96;5 152 96;0 152 96" dur="0.5s" repeatCount="indefinite" begin="0.25s"/>
-          </line>
-          <ellipse cx="175" cy="121" rx="7" ry="5" fill="white" stroke="#111" strokeWidth="2"/>
-
-          {/* Coffee mug */}
-          <rect x="32" y="178" width="24" height="18" rx="4" fill="white" stroke="#111" strokeWidth="2"/>
-          <path d="M56 183 Q64 183 64 189 Q64 195 56 195" stroke="#111" strokeWidth="2" fill="none"/>
-          {/* Steam */}
-          <path d="M38 175 Q40 170 38 165" stroke="#aaa" strokeWidth="1.5" strokeLinecap="round" fill="none">
-            <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
-          </path>
-          <path d="M46 174 Q48 168 46 162" stroke="#aaa" strokeWidth="1.5" strokeLinecap="round" fill="none">
-            <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" begin="0.5s"/>
-          </path>
-
-          {/* Stars / sparkles around head */}
-          <text x="158" y="46" fontSize="14" fill="#111">✦</text>
-          <text x="96"  y="42" fontSize="12" fill="#111">✦</text>
-          <text x="170" y="72" fontSize="10" fill="#111">✦</text>
-        </svg>
-      </div>
-
-      {/* ── Text ── */}
-      <p className="text-xs uppercase tracking-[0.4em] text-gray-400 mb-3">Kids Training Page Under Construction</p>
-      <h1 className="text-4xl sm:text-5xl font-extrabold text-black mb-4">Our Kids Training Page Coming Soon</h1>
-
-      {/* Polite message */}
-      <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-md mx-auto mb-3">
-        We are working hard to bring you something wonderful. This page is currently under development and will be ready very soon.
+    <div className="max-w-3xl mx-auto px-5 py-10 bg-white text-gray-900 font-sans text-[15px] leading-relaxed pt-15 border-t border-white/2">
+      {/* Header */}
+      <p className="text-sm text-gray-500 mb-1 tracking-wide">
+        Swarna Kamal Yoga
       </p>
-      <p className="text-gray-400 text-sm max-w-sm mx-auto mb-8">
-        Thank you for your patience and support. We appreciate you visiting Swarna Kamal Yoga! 🙏
+      <h1 className="text-2xl font-bold underline mb-1">
+        Kids Teacher Training Course
+      </h1>
+      <p className="italic text-gray-600 mb-4">50 Hours Kids Yoga TTC</p>
+      <p className="text-gray-800 mb-6">
+        The Kids Yoga Teacher Training Course at Swarna Kamal Yoga is a
+        comprehensive 50-hour program designed to equip educators, parents, and
+        yoga practitioners with the tools and techniques needed to teach yoga
+        meaningfully to children aged 3–16. This course blends traditional
+        yogic wisdom with child development science to help you create safe,
+        joyful, and transformative yoga experiences for kids.
       </p>
 
-      {/* 24 Hour Timer */}
-      <div className="mb-8  px-8 py-6 max-w-sm">
-        {/* <p className="text-xs uppercase tracking-widest text-black font-bold mb-3">Time until reset</p> */}
-        <div className="font-mono text-5xl font-extrabold text-black tracking-tight">
-          {timeLeft || "00:00:00"}
-        </div>
-        {/* <p className="text-xs text-black mt-3">Resets daily at midnight</p> */}
-      </div>
+      <hr className="border-gray-200 my-7" />
 
-      {/* Animated status */}
-      <div className="flex items-center gap-3 mb-8 bg-gray-50 border border-gray-200 rounded-full px-5 py-2.5">
-        <span className="w-2 h-2 bg-black rounded-full animate-pulse shrink-0" />
-        <p className="text-sm font-medium text-gray-700 min-w-55 text-left">
-          {messages[msgIndex]}
-        </p>
-      </div>
+      {/* Why This Course */}
+      <h2 className="text-lg font-bold underline mb-3">Why This Course?</h2>
+      <p className="mb-2 text-gray-800">
+        Many teachers and parents struggle to:
+      </p>
+      <ul className="list-disc pl-6 mb-3 text-gray-800 space-y-1">
+        <li>Make yoga fun and age-appropriate for children</li>
+        <li>Understand child development at different stages</li>
+        <li>Address special needs like ADHD, Autism, and Anxiety</li>
+        <li>Structure safe, engaging kids yoga classes</li>
+      </ul>
+      <p className="text-gray-800">
+        This course gives you{" "}
+        <strong>
+          the skills, confidence, and creativity to inspire young yogis.
+        </strong>
+      </p>
 
-      {/* Bouncing dots */}
-      <div className="flex gap-2 mb-10">
-        {[0, 1, 2].map((i) => (
-          <div
-            key={i}
-            className="w-2.5 h-2.5 bg-black rounded-full animate-bounce"
-            style={{ animationDelay: `${i * 0.15}s` }}
-          />
-        ))}
-      </div>
+      <hr className="border-gray-200 my-7" />
 
-      {/* Back to Home button */}
-      <Link
-        to="/"
-        className="bg-black text-white px-8 py-3 rounded-full font-bold hover:bg-gray-800 transition-all text-sm sm:text-base shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform duration-200"
-      >
-        ← Back to Home
-      </Link>
+      {/* What You Will Learn */}
+      <h2 className="text-lg font-bold underline mb-4">What You Will Learn</h2>
 
+      {/* Module 1 */}
+      <h3 className="font-bold mb-2">
+        1. Creative & Traditional Breathing Practices
+      </h3>
+      <ul className="list-disc pl-6 mb-5 text-gray-800 space-y-1">
+        <li>Fun and effective pranayama for children</li>
+        <li>Breath awareness and calming techniques</li>
+        <li>Age-appropriate breathing games and exercises</li>
+      </ul>
+
+      {/* Module 2 */}
+      <h3 className="font-bold mb-2">
+        2. Teaching Techniques for Different Age Groups (3–14 Yrs)
+      </h3>
+      <ul className="list-disc pl-6 mb-5 text-gray-800 space-y-1">
+        <li>Developmental stages and how they affect learning</li>
+        <li>
+          Physical, Cognitive, Emotional, Social and Moral Development in
+          children
+        </li>
+        <li>How to create age-appropriate classes from birth to age 16</li>
+        <li>Indian Philosophy of Child Development and Education</li>
+        <li>
+          Consciousness in children and the impact of samskaras on development
+        </li>
+      </ul>
+
+      {/* Module 3 */}
+      <h3 className="font-bold mb-2">3. Kid-Friendly Yoga Postures & Benefits</h3>
+      <p className="mb-2 text-gray-800">
+        Practical exploration of yoga asanas adapted for young bodies:
+      </p>
+      <ul className="list-none pl-0 mb-5 text-gray-800 space-y-1">
+        <li>✓ Muscle engagement and joint safety for growing bodies</li>
+        <li>✓ Benefits of each posture for children</li>
+        <li>✓ Common mistakes and safe modifications</li>
+        <li>✓ Partner poses and group activities</li>
+      </ul>
+
+      {/* Module 4 */}
+      <h3 className="font-bold mb-2">4. Yoga Stories & Yoga Games</h3>
+      <ul className="list-disc pl-6 mb-5 text-gray-800 space-y-1">
+        <li>Using storytelling to guide children through poses</li>
+        <li>Interactive yoga games for engagement and learning</li>
+        <li>Songs, mantras, and omkar for children</li>
+        <li>Activity ideas beyond yoga — arts, crafts, mandalas and cooking</li>
+      </ul>
+
+      {/* Module 5 */}
+      <h3 className="font-bold mb-2">5. Use of Props & Class Structure</h3>
+      <ul className="list-disc pl-6 mb-5 text-gray-800 space-y-1">
+        <li>Creative use of props to enhance learning</li>
+        <li>Class structure and class management techniques</li>
+        <li>How to structure and create your own lesson plan</li>
+        <li>Making yoga fun and engaging for all ages</li>
+      </ul>
+
+      {/* Module 6 */}
+      <h3 className="font-bold mb-2">
+        6. Mindfulness, Meditation & Relaxation Techniques
+      </h3>
+      <ul className="list-disc pl-6 mb-5 text-gray-800 space-y-1">
+        <li>Yoga Nidra and meditation techniques for children and teens</li>
+        <li>Guided visualizations and relaxation practices</li>
+        <li>Taraka Concentrated Gazing (Trataka for kids)</li>
+        <li>Laughter Yoga techniques</li>
+      </ul>
+
+      {/* Module 7 */}
+      <h3 className="font-bold mb-2">
+        7. Online Kids Yoga — Preparation & Tips
+      </h3>
+      <ul className="list-disc pl-6 mb-5 text-gray-800 space-y-1">
+        <li>Setting up an engaging online kids yoga class</li>
+        <li>Tools and platforms for virtual teaching</li>
+        <li>Maintaining attention and energy online</li>
+        <li>Communicating with parents in digital settings</li>
+      </ul>
+
+      {/* Module 8 */}
+      <h3 className="font-bold mb-2">8. Yoga Philosophies for Kids</h3>
+      <ul className="list-disc pl-6 mb-5 text-gray-800 space-y-1">
+        <li>Patanjali's Eight Limbs of Yoga applied to children</li>
+        <li>Karma and Bhakti Yoga for children</li>
+        <li>Yoga for education and classroom settings</li>
+        <li>Lifestyle, diet and parenting from the yogic perspective</li>
+      </ul>
+
+      {/* Module 9 */}
+      <h3 className="font-bold mb-2">9. Chakras & Mudras — Approach for Kids</h3>
+      <ul className="list-disc pl-6 mb-5 text-gray-800 space-y-1">
+        <li>Child-friendly introduction to the chakra system</li>
+        <li>Simple mudras and their benefits for young learners</li>
+        <li>Integrating energy awareness into kids yoga classes</li>
+      </ul>
+
+      {/* Module 10 */}
+      <h3 className="font-bold mb-2">10. Anatomy for Kids Yoga</h3>
+      <ul className="list-disc pl-6 mb-5 text-gray-800 space-y-1">
+        <li>Basic skeletal and muscular anatomy relevant to children</li>
+        <li>
+          Benefits, contraindications and guidelines for teaching yoga to
+          children
+        </li>
+        <li>Safe practice principles for growing bodies</li>
+        <li>
+          Yoga therapy for children with special needs including ADHD, Autism,
+          Asthma, Depression and Anxiety
+        </li>
+      </ul>
+
+      {/* Module 11 */}
+      <h3 className="font-bold mb-2">
+        11. Teaching Methodology & Lesson Planning
+      </h3>
+      <ul className="list-disc pl-6 mb-5 text-gray-800 space-y-1">
+        <li>How to observe students and correct alignment in groups</li>
+        <li>Creating safe, fun, and engaging sequences</li>
+        <li>Teaching Mommy & Me or family yoga classes</li>
+        <li>
+          Practical info — asanas, pranayama, games, songs, partner poses and
+          more
+        </li>
+        <li>Assignments with individual feedback from instructor</li>
+        <li>Experience reconnecting with your own inner child</li>
+      </ul>
+
+      {/* Module 12 */}
+      <h3 className="font-bold mb-2">12. Community & Outreach</h3>
+      <ul className="list-disc pl-6 mb-5 text-gray-800 space-y-1">
+        <li>
+          How to bring kids yoga back to your home country or community
+        </li>
+        <li>Communicating with parents, schools, and administrators</li>
+        <li>Advocating for the benefits of yoga in educational settings</li>
+      </ul>
+
+      <hr className="border-gray-200 my-7" />
+
+      {/* Course Features */}
+      <h2 className="text-lg font-bold underline mb-3">Course Features</h2>
+      <ul className="list-disc pl-6 mb-2 text-gray-800 space-y-1">
+        <li>100% Online – Learn from anywhere</li>
+        <li>50 Hours of comprehensive training</li>
+        <li>Recorded + Live Sessions</li>
+        <li>Step-by-step structured modules</li>
+        <li>Practical demonstrations and assignments</li>
+        <li>Individual feedback from instructor</li>
+      </ul>
+
+      <hr className="border-gray-200 my-7" />
+
+      {/* Course Benefits */}
+      <h2 className="text-lg font-bold underline mb-3">Course Benefits</h2>
+      <ul className="list-disc pl-6 mb-2 text-gray-800 space-y-1">
+        <li>Teach yoga confidently to children of all ages (3–16 yrs)</li>
+        <li>Understand child development at every stage</li>
+        <li>Create safe, joyful, and inclusive yoga classes</li>
+        <li>Support children with special needs through yoga therapy</li>
+        <li>Stand out as a certified Kids Yoga Teacher</li>
+        <li>Reconnect with your own inner child through practice</li>
+      </ul>
+
+      <hr className="border-gray-200 my-7" />
+
+      {/* Why Choose */}
+      <h2 className="text-lg font-bold underline mb-3">
+        Why Choose Swarna Kamal Yoga?
+      </h2>
+      <p className="mb-2 text-gray-800">At Swarna Kamal Yoga, we combine:</p>
+      <ul className="list-disc pl-6 mb-3 text-gray-800 space-y-1">
+        <li>Traditional Yogic Knowledge</li>
+        <li>Modern Child Development Science</li>
+        <li>Creative & Playful Teaching Approaches</li>
+      </ul>
+      <p className="text-gray-800">
+        Our focus is not just learning — but{" "}
+        <strong>real transformation and mastery.</strong>
+      </p>
     </div>
   );
 }
-
-export default KidsTraining;

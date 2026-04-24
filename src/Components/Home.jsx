@@ -54,7 +54,7 @@ const courses = [
     title: "200 Hour TTC",
     desc: "The globally recognized standard for certified yoga instructors.",
     img: "200 Hour TTC.jpg",
-    to: "/courses/pranayama",
+    to: "/courses/pranayama ",
     badge: "Most Popular",
   },
   {
@@ -281,7 +281,7 @@ const Home = () => {
     resetTimer();
   };
   return (
-    <div className="w-full font-sans overflow-x-hidden pt-15 border-t border-white/2">
+    <div className="w-full font-sans overflow-x-hidden pt-16 border-t border-white/2">
       {/* ── 1. HERO SLIDER ── */}
       <div className="w-full h-[65vh] sm:h-[75vh] md:h-[80vh] lg:h-[85vh] overflow-hidden relative">
         {slides.map((s, i) => (

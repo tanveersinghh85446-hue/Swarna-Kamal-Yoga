@@ -86,7 +86,7 @@ const courses = [
     title: "Asana Anatomy",
     slug: "asana-anatomy",
     icon: <PiBoneThin />,
-    sessions: "Live + Recorded",
+    sessions: "Live + Recorded From August 3rd  12 pm 1 pm IST  Fee 4500",
     highlights: ["Muscles", "Alignment", "Injury", "Safety"],
   },
   {
@@ -134,7 +134,7 @@ const courses = [
     title: "Therapy Course",
     slug: "therapy",
     icon: <RiPsychotherapyFill />,
-    sessions: "Live + Recorded",
+    sessions: "Live + Recorded 35 classes Fee 8000 ",
     highlights: ["Therapy", "Healing", "Relaxation", "Naturopathy"],
   },
   {
@@ -149,7 +149,7 @@ const courses = [
 
 function Courses() {
   return (
-    <div className="bg-linear-to-b from-white to-gray-100 min-h-screen pt-15 border-t border-white/2">
+    <div className="bg-linear-to-b from-white to-gray-100 min-h-screen pt-16 border-t border-white/2">
       {/* Header */}
       <section
         className="relative text-white py-16 text-center bg-cover bg-center"
