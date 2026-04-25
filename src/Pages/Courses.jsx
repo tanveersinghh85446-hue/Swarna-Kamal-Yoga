@@ -48,7 +48,7 @@ const courses = [
     price: "₹8,500",
     duration: "35 Classes",
     mode: "Live on Zoom",
-    startDate: "June 4th, 7-8 PM IST",
+    startDate: "June 4th  7-8 PM IST",
     highlights: [
       "Asana Sequences",
       "HIIT & Tabata",
@@ -64,7 +64,7 @@ const courses = [
     price: "₹9,000",
     duration: "40 Sessions",
     mode: "Live + Recorded",
-    startDate: "June 4th, 12-1 PM IST",
+    startDate: "June 4th  12-1 PM IST",
     highlights: [
       "PCOS & Thyroid Therapy",
       "Hormonal Balance",
@@ -100,7 +100,7 @@ const courses = [
     price: "₹5,500",
     // duration: "4 Weeks",
     mode: "Live + Recorded",
-    startDate: "August 3rd, 12-1 PM IST",
+    startDate: "August 3rd  12-1 PM IST",
     highlights: ["Muscles", "Alignment", "Injury", "Safety"],
   },
   {
@@ -139,9 +139,9 @@ const courses = [
     slug: "yin-yoga",
     icon: <IoMoon />,
     price: "₹6,500",
-    // duration: "6 Weeks",
+    duration: "6 Weeks",
     mode: "Live + Recorded",
-    startDate: "June 15, 8-9 PM IST",
+    startDate: "June 15  8-9 PM IST",
     highlights: ["Yin", "Fascia", "Meditation", "Teaching"],
   },
   {
