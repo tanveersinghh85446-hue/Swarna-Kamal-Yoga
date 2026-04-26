@@ -521,7 +521,7 @@ const Home = () => {
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               {[
                 " Expert-Led Sessions",
-                " Online & Offline",
+                " Online",
                 " Flexible Timings",
                 " Certified Courses",
               ].map((tag, i) => (

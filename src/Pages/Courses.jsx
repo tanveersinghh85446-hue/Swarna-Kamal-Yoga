@@ -72,16 +72,16 @@ const courses = [
       "Ayurvedic Approach",
     ],
   },
-  {
-    id: 5,
-    title: "Hatha Yoga TTC",
-    slug: "hatha-yoga",
-    icon: <GiMeditation />,
-    // price: "₹12,000",
-    // duration: "6-8 Weeks",
-    mode: "Live + Recorded",
-    highlights: ["Asanas", "Pranayama", "Teaching", "Anatomy"],
-  },
+  // {
+  //   id: 5,
+  //   title: "Hatha Yoga TTC",
+  //   slug: "hatha-yoga",
+  //   icon: <GiMeditation />,
+  //   // price: "₹12,000",
+  //   // duration: "6-8 Weeks",
+  //   mode: "Live + Recorded",
+  //   highlights: ["Asanas", "Pranayama", "Teaching", "Anatomy"],
+  // },
   {
     id: 6,
     title: "Ashtanga Vinyasa TTC",
@@ -159,7 +159,7 @@ const courses = [
     title: "Therapy Course",
     slug: "therapy",
     icon: <RiPsychotherapyFill />,
-    price: "₹8,000",
+    price: "₹8,500",
     duration: "35 Classes",
     mode: "Live + Recorded",
     highlights: ["Therapy", "Healing", "Relaxation", "Naturopathy"],
@@ -243,7 +243,7 @@ function Courses() {
 
                 {/* Start Date if available */}
                 {course.startDate && (
-                  <p className="text-purple-600 text-xs font-semibold mb-3">
+                  <p className="text-purple-600 text-xl font-bold">
                     🗓️ Starts: {course.startDate}
                   </p>
                 )}
