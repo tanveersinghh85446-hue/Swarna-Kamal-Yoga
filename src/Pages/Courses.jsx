@@ -141,7 +141,7 @@ const courses = [
     price: "₹6,500",
     duration: "6 Weeks",
     mode: "Live + Recorded",
-    startDate: "June 15  8-9 PM IST",
+    startDate: "June 15th  8-9 PM IST",
     highlights: ["Yin", "Fascia", "Meditation", "Teaching"],
   },
   {
