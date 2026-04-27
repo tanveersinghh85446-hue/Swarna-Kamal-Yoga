@@ -18,6 +18,10 @@ import { IoIosFlash } from "react-icons/io";
 import { IoMoon } from "react-icons/io5";
 import { LuBaby } from "react-icons/lu";
 import { MdSelfImprovement, MdChair } from "react-icons/md";
+import { TbWheel } from "react-icons/tb";
+import { GiDuration } from "react-icons/gi";
+import { MdLiveTv } from "react-icons/md";
+import { FaRegCalendarAlt } from "react-icons/fa";
 
 const colors = [
   "from-pink-500 to-rose-500",
@@ -159,134 +163,62 @@ const courses = [
 ];
 
 const workshops = [
-  {
-    id: "w1",
-    title: "Chair Yoga Workshop",
-    icon: <MdChair />,
-    colorIndex: 0,
-  },
-  {
-    id: "w2",
-    title: "Power Yoga Workshop",
-    icon: <IoIosFlash />,
-    colorIndex: 1,
-  },
-  {
-    id: "w3",
-    title: "Yoga Therapy for Digestive Disorders",
-    icon: <GiStomach />,
-    colorIndex: 2,
-  },
-  {
-    id: "w4",
-    title: "Yoga Therapy for Diabetes Reversal",
-    icon: <FaHeartbeat />,
-    colorIndex: 3,
-  },
-  {
-    id: "w5",
-    title: "Yoga Therapy for Thyroid Management",
-    icon: <GiFlowerEmblem />,
-    colorIndex: 4,
-  },
-  {
-    id: "w6",
-    title: "Yoga Therapy for Stress & Anxiety",
-    icon: <GiMeditation />,
-    colorIndex: 5,
-  },
-  {
-    id: "w7",
-    title: "Yoga Therapy for Neck & Back Pain Relief",
-    icon: <PiBoneThin />,
-    colorIndex: 6,
-  },
-  {
-    id: "w8",
-    title: "Yoga Therapy for Menopause",
-    icon: <RiShiningFill />,
-    colorIndex: 7,
-  },
-  {
-    id: "w9",
-    title: "Yoga Therapy for Somatic Awareness & Embodied Healing",
-    icon: <MdSelfImprovement />,
-    colorIndex: 0,
-  },
-  {
-    id: "w10",
-    title: "Master the Basics of Strength Training",
-    icon: <GiStrong />,
-    colorIndex: 1,
-  },
-  {
-    id: "w11",
-    title: "Garbh Sanskar — Journey of Pregnancy",
-    icon: <FaPersonPregnant />,
-    colorIndex: 2,
-  },
-  {
-    id: "w12",
-    title: "Prenatal Therapy Yoga",
-    icon: <LuBaby />,
-    colorIndex: 3,
-  },
-  {
-    id: "w13",
-    title: "Yoga Therapy for Spinal Health",
-    icon: <GiSpinalCoil />,
-    colorIndex: 4,
-  },
-  {
-    id: "w14",
-    title: "Pilates with Stick and Dumbbells",
-    icon: <GiSportMedal />,
-    colorIndex: 5,
-  },
-  {
-    id: "w15",
-    title: "Unwinding with Restorative Yoga",
-    icon: <IoMoon />,
-    colorIndex: 6,
-  },
+  { id: "w1",  title: "Chair Yoga Workshop",                                    icon: <MdChair />,           colorIndex: 0 },
+  { id: "w2",  title: "Power Yoga Workshop",                                    icon: <IoIosFlash />,        colorIndex: 1 },
+  { id: "w3",  title: "Yoga Therapy for Digestive Disorders",                   icon: <GiStomach />,         colorIndex: 2 },
+  { id: "w4",  title: "Yoga Therapy for Diabetes Reversal",                     icon: <FaHeartbeat />,       colorIndex: 3 },
+  { id: "w5",  title: "Yoga Therapy for Thyroid Management",                    icon: <GiFlowerEmblem />,    colorIndex: 4 },
+  { id: "w6",  title: "Yoga Therapy for Stress & Anxiety",                      icon: <GiMeditation />,      colorIndex: 5 },
+  { id: "w7",  title: "Yoga Therapy for Neck & Back Pain Relief",               icon: <PiBoneThin />,        colorIndex: 6 },
+  { id: "w8",  title: "Yoga Therapy for Menopause",                             icon: <RiShiningFill />,     colorIndex: 7 },
+  { id: "w9",  title: "Yoga Therapy for Somatic Awareness & Embodied Healing",  icon: <MdSelfImprovement />, colorIndex: 0 },
+  { id: "w10", title: "Master the Basics of Strength Training",                 icon: <GiStrong />,          colorIndex: 1 },
+  { id: "w11", title: "Garbh Sanskar — Journey of Pregnancy",                   icon: <FaPersonPregnant />,  colorIndex: 2 },
+  { id: "w12", title: "Prenatal Therapy Yoga",                                  icon: <LuBaby />,            colorIndex: 3 },
+  { id: "w13", title: "Yoga Therapy for Spinal Health",                         icon: <GiSpinalCoil />,      colorIndex: 4 },
+  { id: "w14", title: "Pilates with Stick and Dumbbells",                       icon: <GiSportMedal />,      colorIndex: 5 },
+  { id: "w15", title: "Unwinding with Restorative Yoga",                        icon: <IoMoon />,            colorIndex: 6 },
+  { id: "w16", title: "Wheel Yoga",                                             icon: <TbWheel />,           colorIndex: 0 },
 ];
 
 function Courses() {
   return (
     <div className="bg-linear-to-b from-white to-gray-100 min-h-screen pt-16 border-t border-white/20">
+
       {/* ── HERO ── */}
       <section
-        className="relative text-white py-16 text-center bg-cover bg-center"
+        className="relative text-white py-16 sm:py-20 text-center bg-cover bg-center"
         style={{ backgroundImage: "url('/God.png')" }}
       >
         <div className="absolute inset-0 bg-black/50" />
-        <div className="relative">
-          <p className="uppercase tracking-[0.4em] text-xs mb-3 text-white/70">
+        <div className="relative px-4">
+          {/* tracking thoda kam kiya mobile pe overflow na ho */}
+          <p className="uppercase tracking-[0.25em] sm:tracking-[0.4em] text-xs mb-3 text-white/70">
             Live on Zoom
           </p>
-          <h1 className="text-5xl font-extrabold mb-4 text-white">
+          {/* 3xl mobile → 4xl tablet → 5xl desktop */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 text-white leading-tight">
             Online Yoga Courses
           </h1>
-          <p className="max-w-xl mx-auto text-lg text-white/85">
+          <p className="max-w-xl mx-auto text-base sm:text-lg text-white/85">
             Certified courses with expert trainers — learn, grow & transform.
           </p>
         </div>
       </section>
 
       {/* ── CERTIFICATE COURSES ── */}
-      <section className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-3 gap-8">
+      <section className="max-w-7xl mx-auto px-4 py-12 sm:py-16">
+        {/* 1 col mobile → 2 col tablet → 3 col desktop */}
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           {courses.map((course, i) => (
             <div
               key={course.id}
               className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition bg-white"
             >
-              <div
-                className={`h-2 bg-linear-to-r ${colors[i % colors.length]}`}
-              />
-              <div className="p-6">
+              <div className={`h-2 bg-linear-to-r ${colors[i % colors.length]}`} />
+              <div className="p-5 sm:p-6">
                 <div className="flex justify-between items-start mb-4">
-                  <span className="text-4xl text-purple-600">
+                  <span className="text-3xl sm:text-4xl text-purple-600">
                     {course.icon}
                   </span>
                   {course.price && (
@@ -295,25 +227,34 @@ function Courses() {
                     </div>
                   )}
                 </div>
-                <h3 className="font-bold text-xl mb-3 text-gray-900 min-h-14">
+
+                {/* font-size thoda shrink mobile pe, min-h hata diya — ab text freely wrap hoga */}
+                <h3 className="font-bold text-base sm:text-xl mb-3 text-gray-900">
                   {course.title}
                 </h3>
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {course.duration && (
-                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-semibold">
-                      ⏱️ {course.duration}
+                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5">
+                      <GiDuration className="text-base animate-spin text-amber-400" />
+                      {course.duration}
                     </span>
                   )}
-                  <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-semibold">
-                    📹 {course.mode}
+                  <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5">
+                    <MdLiveTv className="text-base animate-bounce text-red-600" />
+                    {course.mode}
                   </span>
                 </div>
+
                 {course.startDate && (
-                  <p className="text-purple-600 text-xl font-bold mb-3">
-                    🗓️ Starts: {course.startDate}
+                  /* text-base mobile, text-lg desktop — text-xl bahut bada tha date ke liye */
+                  <p className="text-yellow-500 text-base sm:text-lg font-bold mb-3 flex items-center gap-2">
+                    <FaRegCalendarAlt className="text-black shrink-0 animate-ping" />
+                    Starts: {course.startDate}
                   </p>
                 )}
-                <ul className="space-y-2 mb-6">
+
+                <ul className="space-y-1.5 mb-6">
                   {course.highlights.map((h, j) => (
                     <li key={j} className="text-sm text-gray-700 flex gap-2">
                       <span className="text-purple-500 font-bold">•</span>
@@ -321,9 +262,10 @@ function Courses() {
                     </li>
                   ))}
                 </ul>
+
                 <Link
                   to={`/courses/${course.slug}`}
-                  className="block text-center bg-linear-to-r from-purple-500 to-indigo-500 text-white py-3 rounded-full font-semibold hover:opacity-90 transition shadow-lg"
+                  className="block text-center bg-linear-to-r from-purple-500 to-indigo-500 text-white py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-semibold hover:opacity-90 transition shadow-lg"
                 >
                   View Syllabus →
                 </Link>
@@ -339,52 +281,42 @@ function Courses() {
       </div>
 
       {/* ── ONLINE WORKSHOPS SECTION ── */}
-      <section className="max-w-7xl mx-auto px-4 py-16">
-        {/* Section Heading */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold text-gray-900 mb-3">
+      <section className="max-w-7xl mx-auto px-4 py-12 sm:py-16">
+        <div className="text-center mb-10 sm:mb-12 px-2">
+          {/* 2xl mobile → 3xl tablet → 4xl desktop */}
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mb-3 leading-tight">
             Welcome to{" "}
-            <span className="text-yellow-400">Swarna Kamal Yoga</span> Online
-            Workshop Courses
+            <span className="text-yellow-400">Swarna Kamal Yoga</span>{" "}
+            Online Workshop Courses
           </h2>
         </div>
 
-        {/* Workshop Cards Grid */}
-        <div className="grid md:grid-cols-3 gap-7">
+        {/* 1 col mobile → 2 col sm → 3 col md → 4 col lg */}
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-7">
           {workshops.map((w) => (
             <div
               key={w.id}
               className="group relative rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
-              {/* Top Color Bar */}
-              <div
-                className={`h-1.5 bg-linear-to-r ${workshopColors[w.colorIndex]}`}
-              />
+              <div className={`h-1.5 bg-linear-to-r ${workshopColors[w.colorIndex]}`} />
 
-              {/* Workshop Badge */}
-              <div className="absolute top-4 right-4">
-                <span className="bg-teal-50 text-teal-600 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border border-teal-200">
-                  Workshop
-                </span>
-              </div>
-
-              <div className="p-6 pt-5">
-                {/* Icon Circle */}
+              <div className="p-5 sm:p-6 pt-4 sm:pt-5">
                 <div
-                  className={`w-12 h-12 rounded-xl bg-linear-to-br ${workshopColors[w.colorIndex]} flex items-center justify-center text-white text-2xl mb-4 shadow-sm`}
+                  className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-linear-to-br ${workshopColors[w.colorIndex]} flex items-center justify-center text-white text-xl sm:text-2xl mb-4 shadow-sm`}
                 >
                   {w.icon}
                 </div>
 
-                {/* Title */}
-                <h3 className="font-bold text-lg text-gray-900 mb-2 leading-snug min-h-14 pr-8">
+                {/* min-h-14 hata diya — long titles pe overflow hota tha mobile pe */}
+                <h3 className="font-bold text-base sm:text-lg text-gray-900 mb-2 leading-snug">
                   {w.title}
                 </h3>
 
-                {/* Tag */}
-                <p className="text-xs text-gray-500 mb-5 leading-relaxed">
-                  {w.tag}
-                </p>
+                {w.tag && (
+                  <p className="text-xs text-gray-500 mb-3 leading-relaxed">
+                    {w.tag}
+                  </p>
+                )}
               </div>
             </div>
           ))}
@@ -392,23 +324,24 @@ function Courses() {
       </section>
 
       {/* ── BOTTOM CTA ── */}
-      <section className="bg-linear-to-r from-black to-gray-900 text-white py-16 text-center">
-        <h2 className="text-3xl font-bold mb-4 text-white">
+      <section className="bg-linear-to-r from-black to-gray-900 text-white py-14 sm:py-16 text-center px-4">
+        {/* 2xl mobile → 3xl desktop */}
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white">
           Not sure which course?
         </h2>
-        <p className="mb-6 text-white/60">
+        <p className="mb-6 text-sm sm:text-base text-white/60">
           We'll guide you to the perfect one.
         </p>
         <div className="flex justify-center gap-4">
           <Link
             to="/contact"
-            className="border px-6 py-3 rounded-full hover:bg-white hover:text-black transition text-white/90"
+            className="border px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base hover:bg-white hover:text-black transition text-white/90"
           >
             Contact
           </Link>
           <Link
             to="/apply"
-            className="bg-white text-black px-6 py-3 rounded-full hover:bg-gray-200 transition"
+            className="bg-white text-black px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base hover:bg-gray-200 transition"
           >
             Apply
           </Link>
@@ -416,8 +349,7 @@ function Courses() {
       </section>
 
       <div className="border-t border-stone-800 mt-10 pt-4 mb-8 text-center text-xs text-stone-500">
-        © {new Date().getFullYear()} Swarna Kamal Yoga Center, Bengaluru. All
-        rights reserved.
+        © {new Date().getFullYear()} Swarna Kamal Yoga Center, Bengaluru. All rights reserved.
       </div>
     </div>
   );
