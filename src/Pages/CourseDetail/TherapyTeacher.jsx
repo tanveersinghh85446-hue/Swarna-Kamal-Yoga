@@ -61,7 +61,8 @@ export default function TherapyTeacher() {
         2. Musculoskeletal System & Case Studies
       </h3>
       <p className="mb-2 text-gray-800">
-        In-depth study of the musculoskeletal system with practical case studies:
+        In-depth study of the musculoskeletal system with practical case
+        studies:
       </p>
       <ul className="list-none pl-0 mb-5 text-gray-800 space-y-1">
         <li>✓ Back Pain</li>
@@ -71,9 +72,7 @@ export default function TherapyTeacher() {
       </ul>
 
       {/* Module 3 */}
-      <h3 className="font-bold mb-2">
-        3. Circulatory System & Case Studies
-      </h3>
+      <h3 className="font-bold mb-2">3. Circulatory System & Case Studies</h3>
       <p className="mb-2 text-gray-800">
         Understanding the heart and circulatory health through yoga therapy:
       </p>
@@ -84,9 +83,7 @@ export default function TherapyTeacher() {
       </ul>
 
       {/* Module 4 */}
-      <h3 className="font-bold mb-2">
-        4. Digestive System & Case Studies
-      </h3>
+      <h3 className="font-bold mb-2">4. Digestive System & Case Studies</h3>
       <p className="mb-2 text-gray-800">
         Therapeutic yoga for digestive health conditions:
       </p>
@@ -98,9 +95,7 @@ export default function TherapyTeacher() {
       </ul>
 
       {/* Module 5 */}
-      <h3 className="font-bold mb-2">
-        5. Endocrine System & Case Studies
-      </h3>
+      <h3 className="font-bold mb-2">5. Endocrine System & Case Studies</h3>
       <p className="mb-2 text-gray-800">
         Understanding hormonal health and yoga's role in balancing it:
       </p>
@@ -112,9 +107,7 @@ export default function TherapyTeacher() {
       </ul>
 
       {/* Module 6 */}
-      <h3 className="font-bold mb-2">
-        6. Yoga for Specific Health Conditions
-      </h3>
+      <h3 className="font-bold mb-2">6. Yoga for Specific Health Conditions</h3>
       <p className="mb-2 text-gray-800">
         Comprehensive yoga therapy protocols for a wide range of conditions:
       </p>
@@ -138,7 +131,7 @@ export default function TherapyTeacher() {
       <ul className="list-disc pl-6 mb-2 text-gray-800 space-y-1">
         <li>Live & Recorded Sessions</li>
         <li>Study Materials in PDFs</li>
-        <li>Soft & Hard Copy of Certificate</li>
+        <li>Soft Copy of Certificate</li>
       </ul>
 
       <hr className="border-gray-200 my-7" />
@@ -149,7 +142,9 @@ export default function TherapyTeacher() {
         <li>Teach yoga therapy with clinical understanding and confidence</li>
         <li>Help students manage chronic and complex health conditions</li>
         <li>Expand your expertise beyond general yoga teaching</li>
-        <li>Work with diverse populations including those with special needs</li>
+        <li>
+          Work with diverse populations including those with special needs
+        </li>
         <li>Stand out as a certified Yoga Therapy Teacher</li>
       </ul>
 
