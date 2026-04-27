@@ -124,16 +124,6 @@ const courses = [
     highlights: ["Diet", "Meals", "Water", "Balance"],
   },
   {
-    id: 10,
-    title: "Power Yoga",
-    slug: "power-yoga",
-    icon: <IoIosFlash />,
-    // price: "₹5,500",
-    // duration: "4 Weeks",
-    mode: "Live + Recorded",
-    highlights: ["Strength", "Core", "Flow", "Energy"],
-  },
-  {
     id: 11,
     title: "Yin Yoga TTC",
     slug: "yin-yoga",

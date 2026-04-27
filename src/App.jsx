@@ -19,7 +19,6 @@ import AshtangaVinyasa from "./Pages/CourseDetail/AshtangaVinyasa";
 import AsanaAnatomy from "./Pages/CourseDetail/AsanaAnatomy";
 import FaceYoga from "./Pages/CourseDetail/FaceYoga";
 import NutritionDiet from "./Pages/CourseDetail/NutritionDiet";
-import PowerYoga from "./Pages/CourseDetail/PowerYoga";
 import YinYoga from "./Pages/CourseDetail/YinYoga";
 import MatPilates from "./Pages/CourseDetail/MatPilates";
 import TherapyTeacher from "./Pages/CourseDetail/TherapyTeacher";
@@ -66,7 +65,6 @@ function App() {
             <Route path="/courses/asana-anatomy" element={<AsanaAnatomy />} />
             <Route path="/courses/face-yoga" element={<FaceYoga />} />
             <Route path="/courses/nutrition" element={<NutritionDiet />} />
-            <Route path="/courses/power-yoga" element={<PowerYoga />} />
             <Route path="/courses/yin-yoga" element={<YinYoga />} />
             <Route path="/courses/mat-pilates" element={<MatPilates />} />
             <Route path="/courses/therapy" element={<TherapyTeacher />} />

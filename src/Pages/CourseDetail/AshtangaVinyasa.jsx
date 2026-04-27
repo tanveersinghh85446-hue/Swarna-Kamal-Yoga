@@ -1,229 +1,253 @@
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import React from "react";
 
-const messages = [
-  "Writing clean code... ✨",
-  "Designing beautiful layouts... 🎨",
-  "Testing on all devices... 📱",
-  "Almost there... 🚀",
-  "Adding final touches... 🛠️",
-];
+const asanas = {
+  standing: [
+    ["Padangusthasana", "Big Toe Pose"],
+    ["Padahastasana", "Hand Under Foot Pose"],
+    ["Utthita Trikonasana", "Triangle Pose"],
+    ["Parivrtta Trikonasana", "Revolving Triangle Pose"],
+    ["Utthita Parsvakonasana", "Extended Side Angle Pose"],
+    ["Parivritta Parsvakonasana", "Revolving Side Angle Pose"],
+    ["Prasarita Padottanasana A–D", "Intense Wide Leg Stretch"],
+    ["Parsvottanasana", "Intense Side Stretch Pose"],
+    ["Utthita Hasta Padangusthasana", "Hand to Big Toe Pose"],
+    ["Ardha Baddha Padmottanasana", "Half Bound Lotus Forward Bend"],
+  ],
+  sitting: [
+    ["Dandasana", "Staff Pose"],
+    ["Paschimottanasana A–C", "Seated Forward Bend"],
+    ["Purvottanasana", "Intense East Stretch"],
+    ["Ardha Baddha Padma Paschimottanasana", "Half Bound Lotus Forward Bend"],
+    ["Tiriang Mukhaipada Paschimottanasana", "Three Limbs West Stretch Pose"],
+    ["Janu Sirsasana", "Head to Knee Pose"],
+    ["Marichyasana", "Sage Marichi's Pose"],
+    ["Navasana", "Boat Pose"],
+    ["Bhujapidasana", "Shoulder Pressure Posture"],
+    ["Kurmasana", "Tortoise Pose"],
+    ["Supta Kurmasana", "Sleeping Tortoise"],
+    ["Garbha Pindasana", "Embryo Pose"],
+    ["Kukkutasana", "Rooster Pose"],
+    ["Baddha Konasana A–B", "Bound Angle Pose"],
+    ["Upavista Konasana A–B", "Seated Angle Pose"],
+    ["Supta Padangustasana", "Reclining Big Toe Posture"],
+    ["Ubhaya Padangusthasana", "Both Big Toes Pose"],
+    ["Urdhva Mukha Paschimottasana", "Upward Facing Full Forward Bend"],
+    ["Setu Bandhasana", "Bridge"],
+    ["Urdhva Dhanurasana", "Upward Bow Posture"],
+  ],
+  finishing: [
+    ["Salamba Sarvangasana", "Shoulderstand"],
+    ["Halasana", "Plow"],
+    ["Karnapidasana", "Ear Pressure Pose"],
+    ["Urdhva Padmasana", "Upward Lotus"],
+    ["Pindasana", "Embryo Pose"],
+    ["Matsyasana", "Fish Pose"],
+    ["Uttana Padasana", "Extended Leg Pose"],
+    ["Sirsasana", "Headstand"],
+    ["Yoga Mudra", "Sealed Yoga Pose"],
+    ["Padmasana", "Lotus"],
+    ["Uttpluthi", "Uprooting"],
+    ["Savasana", "Corpse Pose"],
+  ],
+};
 
-function AshtangaVinyasa() {
-  const [msgIndex, setMsgIndex] = useState(0);
-  const [dots, setDots] = useState("");
-  const [timeLeft, setTimeLeft] = useState("");
-
-  // Cycle through messages
-  useEffect(() => {
-    const t = setInterval(() => {
-      setMsgIndex((prev) => (prev + 1) % messages.length);
-    }, 2000);
-    return () => clearInterval(t);
-  }, []);
-
-  // Animated dots
-  useEffect(() => {
-    const t = setInterval(() => {
-      setDots((prev) => (prev.length >= 3 ? "" : prev + "."));
-    }, 400);
-    return () => clearInterval(t);
-  }, []);
-
-  // 24 Hour Timer
-  useEffect(() => {
-    const calculateTimeLeft = () => {
-      // Get current time
-      const now = new Date();
-      
-      // Get midnight (start of today)
-      const midnight = new Date();
-      midnight.setHours(0, 0, 0, 0);
-      
-      // Calculate next midnight (24 hours from midnight)
-      const nextMidnight = new Date(midnight);
-      nextMidnight.setDate(nextMidnight.getDate() + 1);
-      
-      // Time left in ms
-      const diff = nextMidnight - now;
-      
-      if (diff <= 0) {
-        return "00:00:00";
-      }
-      
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-      
-      return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
-    };
-
-    setTimeLeft(calculateTimeLeft());
-    
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-    
-    return () => clearInterval(timer);
-  }, []);
-
+function SectionTitle({ number, title }) {
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4 text-center pt-15 border-t border-white/2">
+    <h2 className="text-xl font-bold underline underline-offset-4 mb-3 text-black">
+      {number}. {title}
+    </h2>
+  );
+}
 
-      {/* ── Developer SVG Illustration ── */}
-      <div className="mb-8 sm:mb-10">
-        <svg
-          width="260"
-          height="260"
-          viewBox="0 0 260 260"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="mx-auto"
-        >
-          {/* Desk */}
-          <rect x="30" y="190" width="200" height="12" rx="6" fill="#111"/>
-          <rect x="55" y="202" width="12" height="40" rx="4" fill="#333"/>
-          <rect x="193" y="202" width="12" height="40" rx="4" fill="#333"/>
-
-          {/* Monitor */}
-          <rect x="70" y="120" width="120" height="75" rx="8" fill="#111"/>
-          <rect x="78" y="128" width="104" height="58" rx="4" fill="#1a1a2e"/>
-          {/* Screen glow */}
-          <rect x="82" y="132" width="96" height="50" rx="3" fill="#0f0f23"/>
-
-          {/* Code lines on screen */}
-          <rect x="88" y="140" width="55" height="3" rx="1.5" fill="#4ade80"/>
-          <rect x="88" y="148" width="40" height="3" rx="1.5" fill="#60a5fa"/>
-          <rect x="95" y="156" width="65" height="3" rx="1.5" fill="#f9a8d4"/>
-          <rect x="95" y="164" width="45" height="3" rx="1.5" fill="#fbbf24"/>
-          <rect x="88" y="172" width="30" height="3" rx="1.5" fill="#4ade80"/>
-
-          {/* Blinking cursor */}
-          <rect x="120" y="172" width="2" height="10" rx="1" fill="white">
-            <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
-          </rect>
-
-          {/* Monitor stand */}
-          <rect x="122" y="195" width="16" height="10" rx="2" fill="#333"/>
-          <rect x="110" y="203" width="40" height="6" rx="3" fill="#222"/>
-
-          {/* Keyboard */}
-          <rect x="80" y="210" width="100" height="18" rx="5" fill="#222"/>
-          {[0,1,2,3,4,5,6,7,8,9].map((i) => (
-            <rect key={i} x={86 + i * 9} y="214" width="6" height="5" rx="1.5" fill="#444"/>
-          ))}
-          {[0,1,2,3,4,5,6,7,8].map((i) => (
-            <rect key={i} x={90 + i * 9} y="221" width="6" height="4" rx="1.5" fill="#444"/>
-          ))}
-
-          {/* Person body */}
-          <rect x="108" y="82" width="44" height="42" rx="14" fill="white" stroke="#111" strokeWidth="2"/>
-
-          {/* Person neck */}
-          <rect x="125" y="76" width="10" height="10" rx="5" fill="white" stroke="#111" strokeWidth="2"/>
-
-          {/* Person head */}
-          <circle cx="130" cy="58" r="22" fill="white" stroke="#111" strokeWidth="2"/>
-
-          {/* Hair */}
-          <path d="M108 52 Q110 32 130 30 Q150 32 152 52" fill="#111"/>
-
-          {/* Eyes */}
-          <ellipse cx="122" cy="56" rx="4" ry="4.5" fill="#111"/>
-          <ellipse cx="138" cy="56" rx="4" ry="4.5" fill="#111"/>
-          <circle cx="123" cy="54" r="1.5" fill="white"/>
-          <circle cx="139" cy="54" r="1.5" fill="white"/>
-
-          {/* Glasses */}
-          <rect x="116" y="51" width="12" height="10" rx="4" fill="none" stroke="#111" strokeWidth="1.5"/>
-          <rect x="132" y="51" width="12" height="10" rx="4" fill="none" stroke="#111" strokeWidth="1.5"/>
-          <line x1="128" y1="56" x2="132" y2="56" stroke="#111" strokeWidth="1.5"/>
-          <line x1="108" y1="56" x2="116" y2="56" stroke="#111" strokeWidth="1.5"/>
-          <line x1="144" y1="56" x2="152" y2="56" stroke="#111" strokeWidth="1.5"/>
-
-          {/* Smile */}
-          <path d="M122 67 Q130 74 138 67" stroke="#111" strokeWidth="2" strokeLinecap="round" fill="none"/>
-
-          {/* Left arm — typing */}
-          <line x1="108" y1="96" x2="88" y2="118" stroke="#111" strokeWidth="4" strokeLinecap="round">
-            <animateTransform attributeName="transform" type="rotate" values="0 108 96;-5 108 96;0 108 96" dur="0.5s" repeatCount="indefinite"/>
-          </line>
-          <ellipse cx="85" cy="121" rx="7" ry="5" fill="white" stroke="#111" strokeWidth="2"/>
-
-          {/* Right arm — typing */}
-          <line x1="152" y1="96" x2="172" y2="118" stroke="#111" strokeWidth="4" strokeLinecap="round">
-            <animateTransform attributeName="transform" type="rotate" values="0 152 96;5 152 96;0 152 96" dur="0.5s" repeatCount="indefinite" begin="0.25s"/>
-          </line>
-          <ellipse cx="175" cy="121" rx="7" ry="5" fill="white" stroke="#111" strokeWidth="2"/>
-
-          {/* Coffee mug */}
-          <rect x="32" y="178" width="24" height="18" rx="4" fill="white" stroke="#111" strokeWidth="2"/>
-          <path d="M56 183 Q64 183 64 189 Q64 195 56 195" stroke="#111" strokeWidth="2" fill="none"/>
-          {/* Steam */}
-          <path d="M38 175 Q40 170 38 165" stroke="#aaa" strokeWidth="1.5" strokeLinecap="round" fill="none">
-            <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
-          </path>
-          <path d="M46 174 Q48 168 46 162" stroke="#aaa" strokeWidth="1.5" strokeLinecap="round" fill="none">
-            <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" begin="0.5s"/>
-          </path>
-
-          {/* Stars / sparkles around head */}
-          <text x="158" y="46" fontSize="14" fill="#111">✦</text>
-          <text x="96"  y="42" fontSize="12" fill="#111">✦</text>
-          <text x="170" y="72" fontSize="10" fill="#111">✦</text>
-        </svg>
-      </div>
-
-      {/* ── Text ── */}
-      <p className="text-xs uppercase tracking-[0.4em] text-gray-400 mb-3">Ashtanga Vinyasa Page Under Construction</p>
-      <h1 className="text-4xl sm:text-5xl font-extrabold text-black mb-4">Our Ashtanga Vinyasa Page Coming Soon</h1>
-
-      {/* Polite message */}
-      <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-md mx-auto mb-3">
-        We are working hard to bring you something wonderful. This page is currently under development and will be ready very soon.
-      </p>
-      <p className="text-gray-400 text-sm max-w-sm mx-auto mb-8">
-        Thank you for your patience and support. We appreciate you visiting Swarna Kamal Yoga! 🙏
-      </p>
-
-      {/* 24 Hour Timer */}
-      <div className="mb-8  px-8 py-6 max-w-sm">
-        {/* <p className="text-xs uppercase tracking-widest text-black font-bold mb-3">Time until reset</p> */}
-        <div className="font-mono text-5xl font-extrabold text-black tracking-tight">
-          {timeLeft || "00:00:00"}
-        </div>
-        {/* <p className="text-xs text-black mt-3">Resets daily at midnight</p> */}
-      </div>
-
-      {/* Animated status */}
-      <div className="flex items-center gap-3 mb-8 bg-gray-50 border border-gray-200 rounded-full px-5 py-2.5">
-        <span className="w-2 h-2 bg-black rounded-full animate-pulse shrink-0" />
-        <p className="text-sm font-medium text-gray-700 min-w-55 text-left">
-          {messages[msgIndex]}
-        </p>
-      </div>
-
-      {/* Bouncing dots */}
-      <div className="flex gap-2 mb-10">
-        {[0, 1, 2].map((i) => (
-          <div
-            key={i}
-            className="w-2.5 h-2.5 bg-black rounded-full animate-bounce"
-            style={{ animationDelay: `${i * 0.15}s` }}
-          />
-        ))}
-      </div>
-
-      {/* Back to Home button */}
-      <Link
-        to="/"
-        className="bg-black text-white px-8 py-3 rounded-full font-bold hover:bg-gray-800 transition-all text-sm sm:text-base shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform duration-200"
-      >
-        ← Back to Home
-      </Link>
-
+function SubSection({ label, children }) {
+  return (
+    <div className="border-l-2 border-black pl-4 mb-4">
+      <p className="font-semibold text-black mb-1">{label}</p>
+      {children}
     </div>
   );
 }
 
-export default AshtangaVinyasa;
+function AsanaSubheading({ title }) {
+  return (
+    <p className="text-xs font-semibold tracking-widest uppercase text-black border-b border-black pb-1 mb-3">
+      {title}
+    </p>
+  );
+}
+
+function AsanaGrid({ list }) {
+  return (
+    <div className="grid grid-cols-2 gap-x-6 mb-6">
+      {list.map(([name, meaning]) => (
+        <div key={name} className="py-1 border-b border-gray-300">
+          <span className="text-sm font-light text-black">{name}</span>
+          <span className="block text-xs italic text-gray-500">{meaning}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default function AshtangaVinyasa() {
+  return (
+    <div className="max-w-3xl mx-auto px-5 py-10 bg-white text-black text-sm leading-relaxed">
+      {/* Header */}
+      <p className="text-xs tracking-widest uppercase font-medium mb-1">
+        Swarna Kamal Yoga
+      </p>
+      <h1 className="text-3xl font-bold underline underline-offset-4 mb-1 text-black">
+        Ashtanga Yoga Teacher Training Course
+      </h1>
+      <p className="italic text-gray-600 mb-5 text-base">
+        40-Hour Certified Program
+      </p>
+      <p className="font-light text-black mb-6">
+        This 40-hour Ashtanga Yoga Teacher Training Course offers an immersive
+        journey into the traditional Ashtanga Vinyasa system as taught by Sri K.
+        Pattabhi Jois. Students will gain a deep understanding of the Primary
+        Series, pranayama, bandhas, drishti, and the philosophical foundations
+        of this ancient practice.
+      </p>
+
+      <hr className="border-black my-7" />
+
+      {/* Section 1 */}
+      <SectionTitle number="1" title="Origins & History of Ashtanga Yoga" />
+      <p className="font-light text-black mb-6">
+        An exploration of the lineage, philosophy, and historical roots of the
+        Ashtanga Vinyasa system — tracing its origins to the ancient sage Vamana
+        Rishi and its modern revival through Sri T. Krishnamacharya and Sri K.
+        Pattabhi Jois.
+      </p>
+
+      <hr className="border-black my-7" />
+
+      {/* Section 2 */}
+      <SectionTitle
+        number="2"
+        title="Practical Guidelines for Ashtanga Yoga Practice"
+      />
+      <p className="font-light text-black mb-6">
+        Essential guidance on self-practice, Mysore style, led classes, and the
+        foundational principles that support a safe and sustainable Ashtanga
+        practice.
+      </p>
+
+      <hr className="border-black my-7" />
+
+      {/* Section 3: Diet */}
+      <SectionTitle number="3" title="Diet for Ashtanga Yoga Practice" />
+
+      <SubSection label="i. Yogic Diet of Non-Violence">
+        <p className="font-light text-black text-sm">
+          Understanding ahimsa (non-harming) as the basis of conscious eating
+          and its role in supporting deep practice.
+        </p>
+      </SubSection>
+
+      <SubSection label="ii. Diet Guidelines">
+        <ul className="list-disc pl-5 font-light space-y-1 text-sm text-black">
+          <li>Sattvic — pure, light, nourishing foods that support clarity</li>
+          <li>
+            Rajasic — stimulating foods that increase energy and restlessness
+          </li>
+          <li>Tamasic — heavy, dull foods that promote lethargy</li>
+        </ul>
+      </SubSection>
+
+      <SubSection label="iii. Cleansing and Purification through Diet">
+        <p className="font-light text-black text-sm">
+          Dietary practices to purify the body and prepare it for advanced
+          pranayama and asana practice.
+        </p>
+      </SubSection>
+
+      <hr className="border-black my-7" />
+
+      {/* Section 4: Pranayama & Bandhas */}
+      <SectionTitle number="4" title="Pranayama & Bandhas" />
+
+      <SubSection label="i. Awakening the Fire Within">
+        <p className="font-light text-black text-sm">
+          Understanding tapas — the inner heat generated through consistent
+          Ashtanga practice.
+        </p>
+      </SubSection>
+
+      <SubSection label="ii. The Breath of Life: Ujjayi Breathing (Victorious Breath)">
+        <p className="font-light text-black text-sm">
+          The foundational breathing technique of Ashtanga — creating an oceanic
+          sound that anchors the mind and regulates internal heat throughout the
+          practice.
+        </p>
+      </SubSection>
+
+      <SubSection label="iii. Capturing Prana through the Three Bandhas">
+        <ul className="list-disc pl-5 font-light space-y-1 text-sm text-black">
+          <li>
+            <span className="font-medium">Moola Bandha</span> — Root Lock:
+            engaging the perineum to contain and direct prana upward
+          </li>
+          <li>
+            <span className="font-medium">Uddiyana Bandha</span> — Flying Lock:
+            drawing the lower abdomen inward and upward
+          </li>
+          <li>
+            <span className="font-medium">Jalandhara Bandha</span> — Water Pipe
+            Lock: chin-to-chest lock that seals prana in the upper body
+          </li>
+        </ul>
+      </SubSection>
+
+      <hr className="border-black my-7" />
+
+      {/* Section 5: Drishti */}
+      <SectionTitle number="5" title="Drishti: Gaze Focusing Technique" />
+      <p className="font-light text-black mb-3">
+        The nine gazing points (Nava Drishtis) that direct attention inward and
+        deepen concentration:
+      </p>
+      <ol className="list-decimal pl-6 font-light space-y-1 mb-6 text-sm text-black">
+        <li>Nasagrai — the space just beyond the tip of the nose</li>
+        <li>Ajna chakra — the space between the eyebrows</li>
+        <li>Nabi chakra — navel center</li>
+        <li>Hastagrai — hand</li>
+        <li>Padhayoragrai — toes</li>
+        <li>Parshva — far to the right</li>
+        <li>Parshva — far to the left</li>
+        <li>Angushtha ma dyai — thumbs</li>
+        <li>Urdhva drishti / Antara drishti — up to the sky</li>
+      </ol>
+
+      <hr className="border-black my-7" />
+
+      {/* Section 6: Primary Series */}
+      <SectionTitle number="6" title="Ashtanga Yoga Primary Series Practice" />
+
+      <AsanaSubheading title="Opening" />
+      <ul className="list-disc pl-6 font-light space-y-1 mb-6 text-sm text-black">
+        <li>
+          Opening Prayer / Invocation — <em>Vande Gurunam...</em>
+        </li>
+        <li>Surya Namaskar A (Sun Salutation A)</li>
+        <li>Surya Namaskar B (Sun Salutation B)</li>
+      </ul>
+
+      <AsanaSubheading title="Standing Asanas" />
+      <AsanaGrid list={asanas.standing} />
+
+      <AsanaSubheading title="Sitting & Supine Asanas" />
+      <AsanaGrid list={asanas.sitting} />
+
+      <AsanaSubheading title="Finishing Asanas" />
+      <AsanaGrid list={asanas.finishing} />
+
+      <hr className="border-black my-7" />
+
+      <p className="text-center italic text-gray-500 text-sm">
+        Closing Prayer — <em>Svasthi Praja...</em>
+      </p>
+    </div>
+  );
+}
