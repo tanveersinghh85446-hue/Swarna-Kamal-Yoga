@@ -22,6 +22,7 @@ import { TbWheel } from "react-icons/tb";
 import { GiDuration } from "react-icons/gi";
 import { MdLiveTv } from "react-icons/md";
 import { FaRegCalendarAlt } from "react-icons/fa";
+import { IoWomanOutline } from "react-icons/io5";
 
 const colors = [
   "from-pink-500 to-rose-500",
@@ -49,6 +50,8 @@ const courses = [
     title: "Pranayama Mudra Meditations Certificate Course",
     slug: "pranayama",
     icon: <FaOm />,
+    price: "₹8,500",
+
     mode: "Live + Recorded",
     highlights: [
       "Pranayama × 35",
@@ -94,6 +97,8 @@ const courses = [
     title: "Ashtanga Vinyasa TTC",
     slug: "ashtanga",
     icon: <SiLoop />,
+    price: "₹9,000",
+
     mode: "Live + Recorded",
     highlights: ["Primary Series", "Flow", "Bandhas", "Adjustments"],
   },
@@ -139,6 +144,8 @@ const courses = [
     title: "MAT Pilates",
     slug: "mat-pilates",
     icon: <GiSportMedal />,
+    price: "₹8,500",
+
     mode: "Live + Recorded",
     highlights: ["Core", "Flexibility", "Balance", "Training"],
   },
@@ -157,34 +164,126 @@ const courses = [
     title: "Kids Yoga TTC",
     slug: "kids-training",
     icon: <LuBaby />,
+    price: "₹8,000",
+
     mode: "Live + Recorded",
     highlights: ["Kids Yoga", "Fun", "Safety", "Play"],
   },
+  {
+  id: 15,
+  title: "Kundalini Yoga",
+  slug: "kundalini-yoga",
+  icon: <IoWomanOutline />, // better icon (optional)
+  price: "₹10,000",
+
+  mode: "Live + Recorded",
+  highlights: [
+    "Energy Awakening",
+    "Chakra Balancing",
+    "Breathwork (Pranayama)",
+    "Meditation & Awareness"
+  ],
+}
 ];
 
 const workshops = [
-  { id: "w1",  title: "Chair Yoga Workshop",                                    icon: <MdChair />,           colorIndex: 0 },
-  { id: "w2",  title: "Power Yoga Workshop",                                    icon: <IoIosFlash />,        colorIndex: 1 },
-  { id: "w3",  title: "Yoga Therapy for Digestive Disorders",                   icon: <GiStomach />,         colorIndex: 2 },
-  { id: "w4",  title: "Yoga Therapy for Diabetes Reversal",                     icon: <FaHeartbeat />,       colorIndex: 3 },
-  { id: "w5",  title: "Yoga Therapy for Thyroid Management",                    icon: <GiFlowerEmblem />,    colorIndex: 4 },
-  { id: "w6",  title: "Yoga Therapy for Stress & Anxiety",                      icon: <GiMeditation />,      colorIndex: 5 },
-  { id: "w7",  title: "Yoga Therapy for Neck & Back Pain Relief",               icon: <PiBoneThin />,        colorIndex: 6 },
-  { id: "w8",  title: "Yoga Therapy for Menopause",                             icon: <RiShiningFill />,     colorIndex: 7 },
-  { id: "w9",  title: "Yoga Therapy for Somatic Awareness & Embodied Healing",  icon: <MdSelfImprovement />, colorIndex: 0 },
-  { id: "w10", title: "Master the Basics of Strength Training",                 icon: <GiStrong />,          colorIndex: 1 },
-  { id: "w11", title: "Garbh Sanskar — Journey of Pregnancy",                   icon: <FaPersonPregnant />,  colorIndex: 2 },
-  { id: "w12", title: "Prenatal Therapy Yoga",                                  icon: <LuBaby />,            colorIndex: 3 },
-  { id: "w13", title: "Yoga Therapy for Spinal Health",                         icon: <GiSpinalCoil />,      colorIndex: 4 },
-  { id: "w14", title: "Pilates with Stick and Dumbbells",                       icon: <GiSportMedal />,      colorIndex: 5 },
-  { id: "w15", title: "Unwinding with Restorative Yoga",                        icon: <IoMoon />,            colorIndex: 6 },
-  { id: "w16", title: "Wheel Yoga",                                             icon: <TbWheel />,           colorIndex: 0 },
+  { id: "w1", title: "Chair Yoga Workshop", icon: <MdChair />, colorIndex: 0 },
+  {
+    id: "w2",
+    title: "Power Yoga Workshop",
+    icon: <IoIosFlash />,
+    colorIndex: 1,
+  },
+  {
+    id: "w3",
+    title: "Yoga Therapy for Digestive Disorders",
+    icon: <GiStomach />,
+    colorIndex: 2,
+  },
+  {
+    id: "w4",
+    title: "Yoga Therapy for Diabetes Reversal",
+    icon: <FaHeartbeat />,
+    colorIndex: 3,
+  },
+  {
+    id: "w5",
+    title: "Yoga Therapy for Thyroid Management",
+    icon: <GiFlowerEmblem />,
+    colorIndex: 4,
+  },
+  {
+    id: "w6",
+    title: "Yoga Therapy for Stress & Anxiety",
+    icon: <GiMeditation />,
+    colorIndex: 5,
+  },
+  {
+    id: "w7",
+    title: "Yoga Therapy for Neck & Back Pain Relief",
+    icon: <PiBoneThin />,
+    colorIndex: 6,
+  },
+  {
+    id: "w8",
+    title: "Yoga Therapy for Menopause",
+    icon: <RiShiningFill />,
+    colorIndex: 7,
+  },
+  {
+    id: "w9",
+    title: "Yoga Therapy for Somatic Awareness & Embodied Healing",
+    icon: <MdSelfImprovement />,
+    colorIndex: 0,
+  },
+  {
+    id: "w10",
+    title: "Master the Basics of Strength Training",
+    icon: <GiStrong />,
+    colorIndex: 1,
+  },
+  {
+    id: "w11",
+    title: "Garbh Sanskar — Journey of Pregnancy",
+    icon: <FaPersonPregnant />,
+    colorIndex: 2,
+  },
+  {
+    id: "w12",
+    title: "Prenatal Therapy Yoga",
+    icon: <LuBaby />,
+    colorIndex: 3,
+  },
+  {
+    id: "w13",
+    title: "Yoga Therapy for Spinal Health",
+    icon: <GiSpinalCoil />,
+    colorIndex: 4,
+  },
+  {
+    id: "w14",
+    title: "Pilates with Stick and Dumbbells",
+    icon: <GiSportMedal />,
+    colorIndex: 5,
+  },
+  {
+    id: "w15",
+    title: "Unwinding with Restorative Yoga",
+    icon: <IoMoon />,
+    colorIndex: 6,
+  },
+  { id: "w16", title: "Wheel Yoga", icon: <TbWheel />, colorIndex: 0 },
+  {
+    id: "w17",
+    title: "Yoga for Infertility",
+    icon: <IoWomanOutline />,
+    colorIndex: 6,
+  },
 ];
 
 function Courses() {
   return (
     <div className="bg-linear-to-b from-white to-gray-100 min-h-screen pt-16 border-t border-white/20">
-
       {/* ── HERO ── */}
       <section
         className="relative text-white py-16 sm:py-20 text-center bg-cover bg-center"
@@ -215,7 +314,9 @@ function Courses() {
               key={course.id}
               className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition bg-white"
             >
-              <div className={`h-2 bg-linear-to-r ${colors[i % colors.length]}`} />
+              <div
+                className={`h-2 bg-linear-to-r ${colors[i % colors.length]}`}
+              />
               <div className="p-5 sm:p-6">
                 <div className="flex justify-between items-start mb-4">
                   <span className="text-3xl sm:text-4xl text-purple-600">
@@ -286,8 +387,8 @@ function Courses() {
           {/* 2xl mobile → 3xl tablet → 4xl desktop */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mb-3 leading-tight">
             Welcome to{" "}
-            <span className="text-yellow-400">Swarna Kamal Yoga</span>{" "}
-            Online Workshop Courses
+            <span className="text-yellow-400">Swarna Kamal Yoga</span> Online
+            Workshop Courses
           </h2>
         </div>
 
@@ -298,7 +399,9 @@ function Courses() {
               key={w.id}
               className="group relative rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
-              <div className={`h-1.5 bg-linear-to-r ${workshopColors[w.colorIndex]}`} />
+              <div
+                className={`h-1.5 bg-linear-to-r ${workshopColors[w.colorIndex]}`}
+              />
 
               <div className="p-5 sm:p-6 pt-4 sm:pt-5">
                 <div
@@ -349,7 +452,8 @@ function Courses() {
       </section>
 
       <div className="border-t border-stone-800 mt-10 pt-4 mb-8 text-center text-xs text-stone-500">
-        © {new Date().getFullYear()} Swarna Kamal Yoga Center, Bengaluru. All rights reserved.
+        © {new Date().getFullYear()} Swarna Kamal Yoga Center, Bengaluru. All
+        rights reserved.
       </div>
     </div>
   );

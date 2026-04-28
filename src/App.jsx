@@ -26,6 +26,7 @@ import KidsTraining from "./Pages/CourseDetail/KidsTraining";
 import Team from "./Pages/Team";
 import TwoHundred from "./Pages/TwoHundred";
 import ThreeHundred from "./Pages/ThreeHundred";
+import KundaliniYoga from "./Pages/CourseDetail/Kundaliniyoga";
 
 function App() {
   const [splashDone, setSplashDone] = useState(false);
@@ -69,6 +70,7 @@ function App() {
             <Route path="/courses/mat-pilates" element={<MatPilates />} />
             <Route path="/courses/therapy" element={<TherapyTeacher />} />
             <Route path="/courses/kids-training" element={<KidsTraining />} />
+            <Route path="/courses/kundalini-yoga" element={<KundaliniYoga />} />
           </Routes>
         </Router>
       </div>
