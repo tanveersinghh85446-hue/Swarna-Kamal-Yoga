@@ -32,7 +32,7 @@ export default function FaceYoga() {
       <ul className="list-disc pl-6 text-gray-800 space-y-2">
         <li>Introduction to Face Yoga</li>
         <li>Benefits of Face Yoga</li>
-        <li>75+ different facial exercises</li>
+        <li>60 different facial exercises</li>
         <li>Exercises for Anti-Aging</li>
         <li>Exercises for Wrinkles & Smoother Skin</li>
         <li>Exercises to get rid of Dark Circles under the eyes</li>

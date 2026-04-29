@@ -6,7 +6,7 @@ export default function KundaliniYoga() {
         Swarna Kamal Yoga
       </p>
       <h1 className="text-2xl font-bold underline mb-1">
-        Kundalini Yoga & Tantra Course
+        Kundalini Yoga Teaching Trainer course
       </h1>
       <p className="italic text-gray-600 mb-4">
         Awaken the Dormant Energy Within

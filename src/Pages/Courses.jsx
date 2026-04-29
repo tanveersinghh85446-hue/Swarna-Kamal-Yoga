@@ -98,6 +98,8 @@ const courses = [
     slug: "ashtanga",
     icon: <SiLoop />,
     price: "₹9,000",
+    duration: "40 Classes",
+    startDate: "August 10th  11 AM to 12 PM IST",
 
     mode: "Live + Recorded",
     highlights: ["Primary Series", "Flow", "Bandhas", "Adjustments"],
@@ -107,7 +109,9 @@ const courses = [
     title: "Asana Anatomy",
     slug: "asana-anatomy",
     icon: <PiBoneThin />,
-    price: "₹5,500",
+    price: "₹6,000",
+    duration: "20 Classes",
+
     mode: "Live + Recorded",
     startDate: "August 3rd  12-1 PM IST",
     highlights: ["Muscles", "Alignment", "Injury", "Safety"],
@@ -117,6 +121,8 @@ const courses = [
     title: "Face Yoga",
     slug: "face-yoga",
     icon: <RiShiningFill />,
+    price: "₹5,500",
+
     mode: "Live + Recorded",
     highlights: ["Glow", "Anti-Aging", "Acupressure", "Routine"],
   },
@@ -134,7 +140,7 @@ const courses = [
     slug: "yin-yoga",
     icon: <IoMoon />,
     price: "₹6,500",
-    duration: "6 Weeks",
+    duration: "26 classes",
     mode: "Live + Recorded",
     startDate: "June 15th  8-9 PM IST",
     highlights: ["Yin", "Fascia", "Meditation", "Teaching"],
@@ -170,20 +176,20 @@ const courses = [
     highlights: ["Kids Yoga", "Fun", "Safety", "Play"],
   },
   {
-  id: 15,
-  title: "Kundalini Yoga",
-  slug: "kundalini-yoga",
-  icon: <IoWomanOutline />, // better icon (optional)
-  price: "₹10,000",
+    id: 15,
+    title: "Kundalini Yoga",
+    slug: "kundalini-yoga",
+    icon: <IoWomanOutline />, // better icon (optional)
+    price: "₹10,000",
 
-  mode: "Live + Recorded",
-  highlights: [
-    "Energy Awakening",
-    "Chakra Balancing",
-    "Breathwork (Pranayama)",
-    "Meditation & Awareness"
-  ],
-}
+    mode: "Live + Recorded",
+    highlights: [
+      "Energy Awakening",
+      "Chakra Balancing",
+      "Breathwork (Pranayama)",
+      "Meditation & Awareness",
+    ],
+  },
 ];
 
 const workshops = [
